@@ -139,6 +139,12 @@
         "button_label": "SHOP NOW",
         "button_link": "shopify:\/\/collections\/all"
       }
+    },
+    "8585795f-ffbe-4e2a-b9a8-ddb99e276ce6": {
+      "type": "collection-slider",
+      "settings": {
+        "heading": "Shop by"
+      }
     }
   },
   "order": [
@@ -148,6 +154,7 @@
     "165268048583a69a14",
     "143a8151-3eca-477c-906a-f5b42384f3df",
     "16492312090f4dccd0",
-    "1652752504e0ced0e0"
+    "1652752504e0ced0e0",
+    "8585795f-ffbe-4e2a-b9a8-ddb99e276ce6"
   ]
 }
