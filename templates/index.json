@@ -15,6 +15,12 @@
         "layout": "right"
       }
     },
+    "1e826c6f-cef7-40e3-a82b-45c6b23f94d4": {
+      "type": "search-bar",
+      "settings": {
+        "heading": "Get it today, browse our range"
+      }
+    },
     "0bc4ac8f-a994-410c-a54e-ef61a6b8946e": {
       "type": "product-slider",
       "settings": {
@@ -139,33 +145,16 @@
         "button_label": "SHOP NOW",
         "button_link": "shopify:\/\/collections\/all"
       }
-    },
-    "8585795f-ffbe-4e2a-b9a8-ddb99e276ce6": {
-      "type": "collection-slider",
-      "blocks": {
-        "abb469f9-0882-4a26-8671-9ba045fa9254": {
-          "type": "collection_item",
-          "settings": {
-            "collection": "frontpage"
-          }
-        }
-      },
-      "block_order": [
-        "abb469f9-0882-4a26-8671-9ba045fa9254"
-      ],
-      "settings": {
-        "heading": "Shop by"
-      }
     }
   },
   "order": [
     "16490384482dbd99cf",
+    "1e826c6f-cef7-40e3-a82b-45c6b23f94d4",
     "0bc4ac8f-a994-410c-a54e-ef61a6b8946e",
     "ca8a94d5-5724-4796-bea8-50820354c7a5",
     "165268048583a69a14",
     "143a8151-3eca-477c-906a-f5b42384f3df",
     "16492312090f4dccd0",
-    "1652752504e0ced0e0",
-    "8585795f-ffbe-4e2a-b9a8-ddb99e276ce6"
+    "1652752504e0ced0e0"
   ]
 }
