@@ -3,17 +3,22 @@
 {% endcomment %}
 
 <div class="card-block card-block--{{ section.id }}">
-  <div class="card-block__heading">
-    <h2>{{ section.settings.heading }}</h2>
-  </div>
-
   {%- for block in section.blocks -%}
     <div class="card-block__item" id="{{ block.id }}" onclick="toggleActive('{{ block.id }}')">
-      <div class="card-block__item__heading">
-        <h6>{{ block.settings.heading }}</h6>
+      <div class="card-block__item__background">
+        <img
+          loading="lazy"
+          src="{{ block.settings.background_image | image_url: width: 800, height: 800 }}"
+          alt="{{ block.settings.background_image.alt | escape }}"
+          width="{{ block.settings.background_image.width }}"
+          height="{{ block.settings.background_image.height }}"
+        >
       </div>
       <div class="card-block__item__content">
-        {{ block.settings.content }}
+        <h3 class="colour--white">{{ block.settings.heading }}</h3>
+        <p>
+          <a href="{{ block.settings.button_link }}" class="button">{{ block.settings.button_label }}</a>
+        </p>
       </div>
     </div>
   {%- endfor -%}
@@ -51,7 +56,7 @@
           "label": "Secondary Button label"
         },
         {
-          "type": "image_picker", 
+          "type": "image_picker",
           "id": "icon",
           "label": "Icon"
         },
@@ -59,6 +64,18 @@
           "type": "image_picker",
           "id": "background_image",
           "label": "Background Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "overlay",
+          "label": "Enable overlay",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "background_colour",
+          "label": "Background colour",
+          "default": "#ec1d24"
         }
       ]
     }
@@ -67,9 +84,6 @@
     {
       "name": "Card Block",
       "blocks": [
-        {
-          "type": "card_item"
-        },
         {
           "type": "card_item"
         },
