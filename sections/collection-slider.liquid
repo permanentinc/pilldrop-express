@@ -1,0 +1,114 @@
+{% comment %}
+  Product Slider
+{% endcomment %}
+
+<div class="slider slider--{{ section.id }}">
+  <div class="slider__wrap">
+
+    <div class="slider__wrap__heading [ js-in-view ]">
+      <h2 class="colour--green-dark" data-splitting>{{ section.settings.heading }}</h2>
+      <p><b><a href="/collections/shop" class="arrow-link">VIEW ALL PRODUCTS <img src="{{ 'mini-arrow-right.svg' | asset_url }}" width="14" height="22" loading="lazy" /></a></b></p>
+    </div>
+
+    <div class="slider__wrap__slider">
+
+      <div class="slider__wrap__slider__carousel" id="scroller--{{ section.id }}">
+
+        {%- for block in section.blocks -%}
+
+        <div class="slider__wrap__slider__carousel__item">
+          {% if block.settings.collection.image %}
+          <div  href="{{ block.settings.collection.url }}" class="slider__wrap__slider__carousel__item__image slider__wrap__slider__carousel__item__image--overlay">
+            <img loading="lazy"
+              srcset="{{ block.settings.collection.image | image_url: width: 480, height: 480 }} 480w,
+                      {{ block.settings.collection.image | image_url: width: 600, height: 600 }} 600w"
+              sizes="(max-width: 600px) 480px,
+                     (max-width: 1000px) 600px,
+                     1000px"
+              src="{{ block.settings.collection.image | image_url: width: 600, height: 600 }}"
+              alt="{{ block.settings.collection.image.alt | escape }}"
+              width="{{ block.settings.collection.image.width }}"
+              height="{{ block.settings.collection.image.height }}">
+            </div>
+        {% endif %}
+
+        {% comment %} <a href="{{ block.settings.collection.url }}" class="collection__grid__item__details"> {% endcomment %}
+          {% comment %} <div class="collection__grid__item__details__title"> {% endcomment %}
+            {% comment %} <h6 class="colour--green-dark text-center"><strong>{{ block.settings.collection.title | escape }} &nbsp;</strong></h6> {% endcomment %}
+            {% comment %} <p class="colour--green-mid text-center"><b>VIEW COLLECTION</b></p> {% endcomment %}
+          {% comment %} </div> {% endcomment %}
+        {% comment %} </a> {% endcomment %}
+
+      </div>
+      {%- endfor -%}
+    
+    </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+
+<script>
+  tns({
+    container:"#scroller--{{ section.id }}",
+    items: 1,
+    mouseDrag: true,
+    nav: false,
+    controls: true,
+    slideBy: 1,
+    responsive: {
+      800: {
+        items: 2
+      },
+      1000: {
+        items: 3
+      }
+    }
+  });
+</script>
+
+<style> 
+  .slider--{{ section.id }} .tns-controls button:first-of-type {
+    background-image: url({{ 'previous-green-mid.svg' | asset_url }});
+    left: -4rem;
+  }
+  .slider--{{ section.id }} .tns-controls button:last-of-type {
+    background-image: url({{ 'next-green-mid.svg' | asset_url }});
+    right: -4rem;
+  }
+</style>
+
+{% schema %}
+{ 
+  "name": "Collection Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default" : "You may also like…",
+      "label": "Heading"
+    }
+  ],
+    "blocks": [
+      {
+      "type": "collection_item",
+      "name": "Collection item",
+      "settings": [
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      }
+    ]
+  }
+],
+  "presets": [
+    {
+      "name": "Collection Slider",
+      "blocks": []
+    }
+  ]
+}   
+{% endschema %}
