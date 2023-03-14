@@ -142,6 +142,17 @@
     },
     "8585795f-ffbe-4e2a-b9a8-ddb99e276ce6": {
       "type": "collection-slider",
+      "blocks": {
+        "abb469f9-0882-4a26-8671-9ba045fa9254": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "frontpage"
+          }
+        }
+      },
+      "block_order": [
+        "abb469f9-0882-4a26-8671-9ba045fa9254"
+      ],
       "settings": {
         "heading": "Shop by"
       }
