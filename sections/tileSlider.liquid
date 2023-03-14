@@ -60,13 +60,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
 
 <style>
-  .tns-controls button:first-of-type {
+  .tileSlider--{{ section.id }} .tns-controls button:first-of-type {
     background-image: url({{ 'tile-slider-previous.svg' | asset_url }});
     left: -10rem;
     width: 81px;
     height: 27px;
   }
-  .tns-controls button:last-of-type {
+  .tileSlider--{{ section.id }} .tns-controls button:last-of-type {
     background-image: url({{ 'tile-slider-next.svg' | asset_url }});
     right: -10rem;
     width: 81px;

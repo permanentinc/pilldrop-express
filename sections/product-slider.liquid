@@ -2,17 +2,17 @@
   Product Slider
 {% endcomment %}
 
-<div class="slider tileSlider--{{ section.id }}">
-  <div class="slider__wrap">
+<div class="product-slider product-slider--{{ section.id }}">
+  <div class="product-slider__wrap">
 
-    <div class="slider__wrap__heading">
-      <h2 class="colour--white">{{ section.settings.heading }}</h2>
-      <p><a href="/collections/all">VIEW ALL PRODUCTS</a></p>
+    <div class="product-slider__wrap__heading">
+      <h2 class="colour--red">{{ section.settings.heading }}</h2>
+      <p><a href="/collections/all" class="colour--red"><b>VIEW ALL PRODUCTS</b> <svg width="10" height="16" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg"><path fill="#EC1D24" d="M.039 1.599 1.701 0 10 7.978 1.662 16 0 14.401l6.672-6.42z" fill-rule="evenodd"/></svg></a></p>
     </div>
 
-    <div class="slider__wrap__slider">
+    <div class="product-slider__wrap__slider">
 
-      <div class="slider__wrap__slider__carousel" id="tileSlider--{{ section.id }}">
+      <div class="product-slider__wrap__slider__carousel" id="tileSlider--{{ section.id }}">
 
       {%- for product in section.settings.collection.products -%}
 
@@ -21,9 +21,8 @@
         {%- assign on_sale = true -%}
         {% endif %}
 
-        <div class="slider__wrap__slider__carousel__item">
-          {% if product.media[0] %}
-          <a  href="{{ product.url }}" class="slider__wrap__slider__carousel__item__image">
+        <div class="product-slider__wrap__slider__carousel__item">
+          <a  href="{{ product.url }}" class="product-slider__wrap__slider__carousel__item__image">
             <img loading="lazy"
               srcset="{{ product.media[0] | image_url: width: 480 }} 480w,
                       {{ product.media[0] | image_url: width: 800 }} 800w,
@@ -37,22 +36,22 @@
               height="{{ product.media[0].height }}">
 
         {% if on_sale %}
-          <span class="collection__grid__item__image__sale">SALE</span>
+          <span class="product-slider__wrap__slider__carousel__item__image__sale">SALE</span>
         {% endif %}
 
         {% if product.available %}
           
         {% else %}
-          <span class="collection__grid__item__image__unavailable">SOLD OUT</span>
+          <span class="product-slider__wrap__slider__carousel__item__image__unavailable">SOLD OUT</span>
         {% endif %}
 
       </a>
-    {% endif %}
 
-      <a href="{{ product.url }}" class="collection__grid__item__details">
-        <div class="collection__grid__item__details__title">
-            <h6 class="colour--text"><strong>{{ product.title | escape }} &nbsp;</strong></h6>
-            <p class="colour--red">{{ product.price | money }}</p>
+      <a href="{{ product.url }}" class="product-slider__wrap__slider__carousel__item__details">
+        <div class="product-slider__wrap__slider__carousel__item__details__title">
+            <span>{{ product.type | escape }} &nbsp;</span>
+            <h6 class="colour--red">{{ product.title | escape }} &nbsp;</h6>
+            <p class="colour--text">{{ product.price | money }}</p>
           </div>
         </a>
       </div>
@@ -72,31 +71,32 @@
     container:"#tileSlider--{{ section.id }}",
     items: 1,
     mouseDrag: true,
-    nav: true,
+    nav: false,
     controls: true,
     slideBy: 1,
     responsive: {
       800: {
-        items: 2
+        items: 4
       },
       1000: {
-        items: 3
+        items: 5
       }
     }
   });
 });
 </script>
 
-<style>
-  .tns-controls button:first-of-type {
-    background-image: url({{ 'previous.svg' | asset_url }});
+<style> 
+  .product-slider--{{ section.id }} .tns-controls button:first-of-type {
+    background-image: url({{ 'previous-red-mid.svg' | asset_url }});
     left: -4rem;
   }
-  .tns-controls button:last-of-type {
-    background-image: url({{ 'next.svg' | asset_url }});
+  .product-slider--{{ section.id }} .tns-controls button:last-of-type {
+    background-image: url({{ 'next-red-mid.svg' | asset_url }});
     right: -4rem;
   }
 </style>
+
 
 {% schema %}
 { 
