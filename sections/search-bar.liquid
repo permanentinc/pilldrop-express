@@ -5,9 +5,73 @@
 <div class="search-bar search-bar--{{ section.id }}">
   <div class="search-bar__wrap">
     <div class="search-bar__wrap__heading">
-      <h2 class="colour--white">{{ section.settings.text }}</h2>
+      <h2 class="colour--white">{{ section.settings.heading }}</h2>
     </div>
-    <div class="search-bar__wrap__form"></div>
+    <div class="search-bar__wrap__form">
+      <form
+        class="search-bar__wrap__form__form"
+        action="{{ routes.search_url }}"
+        method="get"
+        role="search"
+        autocomplete="off"
+      >
+        <input autocomplete="false" name="hidden" type="text" style="display:none;">
+        <input
+          class="search-bar__wrap__form__form__input [ js-search-bar-query ]"
+          type="text"
+          name="q"
+          placeholder="Search products"
+        >
+        <div class="search-bar__wrap__form__form__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M10.2019773,16.8862162 C6.51673904,16.8862162 3.52065047,13.887017 3.52065047,10.2025751 C3.52065047,6.51714763 6.51673904,3.51991958 10.2019773,3.51991958 C13.8872155,3.51991958 16.8852752,6.51714763 16.8852752,10.2025751 C16.8852752,13.887017 13.8872155,16.8862162 10.2019773,16.8862162 Z M18.5878222,16.0998504 L18.3115957,16.3760912 C19.6186147,14.6618758 20.4049401,12.5260675 20.4049401,10.2025012 C20.4049401,4.56803771 15.837137,0 10.2019773,0 C4.56780314,0 0,4.56803771 0,10.2025012 C0,15.8369647 4.56780314,20.405988 10.2019773,20.405988 C12.5253503,20.405988 14.6601374,19.6196222 16.3762358,18.3125361 L16.0990483,18.5887768 L21.5109797,24 L24,21.511838 L18.5878222,16.0998504 Z"></path>
+          </svg>
+        </div>
+      </form>
+
+      {% comment %}
+        search-bar__wrap__form__searchPane
+      {% endcomment %}
+
+      <section class="search-bar__wrap__form__searchPane">
+        <div class="search-bar__wrap__form__searchPane__wrapper">
+          <p class="search-bar__wrap__form__searchPane__wrapper__title">
+            <span>RESULTS</span>
+          </p>
+
+          <div class="search-bar__wrap__form__searchPane__wrapper__items [ js-search-bar-items ]">
+            <div class="search-bar__wrap__form__searchPane__wrapper__item search-bar__wrap__form__searchPane__wrapper__item--placeholder">
+              <div class="search-bar__wrap__form__searchPane__wrapper__item__image"><span></span></div>
+              <div class="search-bar__wrap__form__searchPane__wrapper__item__details">
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+              </div>
+            </div>
+
+            <div class="search-bar__wrap__form__searchPane__wrapper__item search-bar__wrap__form__searchPane__wrapper__item--placeholder">
+              <div class="search-bar__wrap__form__searchPane__wrapper__item__image"><span></span></div>
+              <div class="search-bar__wrap__form__searchPane__wrapper__item__details">
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+              </div>
+            </div>
+
+            <div class="search-bar__wrap__form__searchPane__wrapper__item search-bar__wrap__form__searchPane__wrapper__item--placeholder">
+              <div class="search-bar__wrap__form__searchPane__wrapper__item__image"><span></span></div>
+              <div class="search-bar__wrap__form__searchPane__wrapper__item__details">
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="{{ routes.search_url }}" class="button [ js-full-search-bar ]"> Show all results </a>
+        </div>
+      </section>
+    </div>
   </div>
 </div>
 

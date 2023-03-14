@@ -57,6 +57,19 @@ export const searchPlaceholder = () =>
         </div>
     </div>`;
 
+
+/**
+* Return a template for a predictive search placeholder item
+* @returns {string}
+*/
+export const searchBarPlaceholder = () =>
+    `<div class="search-bar__wrap__form__searchPane__wrapper__item search-bar__wrap__form__searchPane__wrapper__item--placeholder">
+        <div class="search-bar__wrap__form__searchPane__wrapper__item__image"><span></span></div>
+        <div class="search-bar__wrap__form__searchPane__wrapper__item__details"><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+        </div>
+    </div>`;
+
+
 /**
 * Return a template for a predictive search item
 * @returns {string}
@@ -72,6 +85,24 @@ export const searchItem = (product) =>
             <p><strong>$${product.price}</strong>${(product.compare_at_price_max !== "0.00") ? `<span class="strike">$${product.compare_at_price_max}</span>` : ``}</p>
         </div>
     </a>`;
+
+
+
+/**
+* Return a template for a predictive search item
+* @returns {string}
+*/
+export const searchBarItem = (product) =>
+`<a href="${product.url}" class="search-bar__wrap__form__searchPane__wrapper__item">
+    <div class="search-bar__wrap__form__searchPane__wrapper__item__image">
+        <img src="${product.image || 'https://cdn.shopify.com/s/files/1/0617/3982/7386/products/RX_780b8dd4-821b-426c-9a6b-a4e2b3fc1c18.jpg'}">
+    </div>
+    <div class="search-bar__wrap__form__searchPane__wrapper__item__details">
+        <p><strong>${product.title}</strong></p>
+        <p>${product.type}</p>
+        <p><strong>$${product.price}</strong>${(product.compare_at_price_max !== "0.00") ? `<span class="strike">$${product.compare_at_price_max}</span>` : ``}</p>
+    </div>
+</a>`;
 
 /**
 * Return a template for a sidecart item
