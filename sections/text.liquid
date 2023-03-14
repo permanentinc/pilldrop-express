@@ -1,0 +1,77 @@
+
+  {% comment %}
+    Text block
+  {% endcomment %}
+  
+  <div class="text text--{{ section.id }}">
+    <div class="text__wrap">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="{{ section.settings.heading_size }} colour--red">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+      {{ section.settings.text }}
+      {%- if section.settings.button_label != blank -%}
+        <p>
+          <a href="{{ section.settings.button_link }}" class="button button--yellow">{{ section.settings.button_label }}</a>
+        </p>
+      {%- endif -%}
+    </div>
+  </div>
+    
+
+
+
+{% schema %}
+{
+  "name": "Text", 
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Image with text",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h3",
+          "label": "h3"
+        }
+      ],
+      "default": "h2",
+      "label": "Heading size"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text"
+    }
+  ]
+}   
+{% endschema %}
+  

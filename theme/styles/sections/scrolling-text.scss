@@ -1,0 +1,32 @@
+.scrolling-text {
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    will-change: transform; 
+    --offset: 20vw;
+    --move-initial: calc(-25% + var(--offset));
+    --move-final: calc(-50% + var(--offset));
+
+    &__container {
+        padding: 4rem 0;
+
+        &__text {
+            transform: translate3d(var(--move-initial), 0, 0);
+            animation: animation_loop 5s linear infinite;
+
+            span {
+                font-weight: bolder;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+@keyframes animation_loop {
+    0% {
+        transform: translate3d(var(--move-initial), 0, 0);
+    }
+    100% {
+        transform: translate3d(var(--move-final), 0, 0);
+    }
+}

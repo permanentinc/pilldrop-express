@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "banner": {
+      "type": "banner-slim",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/dog_banner.jpg",
+        "subheading": "",
+        "colour": "dark",
+        "subheading_size": "h4",
+        "heading": "<p><strong>Dog shop.<\/strong><\/p>",
+        "heading_size": "h1",
+        "text": ""
+      }
+    },
+    "product-grid": {
+      "type": "product-grid",
+      "settings": {
+        "heading": ""
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid"
+  ]
+}

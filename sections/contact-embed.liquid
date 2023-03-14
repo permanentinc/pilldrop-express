@@ -1,0 +1,46 @@
+
+  {% comment %}
+   Contact Embed
+  {% endcomment %}
+  
+  <div class="text text--{{ section.id }} contactEmbed">
+    <div class="text__wrap">
+      
+      <div class="text__wrap__copy">
+        {{ section.settings.copy }}        
+      </div>
+
+      <div class="text__wrap__form">
+        <div style="margin:0 auto;" class="pxFormGenerator" id="{{ section.settings.form_ids }}"></div>
+      </div>
+    </div>
+  </div>
+    
+
+
+
+{% schema %}
+{
+  "name": "Contact Embed", 
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "copy",
+      "label": "Copy",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+    },
+    {
+      "type": "text",
+      "id": "form_ids",
+      "default": "3CeDKeqtJaLaUniCqlVjaw",
+      "label": "Form ID"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact Embed"
+    }
+  ]
+}   
+{% endschema %}
+  

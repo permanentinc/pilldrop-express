@@ -1,0 +1,248 @@
+<div class="cart">
+
+  <a href="{{ routes.all_products_collection_url }}" class="cart__continue">
+    <div class="cart__continue__wrap">
+      <h6>Continue Shopping</h6>
+    </div>
+  </a>
+
+  <div class="cart__wrap">
+
+    <h1>Your Cart</h1>
+
+    <form action="{{ routes.cart_url }}" method="post" novalidate class="cart__wrap__form">
+
+      <table class="cart__wrap__form__table">
+
+        <thead class="cart__wrap__form__table__head">
+          <tr>
+            <th>
+              <h6>Product</h6>
+            </th>
+
+            <th>
+              <h6>&nbsp;</h6>
+            </th>
+
+            <th>
+              <h6>Quantity</h6>
+            </th>
+
+            <th>
+              <h6>Total</h6>
+            </th>
+
+            <th>
+              <h6>&nbsp;</h6>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody class="cart__wrap__form__table__body [ js-cart-items ]">
+
+
+          {%- for item in cart.items -%}
+
+          <tr class="cart__wrap__form__table__body__row" data-index="{{ forloop.index }}">
+
+            <td class="cart__wrap__form__table__body__row__cell">
+              <a href="{{ item.url }}" class="cart__wrap__form__table__body__row__cell__image">
+                <img loading="lazy" src="{{ item | image_url: width: 540, height: 540 }}" width="540" height="540" srcset="
+                {{ item | image_url: width: 540, height: 540 }} 540w,
+                {{ item | image_url: width: 768, height: 768 }} 768w,
+                {{ item | image_url: width: 968, height: 968 }} 968w,
+                {{ item | image_url: width: 1080, height: 1080 }} 1080w" alt="{{ item.alt | escape }}" />
+              </a>
+            </td>
+
+            <td class="cart__wrap__form__table__body__row__cell cart__wrap__form__table__body__row__cell--details">
+              <a href="{{ item.url }}">
+                <h5>{{ item.title }}</h5>
+              </a>
+              {%- unless item.product.has_only_default_variant -%}
+              <p>{{ item.variant.title }}</p>
+              {% endunless %}
+            </td>
+
+            <td class="cart__wrap__form__table__body__row__cell">
+
+
+            <div class="quantity quantity--inline quantity--cart">
+              <a href="#" class="quantity__subtract [ js-change-quantity ]" data-cart-item-index="{{ forloop.index }}" data-quantity="{{ item.quantity | minus: 1 }}" href="/cart/change?line={{ forloop.index }}&amp;quantity={{ item.quantity | minus: 1 }}">
+                {% render 'svg-subtract' %}
+              </a>
+              <input name="quantity" class="quantity__quantity" value="{{ item.quantity }}">
+              <a href="#" class="quantity__add [ js-change-quantity ]" data-cart-item-index="{{ forloop.index }}" data-quantity="{{ item.quantity | plus: 1 }}" href="/cart/change?line={{ forloop.index }}&amp;quantity={{ item.quantity | plus: 1 }}">
+                {% render 'svg-add' %}
+              </a>
+            </div>
+
+            </td>
+
+            <td class="cart__wrap__form__table__body__row__cell cart__wrap__form__table__body__row__cell--total">
+              {% if item.original_price > item.discounted_price %}
+              <h6 class="discounted"><strong>{{ item.original_price | money }}</strong><strong>{{ item.discounted_price | money }}</strong></h6>
+              {% else %}
+              <h6>{{ item.final_line_price | money }}</h6>
+              {% endif %}
+            </td>
+
+            <td class="cart__wrap__form__table__body__row__cell">
+              <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" data-cart-item-index="{{ forloop.index }}" class="[ js-remove-from-cart ]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" viewBox="0 0 20 25">
+                  <path fill-rule="evenodd" d="M5.48752834,0 L5.48752834,3.62811791 L0.0453514739,3.62811791 L0.0453514739,5.44217687 L1.85941043,5.44217687 L1.85941043,25.3968254 L18.185941,25.3968254 L18.185941,5.44217687 L20,5.44217687 L20,3.62811791 L14.5578231,3.62811791 L14.5578231,0 L5.48752834,0 Z M7.3015873,1.81405896 L12.7437642,1.81405896 L12.7437642,3.62811791 L7.3015873,3.62811791 L7.3015873,1.81405896 Z M3.67346939,5.44217687 L16.3718821,5.44217687 L16.3718821,23.5827664 L3.67346939,23.5827664 L3.67346939,5.44217687 Z M6.39455782,8.16326531 L6.39455782,20.861678 L8.20861678,20.861678 L8.20861678,8.16326531 L6.39455782,8.16326531 Z M11.8367347,8.16326531 L11.8367347,20.861678 L13.6507937,20.861678 L13.6507937,8.16326531 L11.8367347,8.16326531 Z" />
+                </svg>
+              </a>
+            </td>
+
+          </tr>
+
+          {%- endfor -%}
+
+
+          {% if cart.item_count == 0 %}
+          <p class="cart__wrap__form__table__body__empty">
+            Your cart is empty, but it doesn't have to stay that way!</p>
+          <p class="cart__wrap__form__table__body__emptybutton">
+            <a href="/collections/all" class="button button--yellow">Shop Now</a>
+          </p>
+          {% endif %}
+
+        </tbody>
+      </table>
+
+    </form>
+
+    <div class="text-right [ js-checkout-totals ]" {% if cart.item_count == 0  %}style="display:none;" {% endif %}>
+      <p>
+        <i>SUBTOTAL</i>
+      </p>
+      <h3 class="[ js-total ]">{{ cart.total_price | money }}</h3>
+      <p>
+        <i>Shipping & taxes calculated at checkout</i>
+      </p>
+      <p >
+        <input style="float:none; vertical-align: middle;" type="checkbox" id="agree" />
+        <label style="display:inline; float:none; font-weight:600;" for="agree">
+          I agree with the <a href="/policies/terms-of-service" target="_blank" style="color:var(--primary)">terms and conditions</a> and understand I may order this product online today,<br> but it will not be processed until PillDrop Pets receives an official copy of the prescription.
+        </label>
+      </p>
+      <p>
+        
+        <a href="{{ routes.root_url }}checkout" class="button button--yellow [ js-click-through ]">
+          Checkout
+        </a>
+      </p>
+
+      <p>
+        <b>I already have the prescription. How do I get it to PillDrop Pets?<br></b>
+        Please post the original prescription to us: PO Box 62283, Sylvia Park, Auckland, 1060
+        <br>
+
+      Or you can ask your vet to email the prescription to us directly: email: <a href="mailto:delivery@pilldrop.co.nz" style="color:var(--primary)">delivery@pilldrop.co.nz</a> or via fax: <a href="tel:09 276 9292" style="color:var(--primary)">09 276 9292M</a>
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+{% schema %}
+{
+"name": {
+"da": "Side med indkøbskurv",
+"de": "Warenkorb-Seite",
+"en": "Cart page",
+"es": "Página del carrito de compras",
+"fi": "Ostoskorisivu",
+"fr": "Page du panier",
+"hi": "कार्ट पेज",
+"it": "Pagina del carrello",
+"ja": "カートページ",
+"ko": "카트 페이지",
+"nb": "Handlekurvside",
+"nl": "Winkelwagenpagina",
+"pt-BR": "Página do carrinho",
+"pt-PT": "Página do carrinho",
+"sv": "Varukorgssida",
+"th": "หน้าตะกร้าสินค้า",
+"zh-CN": "购物车页面",
+"zh-TW": "購物車頁面"
+},
+"settings": [
+{
+"type": "checkbox",
+"id": "cart_ajax_enable",
+"label": {
+"da": "Aktivér automatisk opdatering af indkøbskurv",
+"de": "Automatische Warenkorbaktualisierungen aktivieren",
+"en": "Enable automatic cart updates",
+"es": "Habilitar las actualizaciones automáticas del carrito de compra",
+"fi": "Ota automaattinen ostoskorin päivitykset käyttöön",
+"fr": "Activer les mises à jour automatiques",
+"hi": "स्वचालित कार्ट अपडेट सक्षम करें",
+"it": "Abilita aggiornamenti automatici carrello",
+"ja": "自動カートの更新を有効にする",
+"ko": "자동 카트 업데이트 활성화하기",
+"nb": "Aktiver automatiske oppdateringer av handlekurven",
+"nl": "Automatische winkelwagen-updates inschakelen",
+"pt-BR": "Permitir atualizações automáticas do carrinho",
+"pt-PT": "Ativar atualizações automáticas do carrinho",
+"sv": "Aktivera automatiska uppdateringar av varukorgen",
+"th": "เปิดใช้งานการอัปเดตตะกร้าสินค้าอัตโนมัติ",
+"zh-CN": "启用购物车自动更新功能",
+"zh-TW": "啟用自動更新購物車"
+},
+"info": {
+"da": "Opdaterer indkøbskurven, så snart kunden foretager ændringer",
+"de": "Aktualisiert den Warenkorb, sobald Kundenänderungen vorgenommen werden",
+"en": "Updates the cart as soon as customer changes are made",
+"es": "Actualiza el carrito de compra tan pronto como el cliente realice cambios",
+"fi": "Päivittää ostoskorin heti, kun asiakkaan muutokset on tehty",
+"fr": "Mise à jour du panier dès que les modifications apportées aux clients ont été effectuées",
+"hi": "ग्राहक के द्वारा परिवर्तन करते ही कार्ट को अपडेट हो जाता है",
+"it": "Aggiorna il carrello appena il cliente apporta le modifiche",
+"ja": "お客様が変更されるとすぐにカートを更新します",
+"ko": "고객 변경 시 카트를 업데이트합니다.",
+"nb": "Oppdaterer handlekurven så snart kundens endringer er gjort",
+"nl": "De winkelwagen wordt bijgewerkt zodra de klant wijzigingen aanbrengt",
+"pt-BR": "Atualiza o carrinho assim que o cliente faz alterações",
+"pt-PT": "Atualiza o carrinho assim que o cliente faz alterações",
+"sv": "Uppdaterar varukorgen så snart kundändringar görs",
+"th": "อัปเดตตะกร้าสินค้าเมื่อลูกค้าได้ทำการเปลี่ยนแปลง",
+"zh-CN": "客户做出更改后立即更新购物车",
+"zh-TW": "在顧客進行變更時立即更新購物車"
+},
+"default": true
+},
+{
+"type": "checkbox",
+"id": "cart_notes_enable",
+"label": {
+"da": "Aktivér bemærkninger til indkøbskurv",
+"de": "Warenkorbanmerkungen erlauben",
+"en": "Enable cart notes",
+"es": "Habilitar notas del carrito de compra",
+"fi": "Ota tilauskommentit käyttöön",
+"fr": "Activer les notes de panier",
+"hi": "कार्ट नोट्स सक्षम करें",
+"it": "Abilita note carrello",
+"ja": "カートメモを有効にする",
+"ko": "카트 참고 사항 사용",
+"nb": "Aktiver handlekurvmerknader",
+"nl": "Opmerkingen voor winkelwagen inschakelen",
+"pt-BR": "Habilitar observações do carrinho",
+"pt-PT": "Ativar notas do carrinho",
+"sv": "Aktivera varukorgsmeddelanden",
+"th": "เปิดใช้หมายเหตุสำหรับตะกร้าสินค้า",
+"zh-CN": "启用购物车备注",
+"zh-TW": "啟用購物車備註"
+},
+"default": false
+}
+]
+}
+{% endschema %}

@@ -1,0 +1,162 @@
+
+  {% comment %}
+    Banner slim type
+  {% endcomment %}
+  
+  <div class="bannerSlim bannerSlim--{{ section.id }} bannerSlim--{{ section.settings.colour }}  bannerSlim--{{ section.settings.image_position }} image-to-the-{{ section.layout }}">
+    <div class="bannerSlim__text">
+        <div class="bannerSlim__text__constraint">
+          <div class="colour--red {{ section.settings.subheading_size }}">{{ section.settings.subheading}}</div>
+          <h1 class="colour--white {{ section.settings.heading_size }}"><b>{{ section.settings.heading}}</b></h1>
+          {{ section.settings.text }}
+          {%- if section.settings.button_label != blank -%}
+            <p>
+              <a href="{{ section.settings.button_link }}" class="button button--yellow">{{ section.settings.button_label }}</a>
+              {%- if section.settings.second_button_label != blank -%}
+                <a href="{{ section.settings.second_button_link }}" class="button button--yellow">{{ section.settings.second_button_label }}</a>
+              {%- endif -%}
+            </p>
+          {%- endif -%}
+        </div>
+    </div>
+    <div class="bannerSlim__image" >
+        <img loading="lazy" data-parallax="-0.2"
+            srcset="{{ section.settings.image | image_url: width: 480 }} 480w,
+                    {{ section.settings.image | image_url: width: 800 }} 800w,
+                    {{ section.settings.image | image_url: width: 1920 }} 1600w,"
+            sizes="(max-width: 600px) 480px,
+                   (max-width: 1000px) 800px,
+                   1000px"
+            src="{{ section.settings.image | image_url: width: 1920 }}"
+            alt="{{ section.settings.image.alt | escape }}"
+            width="{{ section.settings.image.width }}"
+            height="{{ section.settings.image.height }}">
+    </div>
+  </div>
+   
+  
+  
+
+{% schema %}
+{
+  "name": "Banner Slim",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "left",
+          "label": "left"
+        },
+        {
+          "value": "center",
+          "label": "center"
+        },
+        {
+          "value": "right",
+          "label": "right"
+        }
+       ]
+      },
+
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "default": "<p>Heading</p>",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "colour",
+      "label": "Text colour",
+      "options": [
+        {
+          "value": "light",
+          "label": "light"
+        },
+        {
+          "value": "dark",
+          "label": "dark"
+        }
+       ]
+      },
+    {
+      "type": "select",
+      "id": "subheading_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h3",
+          "label": "h3"
+        },
+        {
+          "value": "h4",
+          "label": "h4"
+        },
+        {
+          "value": "h5",
+          "label": "h5"
+        },
+        {
+          "value": "h6",
+          "label": "h6"
+        }
+      ],
+      "default": "h4",
+      "label": "Heading size"
+    },   
+    {
+      "type": "richtext",
+      "id": "heading",
+      "default": "<p>Heading</p>",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h3",
+          "label": "h3"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>",
+      "label": "Content"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner Slim"
+    }
+  ]
+}   
+{% endschema %}
+  

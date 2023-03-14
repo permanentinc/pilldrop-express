@@ -1,0 +1,152 @@
+.page--collection .bannerSlim__text {
+    padding: 20rem 4rem 20rem;
+    margin-top: 10rem;
+}
+
+.template--page .bannerSlim {
+    margin-top: 10rem;
+}
+
+.bannerSlim {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem auto 0;
+    position: relative;
+    background: var(--text);
+
+    &--dark {
+        * {
+            color: var(--grey-mid) !important; 
+        }
+    }
+
+    &--left .bannerSlim__image img {
+        object-position: left !important;
+    }
+
+    &--center .bannerSlim__image img {
+        object-position: center !important;
+    }
+
+    &--right .bannerSlim__image img {
+        object-position: right !important;
+    }
+
+    &__text {
+        width: 40%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 20rem 4rem 20rem;
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        max-width: 1450px;
+        margin: 0 auto;
+
+        &:after {
+            @include pseudo;
+            @include full;
+            background: var(--green-dark);
+            opacity: 0.9;
+        }
+
+        @include media($md, max) {
+            width: 100%;
+            order: 2;
+            padding: 15rem 2rem 10rem;
+        }
+
+        &__constraint {
+            max-width: calc(var(--content-width) / 2);
+            position: relative;
+            z-index: 4;
+
+            .h1 p {
+                @extend .h1;
+
+                @include media(900px, max) {
+                    font-size: 90%;
+                }
+            }
+
+            .h2 p {
+                @extend .h2;
+
+                @include media(900px, max) {
+                    font-size: 90%;
+                }
+            }
+
+            .h3 p {
+                @extend .h3;
+
+                @include media(900px, max) {
+                    font-size: 90%;
+                }
+            }
+
+            .h4 p {
+                @extend .h4;
+
+                @include media(900px, max) {
+                    font-size: 90%;
+                }
+            }
+
+            .h5 p {
+                @extend .h5;
+
+                @include media(900px, max) {
+                    font-size: 90%;
+                }
+            }
+
+            .h6 p {
+                @extend .h6;
+
+                @include media(900px, max) {
+                    font-size: 90%;
+                }
+            }
+
+            p {
+                color: white;
+                font-weight: bold;
+            }
+
+            h1 {
+                p {
+                    strong {
+                        font-weight: 600;
+                    }
+                    + p {
+                        margin-top: -3rem;
+                    }
+                }
+            }
+
+            .button {
+                min-width: 25rem;
+            }
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0%;
+            left: 0;
+            object-fit: cover;
+        }
+    }
+}

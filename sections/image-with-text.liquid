@@ -1,0 +1,110 @@
+
+  {% comment %}
+    Image and text block
+  {% endcomment %}
+  
+  <div class="image-with-text image-with-text--{{ section.id }} image-to-the-{{ section.settings.layout }}">
+    <div class="image-with-text__text">
+        <div class="image-with-text__text__constraint">
+          <h2 class="{{ section.settings.heading_size }} colour--red">{{ section.settings.heading | escape }}</h2>
+          {{ section.settings.text }}
+          {%- if section.settings.button_label != blank -%}
+            <p>
+              <a href="{{ section.settings.button_link }}" class="button button--yellow">{{ section.settings.button_label }}</a>
+            </p>
+          {%- endif -%}
+        </div>
+    </div>
+    <div class="image-with-text__image">
+        <img loading="lazy"
+            srcset="{{ section.settings.image | image_url: width: 480 }} 480w,
+                    {{ section.settings.image | image_url: width: 800 }} 800w,
+                    {{ section.settings.image | image_url: width: 1600 }} 1600w,"
+            sizes="(max-width: 600px) 480px,
+                   (max-width: 1000px) 800px,
+                   1000px"
+            src="{{ section.settings.image | image_url: width: 1600 }}"
+            alt="{{ section.settings.image.alt | escape }}"
+            width="{{ section.settings.image.width }}"
+            height="{{ section.settings.image.height }}">
+    </div>
+  </div>
+
+
+
+{% schema %}
+{
+  "name": "Image with text",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Image with text",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h3",
+          "label": "h3"
+        }
+      ],
+      "default": "h2",
+      "label": "Heading size"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "right",
+      "options": [
+      {
+          "value": "left",
+          "label": "Image on left"
+      },
+      {
+          "value": "right",
+          "label": "Image on right"
+      }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text"
+    }
+  ]
+}   
+{% endschema %}
+  

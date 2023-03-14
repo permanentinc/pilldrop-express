@@ -1,0 +1,275 @@
+/*------------------------------------------------------------------
+Product
+------------------------------------------------------------------*/
+
+#shopify-section-cart-template {
+  overflow: hidden;
+  position: relative;
+}
+
+.cart {
+  padding-top: 8rem;
+
+  &__continue {
+    width: 100%;
+    display: block;
+    padding: 2rem;
+    background: var(--green-lighter);
+
+    &__wrap {
+      max-width: $xl;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 2rem;
+      align-items: center;
+      justify-content: flex-start;
+
+      h6 {
+        margin: 0 0 0 1rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+    }
+  }
+
+  &__wrap {
+    max-width: $xl;
+    width: 100%;
+    margin: 4rem auto;
+    padding: 0 2rem;
+
+    &__form {
+      width: 100%;
+
+      &__table {
+        width: 100%;
+        border-collapse: collapse;
+
+        &__head {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          width: 100%;
+
+          tr {
+            width: 100%;
+            border-bottom: 1px solid #d5dadc;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            th {
+              display: flex;
+              text-align: center;
+
+              @include media($xmd, max) {
+                display: none;
+              }
+
+              h6 {
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+              }
+
+              &:nth-child(1) {
+                text-align: left;
+                width: 10rem;
+
+                h6 {
+                  text-align: left;
+                }
+              }
+
+              &:nth-child(2) {
+                width: calc(100% - 49.2rem);
+
+                @include media($xmd, max) {
+                  width: calc(100% - 10rem);
+                }
+              }
+ 
+              &:nth-child(3) {
+                width: 19.2rem;
+              }
+
+              &:nth-child(4) {
+                width: 14rem;
+              }
+
+              &:nth-child(5) {
+                width: 5rem;
+              }
+            }
+          }
+        }
+
+        &__body {
+          &__empty {
+            padding: 3rem 1rem 0;
+            text-align: center;
+          }
+
+          &__emptybutton {
+            text-align: center;
+          }
+
+          &__row {
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #d5dadc;
+
+            @include media($xmd) {
+              align-items: center;
+            }
+
+            &--placeholder {
+              .cart__wrap__form__table__body__row__cell__image {
+                background: rgba(black, 0.1);
+                animation-duration: 1.25s;
+                animation-fill-mode: forwards;
+                animation-iteration-count: infinite;
+                animation-name: placeHolderShimmer;
+                animation-timing-function: linear;
+                background: rgba(black, 0.1);
+                background: linear-gradient(to right, #eaeaea 10%, #d5dadc 18%, #eaeaea 33%);
+                background-size: 800px 104px;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                display: block;
+                @include aspect(100, 156);
+              }
+
+              .cart__wrap__form__table__body__row__cell--details {
+                h5,
+                p {
+                  background: rgba(black, 0.1);
+                  animation-duration: 1.25s;
+                  animation-fill-mode: forwards;
+                  animation-iteration-count: infinite;
+                  animation-name: placeHolderShimmer;
+                  animation-timing-function: linear;
+                  background: rgba(black, 0.1);
+                  background: linear-gradient(to right, #eaeaea 10%, #d5dadc 18%, #eaeaea 33%);
+                  background-size: 800px 104px;
+                  position: relative;
+                  width: 24rem;
+                  height: 3.1rem;
+                  display: block;
+                }
+
+                p {
+                  height: 2.4rem;
+                  width: 10rem;
+                  margin-top: 0.5rem;
+                }
+              }
+
+              .cart__wrap__form__table__body__row__cell--quantity {
+                span {
+                  background: rgba(black, 0.1);
+                  animation-duration: 1.25s;
+                  animation-fill-mode: forwards;
+                  animation-iteration-count: infinite;
+                  animation-name: placeHolderShimmer;
+                  animation-timing-function: linear;
+                  background: rgba(black, 0.1);
+                  background: linear-gradient(to right, #eaeaea 10%, #d5dadc 18%, #eaeaea 33%);
+                  background-size: 800px 104px;
+                  position: relative;
+                  width: 8rem;
+                  height: 3.1rem;
+                  display: block;
+                  margin: 0 auto;
+                }
+              }
+
+              .cart__wrap__form__table__body__row__cell--total {
+                h6 {
+                  background: rgba(black, 0.1);
+                  animation-duration: 1.25s;
+                  animation-fill-mode: forwards;
+                  animation-iteration-count: infinite;
+                  animation-name: placeHolderShimmer;
+                  animation-timing-function: linear;
+                  background: rgba(black, 0.1);
+                  background: linear-gradient(to right, #eaeaea 10%, #d5dadc 18%, #eaeaea 33%);
+                  background-size: 800px 104px;
+                  position: relative;
+                  width: 7rem;
+                  height: 3.1rem;
+                  display: block;
+                  margin: 0 auto;
+                }
+              }
+            }
+
+            &__cell {
+              padding: 3rem 0;
+
+              &:nth-child(1) {
+                width: 10rem;
+
+                @include media($xmd, max) {
+                  border-bottom: 1px solid var(--grey-light);
+                }
+              }
+
+              &:nth-child(2) {
+                width: calc(100% - 49.2rem);
+                padding-left: 4rem;
+
+                @include media($xmd, max) {
+                  width: calc(100% - 10rem);
+                  border-bottom: 1px solid var(--grey-light);
+                }
+              }
+
+              &:nth-child(3) {
+                width: 19.2rem;
+                text-align: center;
+              }
+
+              &:nth-child(4) {
+                width: 14rem;
+                text-align: center;
+              }
+
+              &:nth-child(5) {
+                width: 5rem;
+                text-align: center;
+              }
+
+              &__image {
+                max-width: 10rem;
+                display: block;
+
+                img {
+                  width: 100%;
+                  height: auto;
+                }
+              }
+
+              h5,
+              h6 {
+                color: var(--text);
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}

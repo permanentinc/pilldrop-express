@@ -1,0 +1,184 @@
+html {
+  font-size: 10px;
+}
+
+* {
+  font-variant-ligatures: no-common-ligatures !important;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: var(--p-size);
+  color: var(--text);
+}
+
+h1 {
+  font-size: var(--h1-size);
+  margin-bottom: 2rem;
+  line-height: 1.3;
+  font-weight: 700;
+
+  @include media(900px, max) {
+    font-size: calc(var(--h1-size) * 0.9);
+  }
+}
+
+h2 {
+  font-size: var(--h2-size);
+  margin-bottom: 2rem;
+  line-height: 1.3;
+  font-weight: 700;
+
+  @include media(900px, max) {
+    font-size: calc(var(--h2-size) * 0.8);
+  }
+}
+
+h3 {
+  font-size: var(--h3-size);
+  margin-bottom: 2rem;
+  line-height: 1.3;
+  font-weight: 700;
+
+  @include media(900px, max) {
+    font-size: calc(var(--h3-size) * 0.8);
+  }
+}
+
+h4 {
+  font-size: var(--h4-size);
+  margin-bottom: 2rem;
+  line-height: 1.3;
+  font-weight: 700;
+
+  @include media(900px, max) {
+    font-size: calc(var(--h4-size) * 0.8);
+  }
+}
+
+h5 {
+  font-size: var(--h5-size);
+  margin-bottom: 2rem;
+  line-height: 1.3;
+  font-weight: 700;
+
+  @include media(900px, max) {
+    font-size: calc(var(--h5-size) * 0.8);
+  }
+}
+
+h6 {
+  font-size: var(--h6-size);
+  margin-bottom: 2rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.h1 {
+  font-size: var(--h1-size);
+}
+
+.h2 {
+  font-size: var(--h2-size);
+}
+
+.h3 {
+  font-size: var(--h3-size);
+}
+
+.h4 {
+  font-size: var(--h4-size);
+}
+
+.h5 {
+  font-size: var(--h5-size);
+}
+
+.h6 {
+  font-size: var(--h6-size);
+}
+
+p,
+.p {
+  font-size: var(--p-size);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+$link: rgba(white, 0.4);
+
+a:not([class]) {
+  text-decoration: none;
+  box-shadow: inset 0 -1px 0 $link;
+  transition: all $fast;
+
+  &:hover {
+    box-shadow: inset 0 -30px 0 $link, 0 1px 0 $link;
+  }
+}
+
+.colour--white {
+  color: white !important;
+}
+
+.colour--red,
+.colour--red * {
+  color: var(--primary) !important;
+}
+
+.colour--text,
+.colour--text * {
+  color: var(--text) !important;
+}
+
+b,
+strong {
+  font-weight: 800;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.small {
+  font-size: 80%;
+}
+
+.text-right {
+  text-align: right;
+}
+
+hr {
+  border: 0;
+  margin: 3rem auto;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.arrow-link {
+  color: var(--primary);
+  font-weight: bold;
+
+  &:hover {
+    img {
+      transform: translateX(3px);
+    }
+  }
+
+  img {
+    width: 8px;
+    height: 12.57px;
+    position: relative;
+    top: 0.5px;
+    margin-left: 4px;
+    transition: all $fast;
+
+    path {
+      fill: var(--primary);
+    }
+  }
+}

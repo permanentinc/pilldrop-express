@@ -1,0 +1,148 @@
+.banner {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1rem auto 0;
+    position: relative;
+    overflow: hidden;
+
+    &--off-white {
+        background: var(--off-white);
+
+        .bannerSlim__text {
+            padding: 20rem 4rem 10rem;
+        }
+    }
+
+    &__video {
+        @include vertical-center;
+        position: absolute;
+        width: 100%;
+        height: auto;
+        z-index: 3;
+        background: black;
+
+        &:after {
+            @include pseudo;
+            @include full;
+            background: rgba(black, 0.4);
+        }
+
+        iframe {
+            position: absolute;
+            width: 105%;
+            height: 105%;
+            pointer-events: none;
+        }
+    }
+
+    &__push {
+        margin-top: 10rem;
+        display: block;
+    }
+
+    &__push-alt {
+        margin-top: 20rem;
+        display: block;
+    }
+
+    &__text {
+        background: var(--green-mid);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 28rem 4rem 28rem;
+        position: relative;
+        width: 100%;
+        max-width: 1450px;
+        margin: 0 auto;
+
+        @include media(900px, max) {
+            &:before {
+                @include pseudo;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 50%;
+                background: var(--green-mid);
+                z-index: 1;
+            }
+
+            &:after {
+                @include pseudo;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background: var(--green-mid);
+                opacity: 0.7;
+                z-index: 1;
+            }
+        }
+
+        @include media(900px, max) {
+            width: 100%;
+            padding: 20rem 2rem 10rem;
+            background: transparent;
+            justify-content: flex-start;
+        }
+
+        @include media($md, max) {
+            width: 100%;
+            order: 2;
+        }
+
+        &__constraint {
+            max-width: calc(var(--content-width) / 2);
+            position: relative;
+            z-index: 4;
+
+            .h1 p {
+                @extend .h1;
+
+                @include media(900px, max) {
+                    font-size: 80%;
+                }
+            }
+
+            .h2 p {
+                @extend .h2;
+
+                @include media(900px, max) {
+                    font-size: 80%;
+                }
+            }
+
+            .h3 p {
+                @extend .h3;
+
+                @include media(900px, max) {
+                    font-size: 80%;
+                }
+            }
+
+            p {
+                color: white;
+                font-weight: bold;
+            }
+
+            .button {
+                min-width: 25rem;
+            }
+        }
+    }
+
+    &__image {
+        @include full;
+
+        img {
+            height: 120%;
+            width: 100%;
+            position: absolute;
+            // bottom: 20%;
+            left: 0;
+            object-fit: cover;
+            object-position: 80%;
+        }
+    }
+}

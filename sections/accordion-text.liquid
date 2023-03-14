@@ -1,0 +1,155 @@
+
+  {% comment %}
+    Icons
+  {% endcomment %}
+  
+  <div class="accordion-text icon--{{ section.id }}">
+
+
+    <div class="accordion-text__wrap">
+
+      <div class="accordion-text__wrap__content">
+        <h2 class="{{ section.settings.heading_size }} colour--green-light">{{ section.settings.heading | escape }}</h2>
+        {{ block.settings.content }}
+      </div> 
+
+      <div class="accordion-text__wrap__grid">
+        
+        {%- for block in section.blocks -%}
+          <div class="accordion__item" id="{{ block.id }}" onclick="toggleActive('{{ block.id }}')">
+            <div class="accordion__item__heading">
+              <h6 class="colour--red">{{ block.settings.heading }}</h6>
+            </div>
+            <div class="accordion__item__content">
+              {{ block.settings.content }}
+            </div>
+          </div>
+        {%- endfor -%}
+
+      </div>  
+
+    </div>
+  </div>
+
+
+<script>
+  /**
+   * Simple accordion toggle section
+   * @param {string} id 
+   */
+  function toggleActive(id) {
+  
+    // declare the elements we want to toggle
+    var accordion = document.getElementById(id);
+    var content = accordion.querySelector('.accordion__item__content');
+  
+    // toggle the active class on the accordion
+    if (!accordion.classList.contains('active')) {
+  
+        accordion.classList.add('active');
+  
+        // quickly get the height we want to animate to
+        content.style.height = 'auto';
+        var height = content.clientHeight + 'px';
+  
+        // revert the heioght back to nothing
+        content.style.height = 0;
+  
+        // animate the height once the calculations are done
+        setTimeout(function () {
+            content.style.height = height;
+        }, 0);
+  
+    } else {
+  
+        // revert the height back to nothing
+        content.style.height = 0;
+  
+        // remove the active class once animations are over
+        content.addEventListener('transitionend', function () {
+            accordion.classList.remove('active');
+        }, { once: true });
+  
+    }
+  
+  }
+  </script>
+    
+
+  {% schema %}
+  { 
+    "name": "Accordion text",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "select",
+        "id": "heading_size",
+        "options": [
+          {
+            "value": "h1",
+            "label": "h1"
+          },
+          {
+            "value": "h2",
+            "label": "h2"
+          },
+          {
+            "value": "h3",
+            "label": "h3"
+          }
+        ],
+        "default": "h2",
+        "label": "Heading size"
+      },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>" 
+    }
+    ],
+    "blocks": [
+      {
+        "type": "accordion_item",
+        "name": "Accordion item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "A question that customers ask often" 
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>" 
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Accordion text",
+        "blocks": [
+          {
+            "type": "accordion_item"
+          },
+          {
+            "type": "accordion_item"
+          },
+          {
+            "type": "accordion_item"
+          },
+          {
+            "type": "accordion_item"
+          }
+        ]
+      }
+    ]
+  }   
+  {% endschema %}

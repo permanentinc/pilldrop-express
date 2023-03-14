@@ -1,0 +1,85 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Skeleton",
+    "theme_version": "0.0.1",
+    "theme_author": "Shopify",
+    "theme_documentation_url": "http:\/\/toast.co.nz\/",
+    "theme_support_url": "http:\/\/toast.co.nz\/contact-us\/"
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "range",
+        "id": "h1_size",
+        "label": "H1 size",
+        "default": 46,
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h2_size",
+        "label": "H2 size",
+        "default": 36,
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h3_size",
+        "label": "H3 size",
+        "default": 32,
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h4_size",
+        "label": "H4 size",
+        "default": 28,
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h5_size",
+        "label": "H5 size",
+        "default": 24,
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h6_size",
+        "label": "H6 size",
+        "default": 18,
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "p_size",
+        "label": "Paragraph size",
+        "default": 16,
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "unit": "px"
+      }
+    ]
+  }
+]

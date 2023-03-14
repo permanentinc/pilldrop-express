@@ -1,0 +1,85 @@
+
+  {% comment %}
+    Background image
+  {% endcomment %}
+
+
+  <section class="background-image background-image--{{ section.id }}">
+    
+    <div class="background-image__background [ js-parallax ]">
+      <img src="{{ section.settings.image | image_url: width: 1920, height: 1080 }}" loading="lazy" width="1920" height="1080">
+    </div>
+
+    <div class="background-image__wrap">
+        <div class="background-image__wrap__content">
+          <h2 class="{{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
+          {{ section.settings.text }}
+          {%- if section.settings.button_label != blank -%}
+            <p>
+              <a href="{{ section.settings.button_link }}" class="button">{{ section.settings.button_label }}</a>
+            </p>
+          {%- endif -%}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Background Image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Image with text",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h3",
+          "label": "h3"
+        }
+      ],
+      "default": "h2",
+      "label": "Heading size"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Background Image"
+    }
+  ]
+}   
+{% endschema %}
+  

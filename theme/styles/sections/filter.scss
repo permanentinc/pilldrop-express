@@ -1,0 +1,183 @@
+.filters-active {
+    .collection__filters {
+        transform: translateX(0);
+    }
+}
+.filter {
+    width: 100%;
+    padding: 4rem 0 0;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    margin-top: 6rem;
+
+    &__toggle {
+        display: none;
+
+        @include media($md, max) {
+            display: block;
+            width: calc(100% - 2rem);
+            margin: 0 auto;
+            background: var(--primary);
+            padding: 1rem;
+            position: relative;
+            font-weight: bold;
+            color: white;
+        }
+    }
+
+    @include media(1111px, max) {
+        margin-top: 2rem;
+        padding-right: 2rem;
+    }
+
+    @include media($md, max) {
+        padding-right: 1rem;
+    }
+
+    &__wrap {
+        margin: 0 auto -4rem;
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 30rem;
+
+        @include media(1111px, max) {
+            padding-left: 0rem;
+            margin: 0 auto 0rem;
+        }
+
+        @include media($md, max) {
+            justify-content: center;
+        }
+
+        &__item {
+            padding: 2rem 3rem;
+            position: relative;
+            background: white;
+            box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.12);
+            border-radius: 4px;
+            overflow: hidden;
+            padding-right: 8rem;
+            margin: 0 0 2rem 2rem;
+            transition: all $fast;
+            border: 2px solid white;
+
+            @include media(1111px, max) {
+                width: calc(25% - 2rem);
+            }
+
+            @include media($md, max) {
+                width: calc(50% - 1rem);
+                margin: 0 0 1rem 1rem;
+
+                &:first-of-type {
+                    padding-right: 0;
+                }
+            }
+
+            &:hover {
+                box-shadow: 0 3px 18px 0 rgba(0, 0, 0, 0.26);
+            }
+
+            &.active {
+                border-color: var(--primary);
+            }
+
+            p {
+                margin: 0;
+                position: relative;
+                z-index: 4;
+            }
+
+            img {
+                width: 70px;
+                height: auto;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+        }
+    }
+}
+
+/*------------------------------------------------------------------
+Filter icon
+------------------------------------------------------------------*/
+
+.filter-icon {
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    transition: transform 440ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @include media($lg) {
+        transform: translateY(-50%) translateX(-400%);
+        opacity: 0;
+    }
+
+    cursor: pointer;
+    width: 28px;
+    height: 20px;
+    @include vertical-align;
+    right: 1rem;
+    margin-top: -2px;
+
+    b {
+        width: 100%;
+        height: 2px;
+        border-radius: 0px;
+        background: white;
+        display: block;
+        margin: 2px 0 6px;
+
+        i {
+            transition: all 440ms cubic-bezier(0, 0, 0.2, 1);
+            width: 6px;
+            height: 6px;
+            border-radius: 6px;
+            background: white;
+            display: block;
+            position: relative;
+            top: -2px;
+            &:after {
+                @include pseudo;
+                @include vertical-align;
+                width: 4px;
+                height: 4px;
+                left: 0;
+                border-radius: 6px;
+                right: 0;
+                margin: 0 auto;
+                background: white;
+            }
+        }
+    }
+    b {
+        &:nth-child(1) i {
+            transform: translateX(18px);
+        }
+        &:nth-child(2) i {
+            transform: translateX(3px);
+        }
+        &:nth-child(3) i {
+            transform: translateX(15px);
+        }
+    }
+}
+
+.filters-active {
+    .collection__filters {
+        transform: translateY(0);
+    }
+    span.filter-icon {
+        b {
+            &:nth-child(1) i {
+                transform: translateX(3px);
+            }
+            &:nth-child(2) i {
+                transform: translateX(16px);
+            }
+            &:nth-child(3) i {
+                transform: translateX(6px);
+            }
+        }
+    }
+}

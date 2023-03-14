@@ -1,0 +1,197 @@
+
+  {% comment %}
+    Banner type hearo item
+  {% endcomment %}
+  
+  <div class="banner banner--{{ section.id }} image-to-the-{{ section.layout }}">
+    <div class="banner__text">
+        <div class="banner__text__constraint">
+          <h1 class="{{ section.settings.heading_size }}">{{ section.settings.heading}}</h1>
+          {{ section.settings.text }}
+          {%- if section.settings.button_label != blank -%}
+            <p>
+              <a href="{{ section.settings.button_link }}" class="button button--yellow">{{ section.settings.button_label }}</a>
+              {%- if section.settings.second_button_label != blank -%}
+                <a href="{{ section.settings.second_button_link }}" class="button button--yellow">{{ section.settings.second_button_label }}</a>
+              {%- endif -%}
+            </p>
+          {%- endif -%}
+        </div>
+    </div>
+    {%- if section.settings.video_id != blank -%}
+      <script>            
+                    var throttle = function (callback, limit) {
+                        var wait = false;
+                        return function () {
+                            if (!wait) {
+                                callback.call();
+                                wait = true;
+                                setTimeout(function () { wait = false }, limit);
+                            }
+                        }
+                    }
+
+                    var resizeVideo = function () {
+                        let bannerVideo = document.querySelector('.js-banner-video');
+                        let banner = document.querySelector('.banner');
+                        let bw = banner.clientWidth;
+                        let bh = banner.clientHeight;
+                        let ratio = 1920 / 1080;
+
+                        if (bw / bh < ratio) {
+                            bannerVideo.style.height = bh + 'px';
+                            bannerVideo.style.width = bh * ratio + 'px';
+                        } else {
+                            bannerVideo.style.height = bh * ratio + 'px';
+                            bannerVideo.style.width = bw + 'px';
+                        }
+                    }
+
+                    var tag = document.createElement('script');
+                    tag.src = "https://www.youtube.com/iframe_api";
+                    var firstScriptTag = document.getElementsByTagName('script')[0];
+                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+                    var player;
+
+                    function onYouTubeIframeAPIReady() {
+                        player = new YT.Player('video-player', {
+                            color: 'white',
+                            controls: 0,
+                            videoId: '{{ section.settings.video_id }}',
+                            events: {
+                              'onReady': onPlayerReady,
+                              'onStateChange': onPlayerStateChange
+                            }
+                        });
+
+                        function onPlayerReady(event) {
+                            event.target.mute()
+                            event.target.playVideo()
+                        }
+
+                        function onPlayerStateChange(event) {
+                          if (event.data == YT.PlayerState.ENDED) {
+                            setTimeout(function(){ player.playVideo()}, 60);
+                          } 
+                        }
+                         
+                        window.addEventListener('resize', throttle(resizeVideo, 100));
+                        resizeVideo();
+                    
+                    }
+                    
+                </script>
+
+                    <div class="banner__video [ js-banner-video ]" data-video-id="{{ section.settings.video_id }}"><div id="video-player"></div></div>
+
+    {%- endif -%}
+    <div class="banner__image">
+        <img loading="lazy" data-parallax="-.2"
+            srcset="{{ section.settings.image | image_url: width: 480 }} 480w,
+                    {{ section.settings.image | image_url: width: 800 }} 800w,
+                    {{ section.settings.image | image_url: width: 1600 }} 1600w,"
+            sizes="(max-width: 600px) 480px,
+                   (max-width: 1000px) 800px,
+                   1000px"
+            src="{{ section.settings.image | image_url: width: 1600 }}"
+            alt="{{ section.settings.image.alt | escape }}"
+            width="{{ section.settings.image.width }}"
+            height="{{ section.settings.image.height }}">
+    </div>
+  </div>
+
+
+   
+
+{% schema %}
+{
+  "name": "Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "video_id",
+      "label": "Video ID"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "default": "<p>Heading</p>",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h3",
+          "label": "h3"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "second_button_label",
+      "label": "Secondary Button label"
+    },
+    {
+      "type": "url",
+      "id": "second_button_link",
+      "label": "Secondary Button link"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "right",
+      "options": [
+      {
+          "value": "left",
+          "label": "Image on left"
+      },
+      {
+          "value": "right",
+          "label": "Image on right"
+      }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner"
+    }
+  ]
+}   
+{% endschema %}
+  

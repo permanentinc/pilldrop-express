@@ -1,0 +1,151 @@
+{% comment %}
+  Tile slider
+{% endcomment %}
+
+<!--
+  -----------------------------------------------------------------
+  Tile Slider Section
+  ------------------------------------------------------------------
+-->
+
+<section class="tileSlider tileSlider--{{ section.id }}">
+  <div class="tileSlider__wrap">
+    <!--
+      -----------------------------------------------------------------
+      Heading
+      ------------------------------------------------------------------
+    -->
+
+    <div class="tileSlider__wrap__heading">
+      <h2 class="colour--red">{{ section.settings.heading }}</h2>
+    </div>
+
+    <!--
+      -----------------------------------------------------------------
+      Slider
+      ------------------------------------------------------------------
+    -->
+
+    <div class="tileSlider__wrap__slider">
+      <div class="tileSlider__wrap__slider__tray [ js-tile-slider ]" id="tileSlider--{{ section.id }}">
+        {%- for block in section.blocks -%}
+          <div class="tileSlider__wrap__slider__tray__item">
+            <div class="tileSlider__wrap__slider__tray__item__flex">
+              {{ block.settings.content }}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <!--
+      -----------------------------------------------------------------
+      Button link
+      ------------------------------------------------------------------
+    -->
+
+    {%- if block.settings.button_link != blank -%}
+      <div class="tileSlider__wrap__button">
+        <p>
+          <a href="{{ block.settings.button_link }}" class="scroller__grid__carousel__item__link">
+            <b>{{ block.settings.button_label }}</b>
+          </a>
+        </p>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+
+<style>
+  .tns-controls button:first-of-type {
+    background-image: url({{ 'tile-slider-previous.svg' | asset_url }});
+    left: -10rem;
+    width: 81px;
+    height: 27px;
+  }
+  .tns-controls button:last-of-type {
+    background-image: url({{ 'tile-slider-next.svg' | asset_url }});
+    right: -10rem;
+    width: 81px;
+    height: 27px;
+  }
+</style>
+
+<script>
+  window.addEventListener('load', function () {
+    tns({
+      container: '#tileSlider--{{ section.id }}',
+      items: 2,
+      mouseDrag: true,
+      nav: false,
+      controls: true,
+      slideBy: 1,
+      gutter: 20,
+      center: true,
+      edgePadding: 10,
+      responsive: {
+        800: {
+          items: 3.4,
+          gutter: 20,
+        },
+      },
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "tileSlider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Our Promise",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tileSlider_item",
+      "name": "tileSlider item",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Delivery to your doorstep anywhere you are in New Zealand, including rural addresses.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "tileSlider",
+      "blocks": [
+        {
+          "type": "tileSlider_item"
+        },
+        {
+          "type": "tileSlider_item"
+        },
+        {
+          "type": "tileSlider_item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

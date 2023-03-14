@@ -1,0 +1,95 @@
+.icons {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    $link: rgba(#ec1d24, 0.99);
+
+    a:not([class]) {
+        text-decoration: none;
+        box-shadow: inset 0 -1px 0 $link;
+        transition: all $fast;
+        color: $link;
+
+        &:hover {
+            box-shadow: inset 0 -30px 0 $link, 0 1px 0 $link;
+            color: white;
+        }
+    }
+
+    &__background {
+        position: absolute;
+        display: block;
+
+        &--left {
+            left: 0;
+            bottom: 0;
+            transform: translateX(-10%) translateY(5%);
+            width: 40%;
+            height: auto;
+            min-width: 50rem;
+        }
+
+        &--right {
+            left: 100%;
+            bottom: 10%;
+            transform: translateX(-40%) translateY(10%);
+            width: 40%;
+            height: auto;
+            min-width: 40rem;
+
+            @include media(768px, max) {
+                bottom: 60%;
+            }
+        }
+    }
+
+    &__wrap {
+        position: relative;
+        padding: 15rem 2rem 10rem;
+
+        &__heading {
+            margin-bottom: 4rem;
+
+            h2 {
+                text-align: center;
+            }
+        }
+
+        &__grid {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: var(--content-width);
+            margin: 0 auto 4rem;
+
+            &__item {
+                width: calc(33% - 2rem);
+                max-width: 40rem;
+                text-align: center;
+                padding: 0 2rem;
+                margin: 2rem;
+
+                @include media(768px, max) {
+                    width: 100%;
+                }
+
+                &__icon {
+                    margin-bottom: 2rem;
+
+                    img {
+                        width: 8rem;
+                        height: 8rem;
+                        display: block;
+                        margin: 0 auto;
+                    }
+                }
+
+                h5 {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

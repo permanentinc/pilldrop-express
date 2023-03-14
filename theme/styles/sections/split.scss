@@ -1,0 +1,91 @@
+.split {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10rem 2rem;
+    background: var(--off-white);
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    &__image {
+        @include full;
+        z-index: 1;
+    }
+
+    &__heading {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+        z-index: 2;
+
+        h2 {
+            font-weight: normal;
+        }
+    }
+
+    &__text {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+
+        &__divider {
+            border-radius: 100rem;
+            background-color: white;
+            width: 7rem;
+            height: 7rem;
+            position: relative;
+            z-index: 3;
+            box-shadow: 0 0 34px 0 rgba(64, 64, 64, 0.1);
+
+            @include media($md) {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+            }
+
+            @include media($md, max) {
+                position: relative;
+                margin: -3rem auto;
+                z-index: 3;
+            }
+
+            span {
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+                color: var(--green-dark);
+                position: absolute;
+                font-weight: bolder;
+            }
+        }
+
+        &__item {
+            width: calc(50% - 4rem);
+            margin: 2rem;
+            max-width: 44rem;
+            background: white;
+            box-shadow: 0 0 34px 0 rgba(64, 64, 64, 0.1);
+            padding: 4rem;
+            border-radius: 0.2rem;
+            position: relative;
+            z-index: 2;
+
+            @include media($md, max) {
+                width: 100%;
+            }
+
+            h3 {
+                text-align: center;
+            }
+
+            p {
+                text-align: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+/*------------------------------------------------------------------
+Newsletter popup
+------------------------------------------------------------------*/
+
+form {
+  margin-bottom: 2rem;
+}
+
+input,
+textarea,
+select {
+  border: 0;
+  border-bottom: 1px solid var(--off-white);
+  padding: 1rem;
+  border-radius: 0;
+  -webkit-appearance: none;
+  outline: 0;
+  margin-bottom: 2rem;
+  width: 100%;
+  resize: none;
+  background: white;
+  @extend .p;
+
+  @include placeholder {
+    opacity: 0.5;
+  }
+}
+
+.hidden-label {
+  display: none;
+}
+
+
+

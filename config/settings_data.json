@@ -1,0 +1,52 @@
+{
+  "current": {
+    "checkout_logo_image": "shopify:\/\/shop_images\/Pilldrop_colour.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#ec1d24",
+    "checkout_button_color": "#00ab80",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "announcement_text": "Sign up and get 15% off your next purchase!",
+          "announcement_colour": "#ffffff",
+          "announcement_background": "#000000",
+          "announcement_link": "",
+          "announcement_enable": false,
+          "announcement_homepage": true
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+        }
+      },
+      "newsletter-popup": {
+        "type": "newsletter-popup",
+        "settings": {
+          "mode": "disabled",
+          "popup_seconds": 5,
+          "popup_days": 30,
+          "popup_title": "Sign up and save",
+          "popup_text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers. Include an image for extra impact.<\/p>",
+          "close_text": "No thanks",
+          "enable_newsletter": true,
+          "button_label": "Optional button",
+          "button_link": "",
+          "enable_button": false
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  }
+}

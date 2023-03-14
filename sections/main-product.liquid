@@ -1,0 +1,311 @@
+<div class="banner__push"></div>
+
+
+<div class="product">
+    <div class="product__wrap">
+
+      <div class="product__wrap__gallery">
+        <div class="product__wrap__gallery__inner">
+  
+          <div class="product__wrap__gallery__inner__featured">
+
+            {% assign on_sale = false %}
+            {% if product.compare_at_price > product.price %}
+            {%- assign on_sale = true -%}
+            {% endif %}
+            <div class="[ js-product-imagery-slider ]">
+              {% if product.media[0] %}
+                {% else %}
+                
+                <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0617/3982/7386/products/RX_780b8dd4-821b-426c-9a6b-a4e2b3fc1c18.jpg" class="placeholder">
+                {% endif %}
+                
+              {% for media in product.media %}
+                <div>
+                  <img loading="lazy" width="540" height="540" class="[ js-product-slider-item-image ]" src="{{ media.preview_image | image_url: width: 540, height: 540, crop: 'center' }}" srcset="
+                    {{ media.preview_image | image_url: width: 540, height: 540, crop: 'center' }} 540w,
+                    {{ media.preview_image | image_url: width: 768, height: 768, crop: 'center' }} 768w,
+                    {{ media.preview_image | image_url: width: 968, height: 968, crop: 'center' }} 968w,
+                    {{ media.preview_image | image_url: width: 1080, height: 1080, crop: 'center' }} 1080w" alt="{{ media.preview_image.alt | escape }}" data-lightbox-image="{{ media.preview_image | image_url: width: 1080, height: 1080, crop: 'center' }}" />
+                  </div>
+                  {% endfor %} 
+            </div>
+
+            {% if on_sale %}
+                <span class="product__wrap__gallery__inner__featured__sale">SALE</span>
+            {% endif %}
+  
+       
+            <span class="product__wrap__gallery__inner__progresscircle">
+              <svg width="100" height="100" viewBox="0 0 100 100">
+                <circle class="[ js-gallery-progress-circle ]" stroke-linecap="square" cx="50" cy="50" r="48" stroke="#000" stroke-width="2" fill="none" stroke-dasharray="315" stroke-dashoffset="100" stroke-mitterlimit="0" transform="rotate(-90 ) translate(-100 0)" />
+              </svg>
+            </span>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+  
+      <div class="product__wrap__details">
+        <div class="product__wrap__details__inner [ js-in-view ]">
+  
+          {% comment %}
+          Breadcrumbs
+          {% endcomment %}
+    
+          {% render 'breadcrumbs' %}
+
+
+          <h1 class="h2 colour--text">{{ product.title }}</h1>
+          <h3 class="[ js-variation-price ] colour--text">{{ product.price | money }}
+            {% if product.compare_at_price > product.price %}
+              <span class="why-pay">WHY PAY {{ product.compare_at_price | money }} ?</span>
+            {% endif %}
+        </h3>
+          <hr>
+         
+  
+          <div class="product__wrap__details__form">
+  
+         
+  
+            {%- form 'product', product, id: 'product_form', class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+
+            <select name="id" id="ProductSelect-{{ section.id }}" {% if product.variants.size == 1 %}style="display:none;" {% else %}class="[ js-choices ][ js-change-variation ]" {% endif %}>
+              {% for variant in product.variants %}
+              <option value="{{ variant.id }}" {%- if variant == current_variant %} selected="selected" {%- endif -%}>
+                {{ variant.title }} {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+              </option>
+              {% endfor %}
+            </select>
+  
+            <div class="divide"></div>
+  
+            <div class="quantity quantity--inline">
+              <a href="#" class="quantity__subtract [ js-change-quantity-inline ]" data-type="subtract">
+                {% render 'svg-subtract' %}
+              </a>
+              <input name="quantity" class="quantity__quantity" value="1">
+              <a href="#" class="quantity__add [ js-change-quantity-inline ]" data-type="add">
+                {% render 'svg-add' %}
+              </a>
+            </div>
+  
+  
+  
+            <button type="submit" class="button button--yellow [ js-add-to-cart ]">
+              {% unless product.available %}
+              Sold Out
+              {% render 'svg-not-allowed-button' %}
+              {% else %}
+              Add to Cart
+              {% endunless %}
+              {% render 'svg-loader' %}
+            </button>
+  
+            {% endform %}
+
+            {% for tag in product.tags %}
+
+              {% if tag == 'prescription' %}
+                <p class="warning" style="">
+                  <span><?xml version="1.0" encoding="UTF-8"?><svg version="1.1" width="84px" height="84px" viewBox="0 0 84.0 84.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><clipPath id="55551071151081119799117114"><path d="M41.667999,0 C64.679999,0 83.335999,18.656 83.335999,41.668 C83.335999,64.68 64.679999,83.336 41.667999,83.336 C18.655999,83.336 0,64.68 0,41.668 C0,18.656 18.655999,0 41.667999,0 Z M41.667999,4.168 C20.956999,4.168 4.167999,20.957 4.167999,41.668 C4.167999,62.379 20.956999,79.168 41.667999,79.168 C62.378999,79.168 79.167999,62.379 79.167999,41.668 C79.167999,20.957 62.378999,4.168 41.667999,4.168 Z"></path></clipPath><clipPath id="117985599569710012111456"><path d="M8.332,0 C12.9335,0 16.664,3.7304 16.664,8.332 C16.664,12.9374 12.9336,16.6679 8.332,16.6679 C3.7305,16.6679 0,12.9375 0,8.332 C0,3.7305 3.7305,0 8.332,0 Z M8.332,4.1678 C6.0312,4.1678 4.164,6.0311 4.164,8.3319 C4.164,10.6327 6.0312,12.4999 8.332,12.4999 C10.6328,12.4999 12.5,10.6327 12.5,8.3319 C12.5,6.0311 10.6328,4.1678 8.332,4.1678 Z"></path></clipPath><clipPath id="12295118571089952110113118"><path d="M8.332,0 C12.9335,0 16.664,3.7305 16.664,8.3359 L16.664,20.8359 C16.664,25.4375 12.9335,29.1679 8.332,29.1679 C3.7305,29.1679 0,25.4374 0,20.8359 L0,8.3359 C0,3.7304 3.7305,0 8.332,0 Z M8.332,4.1679 C6.0312,4.1679 4.164,6.0351 4.164,8.3359 L4.164,20.8359 C4.164,23.1367 6.0312,25 8.332,25 C10.6328,25 12.5,23.1367 12.5,20.8359 L12.5,8.3359 C12.5,6.0351 10.6328,4.1679 8.332,4.1679 Z"></path></clipPath></defs><g clip-path="url(#55551071151081119799117114)"><polygon points="0,0 83.335999,0 83.335999,83.336 0,83.336 0,0" stroke="none" fill="#000000"></polygon></g><g transform="translate(33.335999 16.66810000000001)"><g clip-path="url(#117985599569710012111456)"><polygon points="0,0 16.664,0 16.664,16.6679 0,16.6679 0,0" stroke="none" fill="#000000"></polygon></g></g><g transform="translate(33.335999 37.5001)"><g clip-path="url(#12295118571089952110113118)"><polygon points="0,0 16.664,0 16.664,29.1679 0,29.1679 0,0" stroke="none" fill="#000000"></polygon></g></g></svg></span>
+                  This item is prescription-only medication. You are able to order this product online, however we will not be able to ship your parcel until we have received an official copy of your prescription. <a href="/pages/how-it-works" style="color:var(--primary)">How it works</a>
+                </p>
+                {% endif %}
+            
+            {% endfor %}
+
+           
+
+            <hr>
+            <div class="product__wrap__details__description">
+              {{ product.description }}
+            </div>
+
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+
+{% comment %}
+  Product Slider
+{% endcomment %}
+
+<div class="sliderAlt" style="background-color: var(--off-white);">
+  <div class="sliderAlt__wrap">
+
+    <div class="sliderAlt__wrap__heading [ js-in-view ]">
+      <h2 class="colour--text" data-splitting>You may also like...</h2>
+      <p><b><a href="/collections/all" class="arrow-link">VIEW ALL PRODUCTS <img src="{{ 'mini-arrow-right.svg' | asset_url }}" width="14" height="22" loading="lazy" /></a></b></p>
+    </div>
+
+    <div class="sliderAlt__wrap__slider">
+
+      <div class="sliderAlt__wrap__slider__carousel" id="scroller--{{ section.id }}">
+
+        {% for product in collections.all.products %}
+
+        {% assign on_sale = false %}
+        {% if product.compare_at_price > product.price %}
+        {%- assign on_sale = true -%}
+        {% endif %}
+
+        <div class="sliderAlt__wrap__slider__carousel__item">
+          <a  href="{{ product.url }}" class="sliderAlt__wrap__slider__carousel__item__image">
+          {% if product.media[0] %}
+          
+            <img loading="lazy"
+              srcset="{{ product.media[0] | image_url: width: 480, height: 480 }} 480w,
+                      {{ product.media[0] | image_url: width: 600, height: 600 }} 600w"
+              sizes="(max-width: 600px) 480px,
+                     (max-width: 1000px) 600px,
+                     1000px"
+              src="{{ product.media[0] | image_url: width: 600, height: 600 }}"
+              alt="{{ product.media[0].alt | escape }}"
+              width="{{ product.media[0].width }}"
+              height="{{ product.media[0].height }}">
+
+        {% if on_sale %}
+          {% comment %} <span class="collection__grid__item__image__sale">SALE</span> {% endcomment %}
+        {% endif %}
+
+        {% if product.available %}
+        {% else %}
+        
+          {% comment %} <span class="collection__grid__item__image__unavailable">SOLD OUT</span> {% endcomment %}
+        {% endif %}
+        {% else %}
+        <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0617/3982/7386/products/RX_780b8dd4-821b-426c-9a6b-a4e2b3fc1c18.jpg" class="placeholder">
+      {% endif %}
+    </a>
+
+      <a href="{{ product.url }}" class="collection__grid__item__details">
+        <div class="collection__grid__item__details__title">
+            <h6 class="colour--text text-center"><strong>{{ product.title | escape }} &nbsp;</strong></h6>
+            <p class="colour--red text-center"><b>VIEW PRODUCT</b></p>
+          </div>
+        </a>
+      </div>
+      {%- endfor -%}
+    
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+
+<script>
+  tns({
+    container:"#scroller--{{ section.id }}" ,
+    items: 1,
+    mouseDrag: true,
+    nav: false,
+    controls: true,
+    slideBy: 1,
+    responsive: {
+      800: {
+        items: 2
+      },
+      1000: {
+        items: 3
+      }
+    }
+  });
+</script>
+
+<style> 
+  .slider--{{ section.id }} .tns-controls button:first-of-type {
+    background-image: url({{ 'previous-green-mid.svg' | asset_url }});
+    left: -4rem;
+  }
+  .slider--{{ section.id }} .tns-controls button:last-of-type {
+    background-image: url({{ 'next-green-mid.svg' | asset_url }});
+    right: -4rem;
+  }
+</style>
+  
+
+
+  
+  <script>
+    window.inventories = [];
+    {% for variant in product.variants %}
+  
+    window.inventories[{{ variant.id }}] = {
+      'id': {{ variant.id }},
+      'quantity': '{{ variant.inventory_quantity | default: 0 }}',
+        'price': '{{ variant.price | money }}',
+    };
+  
+    {% endfor %}
+  </script>
+
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
+
+
+
+<script>
+  // Declare our selects
+  var selects = document.querySelectorAll('.js-choices');
+
+  // Hide all other menus
+  selects.forEach(function (item) { 
+    var choices = new Choices(item, {
+      itemSelectText: '',
+      searchEnabled: false,
+    });
+    
+  })
+</script>
+
+
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org/",
+      "@type": "Product",
+      "name": {{ product.title | json }},
+      "url": {{ shop.url | append: product.url | json }},
+      {%- if product.featured_media -%}
+        {%- assign media_size = product.featured_media.preview_image.width | append: 'x' -%}
+        "image": [
+          {{ product.featured_media | image_url: media_size | prepend: "https:" | json }}
+        ], 
+      {%- endif -%}
+      "description": {{ product.description | strip_html | json }},
+      {%- if current_variant.sku != blank -%}
+        "sku": {{ current_variant.sku | json }},
+      {%- endif -%}
+      "brand": {
+        "@type": "Thing",
+        "name": {{ product.vendor | json }}
+      },
+      "offers": [
+        {%- for variant in product.variants -%}
+          {
+            "@type" : "Offer",
+            {%- if variant.sku != blank -%}
+              "sku": {{ variant.sku | json }},
+            {%- endif -%}
+            "availability" : "http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}",
+            "price" : {{ variant.price | divided_by: 100.00 | json }},
+            "priceCurrency" : {{ cart.currency.iso_code | json }},
+            "url" : {{ shop.url | append: variant.url | json }}
+          }{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      ]
+    }
+    </script>

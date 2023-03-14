@@ -1,0 +1,106 @@
+{% comment %}
+  Hero block
+{% endcomment %}
+
+<div class="hero hero--{{ section.id }}">
+
+  <div class="hero__wrap">
+    {%- for block in section.blocks -%}
+      <a href="{{ block.settings.button_link }}" class="hero__wrap__item" id="{{ block.id }}" onclick="toggleActive('{{ block.id }}')">
+
+        <img class="hero__wrap__item__image" loading="lazy" src="{{ block.settings.image | image_url: width: 800 }}" alt="{{ block.settings.image.alt | escape }}" width="400" height="500">
+
+        <div class="hero__wrap__item__heading">
+          <h4>{{ block.settings.heading }}</h4>
+        </div>
+
+        <div class="hero__wrap__item__content">
+          {%- if block.settings.button_label != blank -%}
+            <p>
+              <button  class="button">{{ block.settings.button_label }}</button>
+            </p>
+          {%- endif -%}
+        </div>
+
+      </a>
+    {%- endfor -%}
+  </div>
+  
+</div>
+
+<script>
+  window.addEventListener('scroll', onScroll);
+
+  function onScroll() {
+    for (var item of document.querySelectorAll('.js-in-view')) {
+      elementVisible(item, 1000);
+    }
+  }
+
+  function elementVisible(el,offset) {
+    let top = el.offsetTop;
+    let height = el.offsetHeight;
+    let bottom = top + height;
+
+    let IsOverBottom = top > (window.pageYOffset + window.innerHeight - offset);
+    let IsBeforeTop = bottom < window.pageYOffset;
+
+    if (!IsOverBottom && !IsBeforeTop) {
+      el.classList.add('inView');
+    }
+  }
+</script>
+
+{% schema %}
+{ 
+  "name": "hero",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "hero_item",
+      "name": "hero item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Background Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Cat shop" 
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "hero",
+      "blocks": [
+        {
+          "type": "hero_item"
+        },
+        {
+          "type": "hero_item"
+        },
+        {
+          "type": "hero_item"
+        }
+      ]
+    }
+  ]
+}   
+{% endschema %}
+  

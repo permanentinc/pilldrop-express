@@ -1,0 +1,97 @@
+.slider {
+    background-color: var(--off-white);
+    position: relative;
+    padding: 10rem 8rem 8rem;
+
+    &__heading {
+        width: 100%;
+        max-width: var(--content-width);
+        margin: 0 auto;
+
+        &__inner{ 
+            max-width: 55rem;
+
+            h2 {
+            }
+
+            p a {
+                color: white;
+            }
+        }
+    }
+
+    &__grid {
+        margin: 6rem auto;
+        width: 100%;
+        max-width: var(--content-width);
+        position: relative;
+
+        .tns-nav {
+            width: 100%;
+            position: absolute;
+            bottom: -3rem;
+
+            button {
+                width: 10rem;
+                border: 0;
+                height: 2px;
+                background: white;
+                margin-right: 1rem;
+                position: relative;
+
+                &:after {
+                    @include pseudo;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    background: var(--yellow-mid);
+                    transform: scaleX(0);
+                }
+
+                &.tns-nav-active {
+                    &:after {
+                        transform: scaleX(1);
+                    }
+                }
+            }
+        }
+
+        .tns-controls {
+            button {
+                border: 0;
+                width: 4rem;
+                height: 4rem;
+                background-color: transparent;
+                background-size: cover;
+                font-size: 0;
+                position: absolute;
+                top: 50%;
+                cursor: pointer;
+                z-index: 44;
+            }
+        }
+
+        &__carousel {
+            width: 100%;
+
+            &__item {
+                padding: 2rem;
+
+                &__heading {
+                    color: white;
+                    max-width: 30rem;
+                }
+
+                &__content {
+                    max-width: 30rem;
+                    color: white;
+                }
+
+                &__link {
+                    color: var(--yellow-mid);
+                }
+            }
+        }
+    }
+}

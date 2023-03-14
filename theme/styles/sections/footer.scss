@@ -1,0 +1,197 @@
+/*------------------------------------------------------------------
+Footer
+------------------------------------------------------------------*/
+
+.footer {
+    position: relative;
+    width: 100%;
+    background: var(--off-white);
+    padding: 0rem 0rem;
+    padding-bottom: 12rem;
+ 
+    &__wrap {
+        position: relative;
+        width: 100%;
+        max-width: $lg;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 4rem 2rem;
+
+        &__column {
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+
+            &--links {
+                width: calc(100% - 30rem);
+                padding-right: 8rem;
+
+                @include media($md, max) {
+                    width: 50%;
+                }
+
+                @include media($xs, max) {
+                    width: 100%;
+                    padding-right: 0;
+                }
+
+                p {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+
+                    @include media($sm, max) {
+                        a {
+                            width: 100%;
+                            display: block;
+                        }
+                    }
+
+                    @include media($xs, max) {
+                        order: 2;
+                    }
+
+                    a {
+                        color: var(--primary);
+                        font-weight: 500;
+                        box-shadow: none;
+                    }
+                }
+            }
+
+            &--details {
+                width: calc(30rem);
+
+                @include media($md, max) {
+                    width: 50%;
+                }
+
+                @include media($xs, max) {
+                    width: 100%;
+                }
+
+                p {
+                    width: 100%;
+
+                    color: #4b555d;
+
+                    @include media($xs, max) {
+                        text-align: left;
+                    }
+
+                    span {
+                        font-size: 1.2rem !important;
+                    }
+
+                    a {
+                        color: var(--primary);
+                    }
+                }
+            }
+
+            &__social {
+                padding: 0 0rem;
+
+                @include media($xs, max) {
+                    order: 12;
+                    margin-bottom: 1rem;
+                }
+
+                &__item {
+                    margin-right: 1rem;
+
+                    @include svg(1, 1);
+                    width: 4rem;
+                    display: inline-block;
+
+                    path {
+                        fill: var(--primary);
+                    }
+
+                    svg {
+                        transition: all $fast;
+                    }
+
+                    &:hover {
+                        svg {
+                            transform: scale(1.005);
+                        }
+                    }
+                }
+            }
+
+            &__moh {
+                position: relative;
+                width: 16rem;
+                margin-right: 2rem;
+
+                @include media($xs, max) {
+                    order: 1;
+                    padding: 5rem 0;
+                    background: white;
+                    text-align: center;
+                    width: calc(100% + 4rem);
+                    margin-top: -4rem;
+                    margin-left: -2rem;
+                    margin-right: -2rem;
+                    margin-bottom: 4rem;
+                }
+
+                &__logo {
+                    @include svg(149, 60.1);
+                    width: 16rem;
+
+                    @include media($xs, max) {
+                        margin: 0 auto;
+                    }
+                }
+
+                p {
+                    position: relative;
+
+                    span {
+                        display: block;
+                        width: 100%;
+                        text-align: center;
+                        margin: 0;
+                    }
+
+                    span:first-of-type {
+                        font-size: 1.2rem !important;
+                        color: #f7941e;
+                        text-align: center;
+                        margin-top: 0.4rem;
+                    }
+
+                    span:last-of-type {
+                        font-size: 1rem !important;
+                        color: #002e6e;
+                    }
+                }
+            }
+
+            &__payment {
+                @include svg(162, 52);
+                width: 12rem;
+                position: absolute;
+                right: 100%;
+                top: 7rem;
+                margin-right: 3rem;
+
+                @include media($md, max) {
+                    position: relative;
+                    top: 0;
+                    right: 0;
+                }
+
+                @include media($sm, max) {
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}

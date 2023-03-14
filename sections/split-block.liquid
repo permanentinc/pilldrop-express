@@ -1,0 +1,219 @@
+
+  {% comment %}
+    Split block
+  {% endcomment %}
+  
+  <div class="split split--{{ section.id }} image-to-the-{{ section.settings.layout }}" style="background-color: {{ section.settings.background_colour }};">
+    
+    {%- if section.settings.background_image != blank -%}
+      <div class="split__image">
+        <img loading="lazy"
+          srcset="{{ section.settings.background_image | image_url: width: 480 }} 480w,
+                  {{ section.settings.background_image | image_url: width: 800 }} 800w,
+                  {{ section.settings.background_image | image_url: width: 1920 }} 1600w,"
+          sizes="(max-width: 600px) 480px,
+                 (max-width: 1000px) 800px,
+                 1000px"
+          src="{{ section.settings.background_image | image_url: width: 1920 }}"
+          alt="{{ section.settings.background_image.alt | escape }}"
+          width="{{ section.settings.background_image.width }}"
+          height="{{ section.settings.background_image.height }}">
+      </div>
+    {%- endif -%}
+
+    <div class="split__heading">
+      <h2 class="{{ section.settings.heading_main_size }} colour--white">{{ section.settings.heading_main | escape }}</h2>
+    </div>
+    
+    <div class="split__text">
+      <div class="split__text__item split__text__item--left">
+          <div class="split__text__item__constraint">
+            <h3 class="{{ section.settings.heading_left_size }} colour--red">{{ section.settings.heading_left | escape }}</h3>
+            {{ section.settings.text_left }}
+            {%- if section.settings.button_left_label != blank -%}
+              <p>
+                <a href="{{ section.settings.button_left_link }}" class="button button--yellow">{{ section.settings.button_left_label }}</a>
+              </p>
+            {%- endif -%}
+          </div>
+      </div>
+    
+      <div class="split__text__divider">
+          <span>OR</span>
+      </div>
+    
+      <div class="split__text__item split__text__item--right">
+          <div class="split__text__item__constraint">
+            <h3 class="{{ section.settings.heading_right_size }} colour--red">{{ section.settings.heading_right | escape }}</h3>
+            {{ section.settings.text_right }}
+            {%- if section.settings.button_right_label != blank -%}
+              <p>
+                <a href="{{ section.settings.button_right_link }}" class="button button--yellow">{{ section.settings.button_right_label }}</a>
+              </p>
+            {%- endif -%}
+          </div>
+      </div>
+    </div>
+   
+  </div>
+
+  
+{% schema %}
+
+{
+  "name": "Split",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_colour",
+      "label": "Background colour",
+      "default": "#ec1d24"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "heading_main",
+      "default": "Getting started",
+      "label": "Heading main"
+    },
+    {
+      "type": "select",
+      "id": "heading_main_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h3",
+          "label": "h3"
+        },
+        {
+          "value": "h4",
+          "label": "h4"
+        },
+        {
+          "value": "h5",
+          "label": "h5"
+        }
+      ],
+      "default": "h2",
+      "label": "Heading main size"
+    },
+    {
+      "type": "text",
+      "id": "heading_left",
+      "default": "Send us your prescription",
+      "label": "Heading Left"
+    },
+    {
+      "type": "select",
+      "id": "heading_left_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h3",
+          "label": "h3"
+        },
+        {
+          "value": "h4",
+          "label": "h4"
+        },
+        {
+          "value": "h5",
+          "label": "h5"
+        }
+      ],
+      "default": "h2",
+      "label": "Heading Left size"
+    },
+    {
+      "type": "richtext",
+      "id": "text_left",
+      "label": "Text Left",
+      "default": "<p>Get a prescription through your doctor or book an appointment with one of our doctors.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_left_label",
+      "label": "Button Left label"
+    },
+    {
+      "type": "url",
+      "id": "button_left_link",
+      "label": "Button Left link"
+    },
+    {
+      "type": "text",
+      "id": "heading_right",
+      "default": "Book an appointment",
+      "label": "Heading right"
+    },
+    {
+      "type": "select",
+      "id": "heading_right_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h3",
+          "label": "h3"
+        },
+        {
+          "value": "h4",
+          "label": "h4"
+        },
+        {
+          "value": "h5",
+          "label": "h5"
+        }
+      ],
+      "default": "h2",
+      "label": "Heading right size"
+    },
+    {
+      "type": "richtext",
+      "id": "text_right",
+      "label": "Text right",
+      "default": "<p>Get a prescription through your doctor or book an appointment with one of our doctors.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_right_label",
+      "label": "Button right label"
+    },
+    {
+      "type": "url",
+      "id": "button_right_link",
+      "label": "Button right link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Split"
+    }
+  ]
+}   
+{% endschema %}
+  

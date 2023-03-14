@@ -1,0 +1,230 @@
+{% if section.settings.mode != 'disabled' %}
+
+<div class="popup popup--{{ section.id }}" 
+  data-section-id="{{ section.id }}" 
+  data-delay-days="{{ section.settings.popup_days }}" 
+  data-delay-seconds="{{ section.settings.popup_seconds }}" 
+  data-test-mode="{% if section.settings.mode == 'testing' %}true{% else %}false{% endif %}">
+
+  <div class="popup__inner">
+
+    <div class="popup__inner__content">
+
+      <button type="button" class="popup__inner__content__close" onclick="hidePopup()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+          <polygon fill-rule="evenodd" points="29.854 25.3 19.482 14.927 29.854 4.553 25.3 0 14.928 10.374 4.555 0 .002 4.553 10.375 14.927 0 25.3 4.553 29.854 14.928 19.48 25.3 29.854" />
+        </svg>
+      </button> 
+
+      {% if section.settings.popup_title != blank %}
+        <h3>{{ section.settings.popup_title }}</h3>
+      {% endif %}
+ 
+      {% if section.settings.popup_image %}
+      <div class="popup__inner__content__image">
+        <img loading="lazy" src="{{ section.settings.popup_image | image_url: width: 475, height: 135 }}" 
+        srcset="{{ section.settings.popup_image | image_url: width: 475, height: 135 }} 475w,
+                {{ section.settings.popup_image | image_url: width: 960, height: 270 }} 960w" 
+        sizes="(max-width: 475px) 475px, 100vw"
+        alt="{{ section.settings.popup_image.alt | escape }}" 
+        width="960"
+        height="270">
+      </div>
+      {% endif %}
+
+      {% if section.settings.popup_text != blank %}
+        {{ section.settings.popup_text }}
+      {% endif %}
+
+      {% if section.settings.enable_newsletter %}
+        <div class="popup__inner__content__form">
+          {% render 'newsletter-form', section_id: section.id, snippet_context: 'popup' %}
+        </div>
+      {% endif %}
+
+      {% if section.settings.enable_button %}
+        <div class="popup__inner__content__button">
+          <a href="{{ section.settings.button_link }}" class="btn">
+            {{ section.settings.button_label }}
+          </a>
+        </div>
+      {% endif %}
+
+      <p class="popup__inner__content__link">
+        <a href="#" onclick="hidePopup()">{{ section.settings.close_text }}</a>
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<script>
+
+/**
+ * Get a cookie by name
+ * @param {string} name 
+ * @returns 
+ */
+function getCookie(name) {
+  let value = `; ${document.cookie}`;
+  let parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+
+/**
+* Show the newsletter popup
+*/
+function showPopup() {
+  document.documentElement.classList.add('popup-open');
+
+  setTimeout(function () {
+      document.querySelector('.popup--{{ section.id }}').classList.add('animate-in');
+  }, 444);
+
+}
+
+
+/**
+* Check if the newsletter popup has been closed before
+*/
+setTimeout(function () {
+  if (getCookie('hasClosedNewsletterPopup') !== 'true') {
+      showPopup();
+  }
+}, {{ section.settings.popup_seconds | times: 1000 }});
+
+
+/**
+* Close the newsletter popup
+*/
+function hidePopup() {
+  document.querySelector('.popup--{{ section.id }}').classList.add('animate-out');
+
+  document.documentElement.classList.remove('popup-open');
+
+  setTimeout(function () {
+      document.querySelector('.popup--{{ section.id }}').classList.remove('animate-in,animate-out');
+  }, 3000);
+
+  document.cookie = 'hasClosedNewsletterPopup=true; max-age=' + (60 * 60 * 24 * {{ section.settings.popup_days }});
+}
+
+</script>
+
+{% endif %}
+ 
+{% schema %}
+{
+  "name": "Popup",
+  "class": "index-section--hidden",
+  "settings": [
+    {
+      "type": "select",
+      "id": "mode",
+      "label": "Display mode",
+      "default": "disabled",
+      "info": "Test mode displays your popup each time even after dismissing it. Switch to Enabled once you are happy with how your popup looks.",
+      "options": [
+        {
+          "value": "enabled",
+          "label": "Enabled"
+        },
+        { 
+          "value": "testing",
+          "label": "Test mode"
+        },
+        {
+          "value": "disabled",
+          "label": "Disabled"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "popup_seconds",
+      "label": "Delay",
+      "info": "Delay is disabled in theme editor for visibility",
+      "default": 5,
+      "min": 2,
+      "max": 60,
+      "step": 1,
+      "unit": "sec"
+    },
+    {
+      "type": "range",
+      "id": "popup_days",
+      "label": "Frequency",
+      "default": 30,
+      "info": "Number of days before a dismissed popup reappears",
+      "min": 2,
+      "max": 30,
+      "step": 1,
+      "unit": "day"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "popup_title",
+      "label": "Heading",
+      "default": "Sign up and save"
+    },
+    {
+      "type": "image_picker",
+      "id": "popup_image",
+      "label": "Image",
+      "info": "Images"
+    },
+    {
+      "type": "richtext",
+      "id": "popup_text",
+      "label": "Text",
+      "default": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers. Include an image for extra impact.</p>"
+    },
+    {
+      "type": "text",
+      "id": "close_text",
+      "label": "Close button text",
+      "default": "No thanks"
+    },
+    {
+      "type": "header",
+      "content": "Newsletter"
+    },
+    {
+      "type": "paragraph",
+      "content": "Every sign up will create a Customer on your store. [View customers](/admin/customers?query=&accepts_marketing=1)."
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_newsletter",
+      "label": "Enable newsletter",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Optional button"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_button",
+      "label": "Enable button",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

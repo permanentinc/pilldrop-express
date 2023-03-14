@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "banner": {
+      "type": "banner-slim",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/horse_banner_3bf7f774-3e06-4bcc-805c-cbd979c5197e.jpg",
+        "subheading": "",
+        "colour": "dark",
+        "subheading_size": "h4",
+        "heading": "<p><strong>Horse shop.<\/strong><\/p>",
+        "heading_size": "h1",
+        "text": ""
+      }
+    },
+    "product-grid": {
+      "type": "product-grid",
+      "settings": {
+        "heading": ""
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid"
+  ]
+}

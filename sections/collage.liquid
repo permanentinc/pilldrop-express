@@ -1,0 +1,83 @@
+
+  {% comment %}
+    Collage
+  {% endcomment %}
+  
+  <div class="collage collage--{{ section.id }} small-images-to-the-{{ section.settings.layout }}">
+    <div class="collage__image">
+        <img loading="lazy"
+            srcset="{{ section.settings.image_1 | image_url: width: 435, height: 525 }} 435w,
+                    {{ section.settings.image_1 | image_url: width: 870, height: 1050 }} 870w,"
+            sizes="(max-width: 900px) 435px, 100vw"
+            src="{{ section.settings.image_1 | image_url: width: 870, height: 1050 }}"
+            alt="{{ section.settings.image_1.alt | escape }}"
+            width="870"
+            height="1050">
+    </div>
+     <div class="collage__image">
+        <img loading="lazy"
+            srcset="{{ section.settings.image_2 | image_url: width: 260, height: 260 }} 260w,
+                    {{ section.settings.image_2 | image_url: width: 520, height: 520 }} 520w"
+            sizes="(max-width: 900px) 260px, 100vw"
+            src="{{ section.settings.image_2 | image_url: width: 520, height: 520 }}"
+            alt="{{ section.settings.image_2.alt | escape }}"
+            width="520"
+            height="520">
+    </div>
+     <div class="collage__image">
+        <img loading="lazy"
+            srcset="{{ section.settings.image_3 | image_url: width: 260, height: 260 }} 260w,
+                    {{ section.settings.image_3 | image_url: width: 520, height: 520 }} 520w"
+            sizes="(max-width: 900px) 260px, 100vw"
+            src="{{ section.settings.image_3 | image_url: width: 520, height: 520 }}"
+            alt="{{ section.settings.image_3.alt | escape }}"
+            width="520"
+            height="520">
+    </div>
+  </div>
+   
+
+{% schema %}
+{
+  "name": "Collage",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image One"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image Two"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image Three"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "right",
+      "options": [
+      {
+          "value": "left",
+          "label": "Small images on left"
+      },
+      {
+          "value": "right",
+          "label": "Small images on right"
+      }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collage"
+    }
+  ]
+}   
+{% endschema %}
+  

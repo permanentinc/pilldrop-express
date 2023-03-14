@@ -1,0 +1,57 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "16510315198c1783c4": {
+      "type": "banner-slim",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/banner_slim.jpg",
+        "image_position": "left",
+        "subheading": "<p><strong>HOW IT WORKS<\/strong><\/p>",
+        "colour": "light",
+        "subheading_size": "h6",
+        "heading": "<p>Pet prescriptions <br\/>made easy<\/p>",
+        "heading_size": "h1",
+        "text": ""
+      }
+    },
+    "1653454661e42a83a4": {
+      "type": "icons-with-text",
+      "settings": {
+        "subheading": "IT'S SIMPLE",
+        "heading": "Getting started.",
+        "heading_size": "h1",
+        "image1": "shopify:\/\/shop_images\/Artboard_Copy_6.png",
+        "heading1": "Shop for the product you need",
+        "text1": "<p>Place your order.<\/p>",
+        "image2": "shopify:\/\/shop_images\/Artboard_e714124e-35da-4abc-b224-b844f91964f6.png",
+        "heading2": "Send your prescription to  PillDrop, there are 2 ways how:",
+        "text2": "<p>Ask your vet to send the prescription directly to PillDrop:<\/p><p>Email: delivery@pilldrop.co.nz  <br\/>Fax: 09 276 9292<\/p><p><em>or <\/em>Post the prescription to <br\/>PO Box: 62283, Sylvia Park, Auckland<\/p>",
+        "image3": "shopify:\/\/shop_images\/Artboard_Copy_7.png",
+        "heading3": "Delivered",
+        "text3": "<p>Your pet medications will be delivered straight to your door anywhere you are in New Zealand.<\/p>"
+      }
+    },
+    "16540708003027a173": {
+      "type": "background-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Pilldrop_aboutus.jpg",
+        "heading": "Fast & Free Delivery*",
+        "heading_size": "h2",
+        "text": "<p><strong>With PillDrop Pets, you will enjoy FREE delivery*<br\/>on all orders over $50.<\/strong><\/p>",
+        "button_label": "Shop now",
+        "button_link": "shopify:\/\/collections\/all"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16510315198c1783c4",
+    "1653454661e42a83a4",
+    "16540708003027a173"
+  ],
+  "wrapper": "div.main-wrapper"
+}

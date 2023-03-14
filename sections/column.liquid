@@ -1,0 +1,100 @@
+
+  {% comment %}
+    Text block
+  {% endcomment %}
+   
+  <div class="text text--{{ section.id }}">
+    <div class="text__wrap">
+      <div class="text__wrap__flex">
+        <div class="text__wrap__flex__left">
+          <h2 class="{{ section.settings.heading_size_left }} colour--green-mid">{{ section.settings.heading_left | escape }}</h2>
+          {{ section.settings.text_left }}
+        </div>
+        <div class="text__wrap__flex__right">
+          <h2 class="{{ section.settings.heading_size_right }} colour--green-mid">{{ section.settings.heading_right | escape }}</h2>
+          {{ section.settings.text_right }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+{% schema %}
+{
+  "name": "Column",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_left",
+      "default": "Text block",
+      "label": "Heading left"
+    },
+    {
+      "type": "select",
+      "id": "heading_left_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h3",
+          "label": "h3"
+        }
+      ],
+      "default": "h2",
+      "label": "Heading left size"
+    },
+    {
+      "type": "richtext",
+      "id": "text_left",
+      "label": "Text left",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+    },
+    {
+      "type": "text",
+      "id": "heading_right",
+      "default": "Text block",
+      "label": "Heading right"
+    },
+    {
+      "type": "select",
+      "id": "heading_right_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h3",
+          "label": "h3"
+        }
+      ],
+      "default": "h2",
+      "label": "Heading right size"
+    },
+    {
+      "type": "richtext",
+      "id": "text_right",
+      "label": "Text right",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+    }
+    
+  ],
+  "presets": [
+    {
+      "name": "Column"
+    }
+  ]
+}   
+{% endschema %}
+  

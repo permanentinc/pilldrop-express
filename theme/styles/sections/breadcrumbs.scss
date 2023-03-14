@@ -1,0 +1,27 @@
+.breadcrumbs {
+    &__wrap {
+        padding: 4rem 2rem;
+        margin: 0 auto;
+        max-width: var(--content-width);
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+
+        &__item {
+            padding: 0 0.5rem;
+
+            &__link {
+                color: var(--green-light);
+                font-weight: 500;
+
+                &--collections {
+                    color: var(--green-mid);
+                }
+
+                &--current {
+                    color: var(--green-dark);
+                }
+            }
+        }
+    }
+}

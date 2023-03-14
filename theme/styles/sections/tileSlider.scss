@@ -1,0 +1,128 @@
+/*------------------------------------------------------------------
+Tile Slider
+------------------------------------------------------------------*/
+
+.tileSlider {
+    position: relative;
+    width: 100%;
+    padding: 10rem 0rem;
+
+    @include media($md, max) {
+        padding: 4rem 0rem 6rem;
+    }
+
+    &__wrap {
+        width: 100%;
+        margin: 0 auto;
+        max-width: $lg;
+
+        &__heading {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 0 2rem;
+
+            @include media($md, max) {
+                margin-bottom: 0;
+            }
+        }
+
+        &__slider {
+            width: 100%;
+            position: relative;
+
+            .tns-controls {
+                button {
+                    border: 0;
+                    width: 4rem;
+                    height: 4rem;
+                    background-color: transparent;
+                    background-size: cover;
+                    font-size: 0;
+                    position: absolute;
+                    top: 50%;
+                    cursor: pointer;
+                    z-index: 44;
+                }
+
+                @include media(1250px, max) {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    text-align: center;
+
+                    button {
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                    }
+                }
+            }
+
+            &__tray {
+                width: 100%;
+                margin: 0 auto;
+                position: relative;
+                overflow: hidden;
+                min-height: 25rem;
+                outline: 0;
+                display: block;
+
+                &::before {
+                    @include pseudo;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    width: 4rem;
+                    z-index: 4;
+                    background: linear-gradient(to left, rgba(white, 0) 50%, rgba(white, 1) 100%);
+                }
+
+                &::after {
+                    @include pseudo;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    width: 4rem;
+                    z-index: 4;
+                    background: linear-gradient(to right, rgba(white, 0) 50%, rgba(white, 1) 100%);
+                }
+
+                &__item {
+                    padding: 2.5rem;
+                    box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.12);
+                    border-radius: 1rem;
+                    margin: 2rem 2rem;
+                    min-height: 18rem;
+                    position: relative;
+
+                    // @include media($xmd, max) {
+                    //     width: calc(50% - 4rem);
+                    //     margin: 2rem 2rem;
+                    // }
+
+                    // @include media($md, max) {
+                    //     width: calc(100% - 4rem);
+                    //     margin: 2rem 2rem;
+                    // }
+
+                    &__flex {
+                        display: flex;
+                        flex-wrap: wrap;
+                        height: 100%;
+                        align-items: center;
+                        min-height: 14rem;
+
+                        p {
+                            font-weight: 500;
+                            line-height: 1.4;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

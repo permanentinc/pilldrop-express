@@ -1,0 +1,214 @@
+/*------------------------------------------------------------------
+Login Page 
+------------------------------------------------------------------*/
+h2.title {
+  color: red !important;
+}
+
+.shopify-challenge__button {
+  @extend .button;
+  margin-top: 2rem !important;
+}
+
+.shopify-challenge__message {
+  margin-top: 4rem;
+}
+
+.form__message {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  span {
+    padding-right: 2rem;
+  }
+
+  svg {
+    width: 4rem;
+    margin-right: 1rem;
+    height: 4rem;
+  }
+}
+
+.Account {
+  label {
+    font-weight: 700 !important;
+  }
+
+  [type='password'],
+  [type='text'],
+  [type='email'],
+  label {
+    padding-left: 0 !important;
+  }
+}
+
+.shopify-challenge__container {
+  padding-top: 20rem;
+  padding-bottom: 10rem;
+}
+
+li[data-address] {
+  padding: 2.5rem;
+  box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 1rem;
+  margin: 2rem 2rem;
+  position: relative;
+
+  p {
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .button:not(.button--outline) {
+    background: var(--primary) !important;
+  }
+}
+
+[data-address] label,
+#AddAddress label {
+  display: none !important;
+}
+
+.field {
+  position: relative;
+
+  + div {
+    position: relative;
+  }
+}
+
+.account-link {
+  color: var(--primary);
+
+  path {
+    fill: var(--primary);
+  }
+}
+
+.customer.account {
+  max-width: var(--inner-content-width);
+  margin: 0 auto 10rem;
+}
+
+@media screen and (min-width: 990px) {
+  :is(.account, .order) > div:nth-of-type(2) > div:first-of-type {
+    flex-grow: 1;
+    padding-right: 3.2rem;
+    position: relative;
+
+    &:after {
+      @include pseudo;
+      right: 1rem;
+      padding-right: 3rem;
+      border-right: 1px solid var(--grey-light);
+      top: 0;
+      bottom: 0;
+      width: 1px;
+    }
+
+    + div {
+      min-width: 30rem;
+      padding-left: 2rem;
+    }
+  }
+}
+
+form select + svg {
+  width: 17px;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+form .field + div {
+  position: relative;
+}
+
+#address_form_new .field {
+  width: 100% !important;
+}
+
+[name='address[zip]'] + label,
+#address_form_new input[type='tel'] + label,
+#address_form_new input[type='text'] + label {
+  display: none !important  ;
+}
+
+.default-address {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--highlight);
+  padding: 0.8rem 1rem;
+  color: white !important;
+  font-size: 1rem !important;
+  border-radius: 0 0.4rem 0 0.4rem;
+}
+
+/*------------------------------------------------------------------
+Table styles
+------------------------------------------------------------------*/
+
+table {
+  vertical-align: top;
+  max-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0 auto 3rem;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--grey-light);
+
+  li {
+    margin-bottom: 0 !important;
+  }
+
+  tr {
+    background: white;
+    border-bottom: 1px solid var(--grey-light);
+    margin-bottom: 5px;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+  }
+
+  tr:nth-child(even) {
+    background: var(--off-white);
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: 1.5rem 1rem !important;
+    border-right: 1px solid var(--grey-light) !important;
+    font-size: 1.4rem !important;
+
+    p {
+      margin: 0;
+    }
+
+    &:last-of-type {
+      border-right: 0;
+    }
+  }
+
+  th {
+    background: var(--primary);
+    color: white !important;
+    font-weight: bold !important;
+  }
+}
+
+.account table td:first-of-type a {
+  padding: 0;
+  font-weight: bold !important;
+  color: var(--primary);
+}
+
+
+.visually-hidden{
+  display: none !important;  
+}

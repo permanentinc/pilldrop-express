@@ -1,0 +1,137 @@
+{%- comment %}<locksmith:467f>{% endcomment -%}
+  {%- include 'locksmith' -%}
+{%- comment %}</locksmith:467f>{% endcomment -%}
+
+<!doctype html>
+
+<html id="html" class="html no-js" lang="{{ request.locale.iso_code }}">
+
+{% comment %}
+    Head section
+{% endcomment %}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="google-site-verification" content="TF5eZOHFjvFh13KizlW7HH9WOvXfhPv4cM-NeM6vjhM" />
+    {% comment %}
+    Canoncical link     
+    {% endcomment %}
+    
+    <link rel="canonical" href="{{ canonical_url }}">
+    
+    {% comment %}
+        Preloads & preconnects
+    {% endcomment %}
+    
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+          font-family: 'Montserrat', serif;
+          font-size: 48px;
+        }
+    </style>
+
+    <link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/png">
+
+    {% comment %} 
+        Header generated content :
+        It dynamically loads all scripts required by Shopify into the document head. 
+        These scripts are required for features like reCAPTCHA, Shopify apps, and more.
+    {% endcomment %}
+    
+    {{ content_for_header }}
+
+    {% comment %}
+        Title section
+    {% endcomment %}
+    
+    <title>
+        {{ page_title }}
+        {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+        {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+        {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+
+    {% comment %}
+        Page description
+    {% endcomment %}
+    
+    {% if page_description %}
+        {%- comment %}<locksmith:9af9>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', variable: 'transparent', hiding_scope: 'resource' %}{% endcapture %}{% if var == 'true' %}<meta name="description" content="{{ page_description | escape }}">{% endif -%}
+          {%- comment %}original: <meta name="description" content="{{ page_description | escape }}">{%- endcomment %}
+        {%- comment %}</locksmith:9af9>{% endcomment -%}
+    {% endif %}
+
+
+    {% comment %}
+        Meta tags for social media outlets
+    {% endcomment %}
+    
+    {% render 'meta-tags' %}
+
+    
+    {% comment %}
+        SCSS Variables
+    {% endcomment %}
+    
+    {% render 'scss-variables' %}
+
+    {% comment %}
+       Styles
+    {% endcomment %}
+
+    {{ 'styles.css' | asset_url | stylesheet_tag }}
+    
+
+
+  {% render 'qikify-apps' %}
+</head>
+
+<body id="body" class=" {{ page_title }} page--{{ request.page_type | handle }} template--{{ template.name }}">
+
+    {% comment %}
+    Announcement bar
+    {% endcomment %}
+
+    {% section 'announcement-bar' %}
+    
+    {% comment %}
+    Header
+    {% endcomment %}
+
+    {% section 'header' %}
+
+ 
+        {{ content_for_layout }}{{ locksmith_content_for_layout_addenda }}
+
+    {% comment %}
+    Footer
+    {% endcomment %}
+
+    {% section 'footer' %}
+
+    {% comment %}
+    Scripts & Styles
+    {% endcomment %}
+
+    <script src="{{ 'app.js' | asset_url }}" async defer="defer"></script>
+
+
+    {% comment %}
+    Newsletter popup
+    {% endcomment %}
+
+    {% section 'newsletter-popup' %}
+
+
+</body>
+
+</html>

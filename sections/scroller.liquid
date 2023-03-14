@@ -1,0 +1,137 @@
+{% comment %}
+  scroller
+{% endcomment %}
+
+<div
+  class="scroller scroller--{{ section.id }}"
+  {%- if section.settings.image -%}
+    style="background-image:url({{ section.settings.image | image_url: width: 1600 }});"
+  {%- else -%}
+    style="background-image:url({{ 'scroller.jpg' | asset_url }});"
+  {%- endif -%}
+>
+  <div class="scroller__heading">
+    <div class="scroller__heading__inner">
+      <h6 class="colour--white">{{ section.settings.subheading }}</h6>
+      <h2 class="colour--white">{{ section.settings.heading }}</h2>
+      {{ section.settings.content }}
+    </div>
+  </div>
+
+  <div class="scroller__grid">
+    <div class="scroller__grid__carousel" id="scroller--{{ section.id }}">
+      {%- for block in section.blocks -%}
+        <div class="scroller__grid__carousel__item" id="{{ block.id }}">
+          <div class="scroller__grid__carousel__item__icon">
+
+            {%- if block.settings.icon -%}
+
+            <img
+              loading="lazy"
+              src="{{ block.settings.icon | image_url: width: 240, height: 240 }}"
+              alt="{{ block.settings.icon.alt | escape }}"
+              width="120"
+              height="120"
+            >
+            {%- endif -%}
+
+          </div>
+          <div class="scroller__grid__carousel__item__heading">
+            <h6>{{ block.settings.heading }}</h6>
+          </div>
+          <div class="scroller__grid__carousel__item__content">
+            {{ block.settings.content }}
+          </div>
+          <a href="{{ block.settings.button_link }}" class="scroller__grid__carousel__item__link">
+            <b>{{ block.settings.button_label }}</b>
+          </a>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "scroller",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub Heading",
+      "default": "IT'S SIMPLE"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why choose PillDrop Express"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>We will inform you once we have received your prescriptions. We will inform you once we have received your prescriptions.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "scroller_item",
+      "name": "scroller item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Every Day Low Prices on Medication"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>This is a small description about pricing.</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "scroller",
+      "blocks": [
+        {
+          "type": "scroller_item"
+        },
+        {
+          "type": "scroller_item"
+        },
+        {
+          "type": "scroller_item"
+        },
+        {
+          "type": "scroller_item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

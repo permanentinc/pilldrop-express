@@ -1,0 +1,110 @@
+{% comment %}
+Announcement Bar
+{% endcomment %}
+
+{% if section.settings.announcement_enable %}
+    {% if section.settings.announcement_homepage == false or request.page_type == 'index' %}
+     
+      {% comment %}
+      Section specific styles
+      {% endcomment %}
+
+      {%- style -%}
+
+        .announce {
+          opacity:.3;
+          background-color: {{ section.settings.announcement_background }};
+        }
+
+        .announce + .header {
+          margin-top: 34px;
+        }
+     
+        .announce p {
+          font-size: 16px;
+          color: {{ section.settings.announcement_colour }};
+        }
+
+      {%- endstyle -%}
+
+
+      {% comment %}
+        Scrolling text inner to be wrapped in a 
+        div or a link depending on link
+      {% endcomment %}
+      {%- capture markup -%}
+      <div class="announce__content">
+        <p class="announcement-bar__message">{{ section.settings.announcement_text | escape }}</p>
+      </div>
+      {%- endcapture -%}
+
+      {% comment %}
+        Section is a a link if there is a URL present
+      {% endcomment %}
+
+      {% if section.settings.announcement_link == blank %}
+        <div class="announce">
+          {{ markup }}
+        </div>
+      {% else %}
+        <a href="{{ section.settings.announcement_link }}" class="announce announce--link">
+          {{ markup }}
+        </a>
+      {% endif %}
+ 
+    {% endif %}
+    
+{% endif %}
+
+{% comment %}
+Header
+{% endcomment %}
+
+
+{% schema %}
+  {
+  "name": "Announcement Bar",
+  "settings": [
+      {
+      "type": "header",
+      "content": "Announcement Bar"
+      },
+      {
+          "type": "text",
+          "id": "announcement_text",
+          "label": "Announce something here",
+          "default": "Sign up and get 15% off your next purchase!"
+      },
+      {
+          "type": "color",
+          "id": "announcement_colour",
+          "label": "Text colour",
+          "default": "#ffffff"
+      },
+      {
+          "type": "color",
+          "id": "announcement_background",
+          "label": "Background colour",
+          "default": "#000000"
+      },
+      {
+          "type": "url",
+          "id": "announcement_link",
+          "label": "Link"
+      },
+      {
+          "type": "checkbox",
+          "id": "announcement_enable",
+          "label": "Enable announcement bar",
+          "default": false
+      },
+      {
+          "type": "checkbox",
+          "id": "announcement_homepage",
+          "label": "Homepage only",
+          "info" : "Checking this will only show this announcement on the homepage",    
+          "default": true
+      }
+  ]
+}
+{% endschema %}

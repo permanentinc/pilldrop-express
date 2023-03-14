@@ -1,0 +1,110 @@
+.icons-with-image {
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--off-white);
+
+    &.image-to-the-left {
+        .icons-with-image__text {
+            order: 2;
+        }
+
+        .icons-with-image__image {
+            order: 1;
+        }
+    }
+
+    &.image-to-the-right {
+        .icons-with-image__text {
+            order: 1;
+            justify-content: flex-end;
+        }
+
+        .icons-with-image__image {
+            justify-content: flex-start;
+            order: 2;
+            padding-right: 0rem;
+            padding-left: 10rem;
+        }
+    }
+
+    &__text {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 6rem 8rem;
+        justify-content: flex-start;
+
+        &__heading {
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+
+        @include media($xmd, max) {
+            width: 100%;
+            order: 2 !important;
+            padding: 10rem 4rem 6rem;
+        }
+
+        &__item {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+
+            &__icon {
+                width: 8rem;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            &__text {
+                width: calc(100% - 8rem);
+                padding-left: 2rem;
+
+                h6 {
+                    margin-bottom: 1rem;
+                }
+
+                $link: rgba(#ec1d24, 0.99);
+
+                a:not([class]) {
+                    text-decoration: none;
+                    box-shadow: inset 0 -1px 0 $link;
+                    transition: all $fast;
+                    color: $link;
+            
+                    &:hover {
+                        box-shadow: inset 0 -30px 0 $link, 0 1px 0 $link;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    &__image {
+        width: 50%;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+
+        @include media($xmd, max) {
+            width: 100%;
+            padding-right: 0rem !important;
+            padding-left: 0rem !important;
+            order: 1 !important;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

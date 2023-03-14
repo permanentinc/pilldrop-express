@@ -1,0 +1,97 @@
+.image-with-text-alternative {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+
+    &:after {
+        @include pseudo;
+        background: var(--off-white);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 30%;
+        z-index: -1;
+    }
+
+    &__wrap {
+        max-width: var(--content-width);
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 8rem 0;
+        margin: 0 auto;
+        align-items: center;
+        align-content: center;
+    }
+
+    &.image-to-the-left {
+        .image-with-text-alternative__wrap__text {
+            order: 2;
+        }
+
+        .image-with-text-alternative__wrap__image {
+            order: 1;
+        }
+    }
+
+    &.image-to-the-right {
+        .image-with-text-alternative__wrap__text {
+            order: 1;
+            justify-content: flex-end;
+        }
+
+        .image-with-text-alternative__wrap__image {
+            justify-content: flex-start;
+            order: 2;
+        }
+    }
+    &__wrap {
+        &__text {
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 12rem 8rem;
+            justify-content: flex-start;
+
+            @include media($xmd, max) {
+                width: 100%;
+                order: 2 !important;
+                padding: 10rem 4rem 6rem;
+            }
+
+            &__constraint {
+                max-width: calc(var(--content-width) / 3);
+
+            }
+        }
+
+        &__image {
+            width: 50%;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+
+            @include media($xmd, max) {
+                width: 100%;
+                padding-right: 0rem !important;
+                padding-left: 0rem !important;
+                order: 1 !important;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+                max-width: 60rem;
+                max-width: calc(100% - 6rem);
+                margin: 0 auto;
+                box-shadow: 15px 15px 0px 5px #ffc300;
+            }
+        }
+    }
+}

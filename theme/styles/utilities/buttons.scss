@@ -1,0 +1,97 @@
+.button {
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--primary);
+  padding: 1.5rem 4.4rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  text-decoration: none !important;
+  color: white !important;
+  transition: all 111ms ease;
+  border: 0;
+  border-radius: 100rem;
+  text-align: center;
+  cursor: pointer;
+
+  .svg-loader {
+    @include vertical-center;
+    background: var(--yellow-mid);
+    max-width: 5em;
+    border-radius: 3px;
+    fill: none;
+    stroke: rgba(white, 0.2);
+    stroke-width: 8%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all $fast;
+    stroke-linecap: square;
+
+    use {
+      stroke: var(--green-dark);
+      animation: a 1.5s linear infinite;
+    }
+  }
+
+  &.busy {
+    color: var(--yellow-mid) !important;
+
+    .svg-loader {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @keyframes a {
+    to {
+      stroke-dashoffset: 0px;
+    }
+  }
+
+  &:hover {
+    box-shadow: inset 0 0 0 1000px rgba(black, 0.2);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &--secondary {
+    background: transparent;
+    background: var(--secondary);
+
+    &:hover {
+      box-shadow: inset 0 0 0 1000px rgba(black, 0.3);
+    }
+  }
+
+  &--small {
+    padding: 1rem 4rem;
+  }
+
+  &--white {
+    color: var(--primary) !important;
+    background: white;
+  }
+
+  &--outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary) !important;
+    border-radius: 100rem !important;
+
+    &:hover {
+      box-shadow: inset 0 0 0 1000px var(--primary);
+      color: white !important;
+    }
+
+    &.button--white {
+      border: 2px solid white;
+      color: white !important;
+
+      &:hover {
+        box-shadow: inset 0 0 0 1000px white;
+        color: var(--primary) !important;
+      }
+    }
+  }
+}
