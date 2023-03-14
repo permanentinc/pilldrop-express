@@ -1,0 +1,31 @@
+{% comment %}
+  Search bar element
+{% endcomment %}
+
+<div class="search-bar search-bar--{{ section.id }}">
+  <div class="search-bar__wrap">
+    <div class="search-bar__wrap__heading">
+      <h2 class="colour--white">{{ section.settings.text }}</h2>
+    </div>
+    <div class="search-bar__wrap__form"></div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Search Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Get it today, browse our range",
+      "label": "Heading"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Search Bar"
+    }
+  ]
+}
+{% endschema %}
