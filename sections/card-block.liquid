@@ -1,0 +1,83 @@
+{% comment %}
+  Card Block
+{% endcomment %}
+
+<div class="card-block card-block--{{ section.id }}">
+  <div class="card-block__heading">
+    <h2>{{ section.settings.heading }}</h2>
+  </div>
+
+  {%- for block in section.blocks -%}
+    <div class="card-block__item" id="{{ block.id }}" onclick="toggleActive('{{ block.id }}')">
+      <div class="card-block__item__heading">
+        <h6>{{ block.settings.heading }}</h6>
+      </div>
+      <div class="card-block__item__content">
+        {{ block.settings.content }}
+      </div>
+    </div>
+  {%- endfor -%}
+</div>
+
+{% schema %}
+{
+  "name": "Card Block",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card_item",
+      "name": "Card item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Stop paying too much for your subscriptions"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Secondary Button label"
+        },
+        {
+          "type": "image_picker", 
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "image_picker",
+          "id": "background_image",
+          "label": "Background Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Card Block",
+      "blocks": [
+        {
+          "type": "card_item"
+        },
+        {
+          "type": "card_item"
+        },
+        {
+          "type": "card_item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
