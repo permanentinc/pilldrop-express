@@ -145,6 +145,36 @@
         "button_label": "SHOP NOW",
         "button_link": "shopify:\/\/collections\/all"
       }
+    },
+    "0c813dce-aa7e-490a-bd49-e7c998ac8091": {
+      "type": "card-block",
+      "blocks": {
+        "template--18191156871460__0c813dce-aa7e-490a-bd49-e7c998ac8091-1678768578d290080e-0": {
+          "type": "card_item",
+          "settings": {
+            "heading": "Stop paying too much for your subscriptions",
+            "button_link": "",
+            "button_label": "SHOP NOW",
+            "icon": "shopify:\/\/shop_images\/Artboard_Copy_76485bd0-9d30-498d-89d4-0dd82f94fcfc.png",
+            "background_image": "shopify:\/\/shop_images\/matthew-brodeur-qcCPIhhdgTw-unsplash.jpg"
+          }
+        },
+        "template--18191156871460__0c813dce-aa7e-490a-bd49-e7c998ac8091-1678768578d290080e-1": {
+          "type": "card_item",
+          "settings": {
+            "heading": "Stop paying too much for your subscriptions",
+            "button_link": "",
+            "button_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18191156871460__0c813dce-aa7e-490a-bd49-e7c998ac8091-1678768578d290080e-0",
+        "template--18191156871460__0c813dce-aa7e-490a-bd49-e7c998ac8091-1678768578d290080e-1"
+      ],
+      "settings": {
+        "heading": ""
+      }
     }
   },
   "order": [
@@ -155,6 +185,7 @@
     "165268048583a69a14",
     "143a8151-3eca-477c-906a-f5b42384f3df",
     "16492312090f4dccd0",
-    "1652752504e0ced0e0"
+    "1652752504e0ced0e0",
+    "0c813dce-aa7e-490a-bd49-e7c998ac8091"
   ]
 }
