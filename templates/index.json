@@ -213,6 +213,7 @@
           "type": "card_item",
           "settings": {
             "heading": "Card Title",
+            "image": "shopify:\/\/shop_images\/a-hand-removes-a-sweater-from-a-clothing-rack.jpg",
             "link": ""
           }
         }
