@@ -181,6 +181,51 @@
       "settings": {
         "heading": ""
       }
+    },
+    "d729f901-4e10-4ce7-819f-da1379f85ce8": {
+      "type": "collection-slider",
+      "blocks": {
+        "template--18191156871460__d729f901-4e10-4ce7-819f-da1379f85ce8-167989788788f484fb-0": {
+          "type": "card_item",
+          "settings": {
+            "heading": "Card Title",
+            "image": "shopify:\/\/shop_images\/john-cameron-ShLDezSsZJk-unsplash.jpg",
+            "link": "shopify:\/\/products\/albalon-drops-15ml"
+          }
+        },
+        "template--18191156871460__d729f901-4e10-4ce7-819f-da1379f85ce8-167989788788f484fb-1": {
+          "type": "card_item",
+          "settings": {
+            "heading": "Card Title",
+            "image": "shopify:\/\/shop_images\/matthew-brodeur-qcCPIhhdgTw-unsplash.jpg",
+            "link": "shopify:\/\/products\/audiclean-ear-cleansing-spray-60ml"
+          }
+        },
+        "template--18191156871460__d729f901-4e10-4ce7-819f-da1379f85ce8-167989788788f484fb-2": {
+          "type": "card_item",
+          "settings": {
+            "heading": "Card Title That is quite long",
+            "image": "shopify:\/\/shop_images\/paxlovid_banner_newpackagng.jpg",
+            "link": ""
+          }
+        },
+        "template--18191156871460__d729f901-4e10-4ce7-819f-da1379f85ce8-167989788788f484fb-3": {
+          "type": "card_item",
+          "settings": {
+            "heading": "Card Title",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18191156871460__d729f901-4e10-4ce7-819f-da1379f85ce8-167989788788f484fb-0",
+        "template--18191156871460__d729f901-4e10-4ce7-819f-da1379f85ce8-167989788788f484fb-1",
+        "template--18191156871460__d729f901-4e10-4ce7-819f-da1379f85ce8-167989788788f484fb-2",
+        "template--18191156871460__d729f901-4e10-4ce7-819f-da1379f85ce8-167989788788f484fb-3"
+      ],
+      "settings": {
+        "heading": "You may also like…"
+      }
     }
   },
   "order": [
@@ -192,6 +237,7 @@
     "143a8151-3eca-477c-906a-f5b42384f3df",
     "16492312090f4dccd0",
     "1652752504e0ced0e0",
-    "0c813dce-aa7e-490a-bd49-e7c998ac8091"
+    "0c813dce-aa7e-490a-bd49-e7c998ac8091",
+    "d729f901-4e10-4ce7-819f-da1379f85ce8"
   ]
 }
