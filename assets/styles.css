@@ -3179,13 +3179,13 @@ Newsletter popup
     .product-slider__wrap__slider__carousel {
       width: 100%; }
       .product-slider__wrap__slider__carousel__item {
-        padding: 2rem;
+        padding: 3rem 2rem 2rem;
         position: relative; }
         .product-slider__wrap__slider__carousel__item__form {
           position: absolute;
           z-index: 9;
           right: 6rem;
-          top: 0rem; }
+          top: 1rem; }
           .product-slider__wrap__slider__carousel__item__form input {
             display: none; }
             .product-slider__wrap__slider__carousel__item__form input[type='submit'] {
@@ -3199,7 +3199,11 @@ Newsletter popup
               font-weight: bold;
               font-size: 1.2rem;
               white-space: break-spaces;
-              line-height: 1; }
+              line-height: 1;
+              cursor: pointer;
+              transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); }
+              .product-slider__wrap__slider__carousel__item__form input[type='submit']:hover {
+                transform: scale(1.05); }
         .product-slider__wrap__slider__carousel__item__image {
           position: relative;
           width: 100%;

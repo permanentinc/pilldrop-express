@@ -1,0 +1,140 @@
+{% comment %}
+  Product Slider
+{% endcomment %}
+
+<div class="collection-slider collection-slider--{{ section.id }}">
+  <div class="collection-collection-slider__wrap">
+    <div class="collection-slider__wrap__heading [ js-in-view ]">
+      <h2 class="colour--green-dark" data-splitting>{{ section.settings.heading }}</h2>
+      <p>
+        <b
+          ><a href="/collections/shop" class="arrow-link"
+            >VIEW ALL PRODUCTS
+            <img src="{{ 'mini-arrow-right.svg' | asset_url }}" width="14" height="22" loading="lazy"></a
+        ></b>
+      </p>
+    </div>
+
+    <div class="collection-slider__wrap__slider">
+      <div class="collection-slider__wrap__slider__carousel" id="scroller--{{ section.id }}">
+        {%- for block in section.blocks -%}
+          <div class="collection-slider__wrap__slider__carousel__item">
+            {% if block.settings.image %}
+              <div
+                href="{{ block.settings.link }}"
+                class="collection-slider__wrap__slider__carousel__item__image collection-slider__wrap__slider__carousel__item__image--overlay"
+              >
+                <img
+                  loading="lazy"
+                  srcset="
+                    {{ block.settings.image | image_url: width: 480, height: 480 }} 480w,
+                    {{ block.settings.image | image_url: width: 600, height: 600 }} 600w
+                  "
+                  sizes="
+                    (max-width: 600px) 480px,
+                    (max-width: 1000px) 600px,
+                    1000px
+                  "
+                  src="{{ block.settings.image | image_url: width: 600, height: 600 }}"
+                  alt="{{ block.settings.image.alt | escape }}"
+                  width="{{ block.settings.image.width }}"
+                  height="{{ block.settings.image.height }}"
+                >
+              </div>
+            {% endif %}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+
+<script>
+  tns({
+    container: '#scroller--{{ section.id }}',
+    items: 1,
+    mouseDrag: true,
+    nav: false,
+    controls: true,
+    slideBy: 1,
+    responsive: {
+      800: {
+        items: 2,
+      },
+      1000: {
+        items: 3,
+      },
+    },
+  });
+</script>
+
+<style>
+  .slider--{{ section.id }} .tns-controls button:first-of-type {
+    background-image: url({{ 'previous-green-mid.svg' | asset_url }});
+    left: -4rem;
+  }
+  .slider--{{ section.id }} .tns-controls button:last-of-type {
+    background-image: url({{ 'next-green-mid.svg' | asset_url }});
+    right: -4rem;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Collection Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "You may also like…",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card_item",
+      "name": "Card item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Text",
+          "default": "Card Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Card Slider",
+      "blocks": [
+        {
+          "type": "card_item"
+        },
+        {
+          "type": "card_item"
+        },
+        {
+          "type": "card_item"
+        },
+        {
+          "type": "card_item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
