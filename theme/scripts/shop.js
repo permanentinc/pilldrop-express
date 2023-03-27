@@ -25,6 +25,7 @@ export default class Shop {
         $(document).keyup((e) => { if (e.keyCode == 27) this.closeSideCart(e) });
         this.$shop.mouseup((e) => { if (!$('.sidecart__inner').is(e.target) && $('.sidecart__inner').has(e.target).length === 0) this.closeSideCart(e) });
         $('.js-add-to-cart').on('click', (e) => { this.addToCart(e) });
+        $('.js-quick-add-to-cart').on('click', (e) => { this.addToCart(e) });
         $('.js-open-side-cart').on('click', (e) => { this.openSideCart(e) });
         $('.js-close-side-cart').on('click', (e) => { this.closeSideCart(e) });
         this.$shop.on('click', '.js-remove-from-side-cart', (e) => { this.removeFromSideCart(e) });

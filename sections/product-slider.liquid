@@ -4,59 +4,74 @@
 
 <div class="product-slider product-slider--{{ section.id }}">
   <div class="product-slider__wrap">
-
     <div class="product-slider__wrap__heading">
       <h2 class="colour--red">{{ section.settings.heading }}</h2>
-      <p><a href="/collections/all" class="colour--red"><b>VIEW ALL PRODUCTS</b> <svg width="10" height="16" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg"><path fill="#EC1D24" d="M.039 1.599 1.701 0 10 7.978 1.662 16 0 14.401l6.672-6.42z" fill-rule="evenodd"/></svg></a></p>
+      <p>
+        <a href="/collections/all" class="colour--red"
+          ><b>VIEW ALL PRODUCTS</b>
+          <svg width="10" height="16" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#EC1D24" d="M.039 1.599 1.701 0 10 7.978 1.662 16 0 14.401l6.672-6.42z" fill-rule="evenodd"/>
+          </svg>
+        </a>
+      </p>
     </div>
 
     <div class="product-slider__wrap__slider">
-
       <div class="product-slider__wrap__slider__carousel" id="tileSlider--{{ section.id }}">
+        {%- for product in section.settings.collection.products -%}
+          {% assign on_sale = false %}
+          {% if product.compare_at_price > product.price %}
+            {%- assign on_sale = true -%}
+          {% endif %}
 
-      {%- for product in section.settings.collection.products -%}
+          <div class="product-slider__wrap__slider__carousel__item">
+            <div class="product-slider__wrap__slider__carousel__item__form">
+              <form method="post" action="/cart/add">
+                <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                <input min="1" type="number" id="quantity" name="quantity" value="1">
+                <input type="submit" value="Add to cart" class="btn js-quick-add-to-cart">
+              </form>
+            </div>
 
-        {% assign on_sale = false %}
-        {% if product.compare_at_price > product.price %}
-        {%- assign on_sale = true -%}
-        {% endif %}
+            <a href="{{ product.url }}" class="product-slider__wrap__slider__carousel__item__image">
+              <img
+                loading="lazy"
+                srcset="
+                  {{ product.media[0] | image_url: width: 480 }} 480w,
+                  {{ product.media[0] | image_url: width: 800 }} 800w,
+                  {{ product.media[0] | image_url: width: 1920 }} 1600w,
+                "
+                sizes="
+                  (max-width: 600px) 480px,
+                  (max-width: 1000px) 800px,
+                  1000px
+                "
+                src="{{ product.media[0] | image_url: width: 1920 }}"
+                alt="{{ product.media[0].alt | escape }}"
+                width="{{ product.media[0].width }}"
+                height="{{ product.media[0].height }}"
+              >
 
-        <div class="product-slider__wrap__slider__carousel__item">
-          <a  href="{{ product.url }}" class="product-slider__wrap__slider__carousel__item__image">
-            <img loading="lazy"
-              srcset="{{ product.media[0] | image_url: width: 480 }} 480w,
-                      {{ product.media[0] | image_url: width: 800 }} 800w,
-                      {{ product.media[0] | image_url: width: 1920 }} 1600w,"
-              sizes="(max-width: 600px) 480px,
-                     (max-width: 1000px) 800px,
-                     1000px"
-              src="{{ product.media[0] | image_url: width: 1920 }}"
-              alt="{{ product.media[0].alt | escape }}"
-              width="{{ product.media[0].width }}"
-              height="{{ product.media[0].height }}">
+              {% if on_sale -%}
+                <span class="product-slider__wrap__slider__carousel__item__image__sale">SALE</span>
+              {%- endif %}
 
-        {% if on_sale %}
-          <span class="product-slider__wrap__slider__carousel__item__image__sale">SALE</span>
-        {% endif %}
+              {% if product.available -%}
+              {%- else -%}
+                <span class="product-slider__wrap__slider__carousel__item__image__unavailable">SOLD OUT</span>
+              {%- endif %}
+            </a>
 
-        {% if product.available %}
-          
-        {% else %}
-          <span class="product-slider__wrap__slider__carousel__item__image__unavailable">SOLD OUT</span>
-        {% endif %}
-
-      </a>
-
-      <a href="{{ product.url }}" class="product-slider__wrap__slider__carousel__item__details">
-        <div class="product-slider__wrap__slider__carousel__item__details__title">
-            <span>{{ product.type | escape }} &nbsp;</span>
-            <h6 class="colour--red">{{ product.title | escape }} &nbsp;</h6>
-            <p class="colour--text">{{ product.price | money }}</p>
+            <a href="{{ product.url }}" class="product-slider__wrap__slider__carousel__item__details">
+              <div class="product-slider__wrap__slider__carousel__item__details__title">
+                <span>{{ product.type | escape }} &nbsp;</span>
+                <h6 class="colour--red">{{ product.title | escape }} &nbsp;</h6>
+                <p class="colour--text">{{ product.price | money }}</p>
+              </div>
+            </a>
           </div>
-        </a>
+        {%- endfor -%}
       </div>
-      {%- endfor -%}
-    
     </div>
   </div>
 </div>
@@ -65,28 +80,27 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css">
 
 <script>
-
   window.addEventListener('load', function () {
-  tns({
-    container:"#tileSlider--{{ section.id }}",
-    items: 1,
-    mouseDrag: true,
-    nav: false,
-    controls: true,
-    slideBy: 1,
-    responsive: {
-      800: {
-        items: 4
+    tns({
+      container: '#tileSlider--{{ section.id }}',
+      items: 1,
+      mouseDrag: true,
+      nav: false,
+      controls: true,
+      slideBy: 1,
+      responsive: {
+        800: {
+          items: 4,
+        },
+        1000: {
+          items: 5,
+        },
       },
-      1000: {
-        items: 5
-      }
-    }
+    });
   });
-});
 </script>
 
-<style> 
+<style>
   .product-slider--{{ section.id }} .tns-controls button:first-of-type {
     background-image: url({{ 'previous-red-mid.svg' | asset_url }});
     left: -4rem;
@@ -97,15 +111,14 @@
   }
 </style>
 
-
 {% schema %}
-{ 
+{
   "name": "Product Slider",
   "settings": [
     {
       "type": "text",
       "id": "heading",
-      "default" : "You may also like…",
+      "default": "You may also like…",
       "label": "Heading"
     },
     {
@@ -119,5 +132,5 @@
       "name": "Product Slider"
     }
   ]
-}   
+}
 {% endschema %}

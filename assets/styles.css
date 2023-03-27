@@ -701,6 +701,21 @@ Background Image
   padding: 4rem 2rem;
   margin: 0 auto;
   max-width: var(--inner-content-width); }
+  .card-block--2 .card-block__item {
+    width: calc(50% - 4rem); }
+  @media only screen and (max-width: 767px) {
+    .card-block--2 .card-block__item {
+      width: 100%; } }
+  .card-block--3 .card-block__item {
+    width: calc(33.333333% - 4rem); }
+  @media only screen and (max-width: 767px) {
+    .card-block--3 .card-block__item {
+      width: 100%; } }
+  .card-block--4 .card-block__item {
+    width: calc(25% - 4rem); }
+  @media only screen and (max-width: 767px) {
+    .card-block--4 .card-block__item {
+      width: 100%; } }
   .card-block__item {
     width: calc(50% - 4rem);
     border-radius: 1rem;
@@ -722,10 +737,22 @@ Background Image
         height: 100%;
         -o-object-fit: cover;
            object-fit: cover; }
+    .card-block__item__overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 2; }
     .card-block__item__content {
       position: relative;
       z-index: 3;
-      padding: 8rem 4rem; }
+      padding: 8rem 4rem 4rem; }
+      .card-block__item__content img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 2rem; }
 
 /*------------------------------------------------------------------
 Product
@@ -3152,7 +3179,27 @@ Newsletter popup
     .product-slider__wrap__slider__carousel {
       width: 100%; }
       .product-slider__wrap__slider__carousel__item {
-        padding: 2rem; }
+        padding: 2rem;
+        position: relative; }
+        .product-slider__wrap__slider__carousel__item__form {
+          position: absolute;
+          z-index: 9;
+          right: 6rem;
+          top: 0rem; }
+          .product-slider__wrap__slider__carousel__item__form input {
+            display: none; }
+            .product-slider__wrap__slider__carousel__item__form input[type='submit'] {
+              position: absolute;
+              display: block;
+              background: red;
+              color: white;
+              width: 6rem;
+              height: 6rem;
+              border-radius: 6rem;
+              font-weight: bold;
+              font-size: 1.2rem;
+              white-space: break-spaces;
+              line-height: 1; }
         .product-slider__wrap__slider__carousel__item__image {
           position: relative;
           width: 100%;

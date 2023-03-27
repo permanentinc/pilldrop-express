@@ -2,7 +2,12 @@
   Card Block
 {% endcomment %}
 
-<div class="card-block card-block--{{ section.id }}">
+{% assign count = 0 %}
+{% for block in section.blocks %}
+  {% assign count = count | plus: 1 %}
+{% endfor %}
+
+<div class="card-block card-block--{{ count }} card-block--{{ section.id }} ">
   {%- for block in section.blocks -%}
     <div class="card-block__item" id="{{ block.id }}" onclick="toggleActive('{{ block.id }}')">
       <div class="card-block__item__background">
@@ -14,10 +19,28 @@
           height="{{ block.settings.background_image.height }}"
         >
       </div>
+
+      {% if section.settings.overlay %}
+        <div class="card-block__item__overlay"></div>
+      {% endif %}
+
       <div class="card-block__item__content">
+        <img
+          loading="lazy"
+          src="{{ block.settings.icon | image_url }}"
+          alt="{{ block.settings.icon.alt | escape }}"
+          width="{{ block.settings.icon.width }}"
+          height="{{ block.settings.icon.height }}"
+        >
         <h2 class="colour--white">{{ block.settings.heading }}</h2>
         <p>
-          <a href="{{ block.settings.button_link }}" class="button">{{ block.settings.button_label }}</a>
+          <a
+            href="{{ block.settings.button_link }}"
+            class="button"
+            style="background-color:{{ block.settings.button_colour }}"
+          >
+            {{- block.settings.button_label -}}
+          </a>
         </p>
       </div>
     </div>

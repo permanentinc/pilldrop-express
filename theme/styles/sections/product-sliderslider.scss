@@ -61,6 +61,32 @@
 
                 &__item {
                     padding: 2rem;
+                    position: relative;
+
+                    &__form {
+                        position: absolute;
+                        z-index: 9;
+                        right: 6rem;
+                        top: 0rem;
+
+                        input {
+                            display: none;
+
+                            &[type='submit'] {
+                                position: absolute;
+                                display: block;
+                                background: red;
+                                color: white;
+                                width: 6rem;
+                                height: 6rem;
+                                border-radius: 6rem;
+                                font-weight: bold;
+                                font-size: 1.2rem;
+                                white-space: break-spaces;
+                                line-height: 1;
+                            }
+                        }
+                    }
 
                     &__image {
                         @include aspect(1, 1.5);
@@ -101,7 +127,7 @@
                                 text-transform: uppercase;
                             }
 
-                            h6{
+                            h6 {
                                 font-weight: 700;
                             }
                         }
