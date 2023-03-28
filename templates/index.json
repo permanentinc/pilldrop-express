@@ -172,11 +172,23 @@
             "overlay": false,
             "button_colour": "#ec1d24"
           }
+        },
+        "fd5b1d8d-6fb8-4254-ab56-7c41469a8c9d": {
+          "type": "card_item",
+          "settings": {
+            "heading": "Stop paying too much for your subscriptions",
+            "button_link": "",
+            "button_label": "",
+            "icon": "shopify:\/\/shop_images\/welcome-to-my-business.jpg",
+            "overlay": false,
+            "button_colour": "#ec1d24"
+          }
         }
       },
       "block_order": [
         "template--18191156871460__0c813dce-aa7e-490a-bd49-e7c998ac8091-1678768578d290080e-0",
-        "template--18191156871460__0c813dce-aa7e-490a-bd49-e7c998ac8091-1678768578d290080e-1"
+        "template--18191156871460__0c813dce-aa7e-490a-bd49-e7c998ac8091-1678768578d290080e-1",
+        "fd5b1d8d-6fb8-4254-ab56-7c41469a8c9d"
       ],
       "settings": {
         "heading": ""
