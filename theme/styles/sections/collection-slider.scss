@@ -2,7 +2,7 @@
     position: relative;
     padding: 10rem 8rem 8rem;
 
-    $link: rgba(#144444, 0.99);
+    $link: rgba(#ec1d24, 0.99);
 
     a:not([class]) {
         text-decoration: none;
@@ -62,12 +62,14 @@
                         width: 100%;
                         display: block;
                         overflow: hidden;
+                        border-radius: 0.5rem;
+                        box-shadow: 0px 0px 3.3px rgba(0, 0, 0, 0.035), 0px 0px 26px rgba(0, 0, 0, 0.07);
 
                         &--overlay {
                             &:before {
                                 @include pseudo;
                                 @include full;
-                                background: rgba(black, 0.025);
+                                background: rgba(black, 0.225);
                                 z-index: 3;
                             }
                         }
@@ -79,6 +81,12 @@
                             height: auto;
                             @include vertical-center;
                         }
+                    }
+
+                    h5{
+                        @include vertical-center;
+                        z-index:4;
+
                     }
 
                     &__details {

@@ -1,108 +1,141 @@
+{% comment %}
+  Banner type hearo item
+{% endcomment %}
 
-  {% comment %}
-    Banner type hearo item
-  {% endcomment %}
-  
-  <div class="banner banner--{{ section.id }} image-to-the-{{ section.layout }}">
-    <div class="banner__text">
-        <div class="banner__text__constraint">
-          <h1 class="{{ section.settings.heading_size }}">{{ section.settings.heading}}</h1>
-          {{ section.settings.text }}
-          {%- if section.settings.button_label != blank -%}
-            <p>
-              <a href="{{ section.settings.button_link }}" class="button button--yellow">{{ section.settings.button_label }}</a>
-              {%- if section.settings.second_button_label != blank -%}
-                <a href="{{ section.settings.second_button_link }}" class="button button--yellow">{{ section.settings.second_button_label }}</a>
-              {%- endif -%}
-            </p>
+<div class="banner banner--{{ section.id }} image-to-the-{{ section.layout }}">
+  <div class="banner__text">
+    <div class="banner__text__constraint">
+      <h1 class="{{ section.settings.heading_size }}">{{ section.settings.heading }}</h1>
+      {{ section.settings.text }}
+      {%- if section.settings.button_label != blank -%}
+        <p>
+          <a href="{{ section.settings.button_link }}" class="button button--yellow">
+            {{- section.settings.button_label -}}
+          </a>
+          {%- if section.settings.second_button_label != blank -%}
+            <a href="{{ section.settings.second_button_link }}" class="button button--yellow">
+              {{- section.settings.second_button_label -}}
+            </a>
           {%- endif -%}
-        </div>
-    </div>
-    {%- if section.settings.video_id != blank -%}
-      <script>            
-                    var throttle = function (callback, limit) {
-                        var wait = false;
-                        return function () {
-                            if (!wait) {
-                                callback.call();
-                                wait = true;
-                                setTimeout(function () { wait = false }, limit);
-                            }
-                        }
-                    }
-
-                    var resizeVideo = function () {
-                        let bannerVideo = document.querySelector('.js-banner-video');
-                        let banner = document.querySelector('.banner');
-                        let bw = banner.clientWidth;
-                        let bh = banner.clientHeight;
-                        let ratio = 1920 / 1080;
-
-                        if (bw / bh < ratio) {
-                            bannerVideo.style.height = bh + 'px';
-                            bannerVideo.style.width = bh * ratio + 'px';
-                        } else {
-                            bannerVideo.style.height = bh * ratio + 'px';
-                            bannerVideo.style.width = bw + 'px';
-                        }
-                    }
-
-                    var tag = document.createElement('script');
-                    tag.src = "https://www.youtube.com/iframe_api";
-                    var firstScriptTag = document.getElementsByTagName('script')[0];
-                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-                    var player;
-
-                    function onYouTubeIframeAPIReady() {
-                        player = new YT.Player('video-player', {
-                            color: 'white',
-                            controls: 0,
-                            videoId: '{{ section.settings.video_id }}',
-                            events: {
-                              'onReady': onPlayerReady,
-                              'onStateChange': onPlayerStateChange
-                            }
-                        });
-
-                        function onPlayerReady(event) {
-                            event.target.mute()
-                            event.target.playVideo()
-                        }
-
-                        function onPlayerStateChange(event) {
-                          if (event.data == YT.PlayerState.ENDED) {
-                            setTimeout(function(){ player.playVideo()}, 60);
-                          } 
-                        }
-                         
-                        window.addEventListener('resize', throttle(resizeVideo, 100));
-                        resizeVideo();
-                    
-                    }
-                    
-                </script>
-
-                    <div class="banner__video [ js-banner-video ]" data-video-id="{{ section.settings.video_id }}"><div id="video-player"></div></div>
-
-    {%- endif -%}
-    <div class="banner__image">
-        <img loading="lazy" data-parallax="-.2"
-            srcset="{{ section.settings.image | image_url: width: 480 }} 480w,
-                    {{ section.settings.image | image_url: width: 800 }} 800w,
-                    {{ section.settings.image | image_url: width: 1600 }} 1600w,"
-            sizes="(max-width: 600px) 480px,
-                   (max-width: 1000px) 800px,
-                   1000px"
-            src="{{ section.settings.image | image_url: width: 1600 }}"
-            alt="{{ section.settings.image.alt | escape }}"
-            width="{{ section.settings.image.width }}"
-            height="{{ section.settings.image.height }}">
+        </p>
+      {%- endif -%}
     </div>
   </div>
+  {%- if section.settings.video_id != blank -%}
+    <script>
+      var throttle = function (callback, limit) {
+        var wait = false;
+        return function () {
+          if (!wait) {
+            callback.call();
+            wait = true;
+            setTimeout(function () {
+              wait = false;
+            }, limit);
+          }
+        };
+      };
 
+      var resizeVideo = function () {
+        let bannerVideo = document.querySelector('.js-banner-video');
+        let banner = document.querySelector('.banner');
+        let bw = banner.clientWidth;
+        let bh = banner.clientHeight;
+        let ratio = 1920 / 1080;
 
-   
+        if (bw / bh < ratio) {
+          bannerVideo.style.height = bh + 'px';
+          bannerVideo.style.width = bh * ratio + 'px';
+        } else {
+          bannerVideo.style.height = bh * ratio + 'px';
+          bannerVideo.style.width = bw + 'px';
+        }
+      };
+
+      var tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('video-player', {
+          color: 'white',
+          controls: 0,
+          videoId: '{{ section.settings.video_id }}',
+          events: {
+            onReady: onPlayerReady,
+            onStateChange: onPlayerStateChange,
+          },
+        });
+
+        function onPlayerReady(event) {
+          event.target.mute();
+          event.target.playVideo();
+        }
+
+        function onPlayerStateChange(event) {
+          if (event.data == YT.PlayerState.ENDED) {
+            setTimeout(function () {
+              player.playVideo();
+            }, 60);
+          }
+        }
+
+        window.addEventListener('resize', throttle(resizeVideo, 100));
+        resizeVideo();
+      }
+    </script>
+
+    <div class="banner__video [ js-banner-video ]" data-video-id="{{ section.settings.video_id }}">
+      <div id="video-player"></div>
+    </div>
+  {%- endif -%}
+  <div class="banner__image">
+    <img
+      loading="lazy"
+      data-parallax="-.2"
+      srcset="
+        {{ section.settings.image | image_url: width: 480 }} 480w,
+        {{ section.settings.image | image_url: width: 800 }} 800w,
+        {{ section.settings.image | image_url: width: 1600 }} 1600w,
+      "
+      sizes="
+        (max-width: 600px) 480px,
+        (max-width: 1000px) 800px,
+        1000px
+      "
+      src="{{ section.settings.image | image_url: width: 1600 }}"
+      alt="{{ section.settings.image.alt | escape }}"
+      width="{{ section.settings.image.width }}"
+      height="{{ section.settings.image.height }}"
+    >
+  </div>
+
+  <div class="banner__cta">
+    <div class="banner__cta__left">
+      <div class="banner__cta__left__icon">
+        <svg width="52" height="24" viewBox="0 0 52 24" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#FFF" fill-rule="nonzero"><path d="m51.948 12.766-3.062-7.028a.636.636 0 0 0-.581-.382H39.67V.636A.635.635 0 0 0 39.036 0H9.634A.636.636 0 0 0 9 .637v.636c0 .352.284.637.634.637h28.133v16.868H20.896a4.417 4.417 0 0 0-.061-.244 4.438 4.438 0 0 0-.295-.74 4.333 4.333 0 0 0-.378-.605l-.044-.06c-.14-.18-.29-.346-.446-.493l-.08-.073a4.238 4.238 0 0 0-.554-.424l-.066-.04a4.003 4.003 0 0 0-.693-.345 3.827 3.827 0 0 0-.656-.194l-.09-.018a4.024 4.024 0 0 0-1.6.009 4.165 4.165 0 0 0-1.386.543l-.092.056a4.328 4.328 0 0 0-.533.41l-.079.073c-.16.152-.311.32-.45.5l-.063.083a4.147 4.147 0 0 0-.402.67c-.106.221-.189.434-.254.66l-.02.079a5.833 5.833 0 0 0-.038.154H9.635a.635.635 0 0 0-.634.637v.636c0 .352.284.637.634.637h2.98C13.053 22.586 14.771 24 16.756 24c1.985 0 3.703-1.414 4.141-3.311h18.676C40.01 22.586 41.728 24 43.714 24c1.985 0 3.702-1.414 4.14-3.311h3.511c.351 0 .635-.285.635-.637v-7.03a.588.588 0 0 0-.052-.255Zm-35.19 9.325a2.356 2.356 0 0 1-2.35-2.357c0-1.3 1.054-2.356 2.35-2.356a2.354 2.354 0 0 1 2.347 2.356c0 1.3-1.053 2.357-2.348 2.357Zm26.958 0a2.355 2.355 0 0 1-2.347-2.357c0-1.3 1.053-2.356 2.347-2.356a2.357 2.357 0 0 1 0 4.714Zm6.383-3.313h-2.244l-.042-.167-.02-.077a4.252 4.252 0 0 0-.649-1.315l-.066-.088a4.225 4.225 0 0 0-.45-.5l-.077-.07a4.08 4.08 0 0 0-.62-.464 4.095 4.095 0 0 0-.609-.312l-.086-.033a4.125 4.125 0 0 0-.744-.211 4.125 4.125 0 0 0-1.538-.003l-.064.01a4.281 4.281 0 0 0-1.402.556 4.087 4.087 0 0 0-.605.454l-.079.071c-.161.152-.313.32-.452.502l-.063.083a4.19 4.19 0 0 0-.354.573l-.047.096a4.249 4.249 0 0 0-.218.543V7.266h7.806l2.622 5.957v5.555Z"/><path d="M5.653 5h16.694A.66.66 0 0 0 23 4.333v-.666A.66.66 0 0 0 22.347 3H5.653A.66.66 0 0 0 5 3.667v.666A.66.66 0 0 0 5.653 5ZM28 9.333v-.666A.657.657 0 0 0 27.352 8H.648A.658.658 0 0 0 0 8.667v.666c0 .37.29.667.648.667h26.705A.657.657 0 0 0 28 9.333ZM23 14.333v-.666a.66.66 0 0 0-.653-.667H5.653a.66.66 0 0 0-.653.667v.666a.66.66 0 0 0 .653.667h16.694a.66.66 0 0 0 .653-.667Z"/></g>
+        </svg>
+      </div>
+      <div class="banner__cta__left__text">
+        <h6 class="colour--white no-margin">SAME DAY DELIVERY IN MAJOR CITIES</h6>
+      </div>
+    </div>
+    <div class="banner__cta__right">
+      <div class="banner__cta__right__icon">
+        <svg width="26" height="25" viewBox="0 0 26 25" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.6 9.375v7.292h-5.2V9.375H1.04v14.583h23.92V9.375H15.6Zm-4.16-8.333H5.824l-4.55 7.291H10.4l1.04-7.291Zm3.12 0 1.04 7.291h9.126l-4.55-7.291H14.56ZM0 8.854v-.52L5.2 0h15.6L26 8.333V25H0V8.854Zm12.48-7.812-1.04 7.291h3.12l-1.04-7.291h-1.04Zm-1.04 8.333v6.25h3.12v-6.25h-3.12Zm-9.36 8.333v1.042h7.28v-1.042H2.08Zm0 4.167v1.042h7.28v-1.042H2.08Zm0-2.083v1.041h5.2v-1.041h-5.2Z" fill="#FFF" fill-rule="nonzero"/>
+        </svg>
+      </div>
+      <div class="banner__cta__right__text">
+        <h6 class="colour--white no-margin">SAME DAY DISPATCH NATIONWIDE</h6>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% schema %}
 {
@@ -176,14 +209,14 @@
       "label": "Layout",
       "default": "right",
       "options": [
-      {
+        {
           "value": "left",
           "label": "Image on left"
-      },
-      {
+        },
+        {
           "value": "right",
           "label": "Image on right"
-      }
+        }
       ]
     }
   ],
@@ -192,6 +225,5 @@
       "name": "Banner"
     }
   ]
-}   
+}
 {% endschema %}
-  

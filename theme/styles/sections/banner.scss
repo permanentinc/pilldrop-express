@@ -13,6 +13,80 @@
         }
     }
 
+    &__cta {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-top: 1px solid white;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        z-index: 4;
+        background: rgba(black, 0.4);
+        display: none;
+
+        &__right,
+        &__left {
+            width: 50%;
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+
+            @include media($sm, max) {
+                padding: 1rem 2rem;
+            }
+
+            @include media($lg, max) {
+                .banner__cta__left__icon,
+                .banner__cta__right__icon {
+                    width: 100%;
+                    margin: 0 auto;
+                    text-align: center;
+                }
+            }
+
+            @include media($sm, max) {
+                .banner__cta__left__icon,
+                .banner__cta__right__icon {
+                    width: auto;
+                    margin: 0 2rem 0 0;
+                }
+            }
+
+            @include media($sm, max) {
+                width: 100%;
+            }
+
+            &__text {
+                @include media($lg, max) {
+                    width: 100%;
+                }
+
+                @include media($sm, max) {
+                    width: auto;
+                }
+
+                h6 {
+                    letter-spacing: 1px;
+
+                    @include media($lg, max) {
+                        text-align: center;
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+
+            &__icon {
+                margin-right: 2rem;
+            }
+        }
+    }
+
     &__video {
         @include vertical-center;
         position: absolute;
@@ -139,10 +213,35 @@
             height: 120%;
             width: 100%;
             position: absolute;
-            // bottom: 20%;
             left: 0;
             object-fit: cover;
             object-position: 80%;
+        }
+    }
+}
+
+.page--index {
+    .banner {
+        .banner__text {
+            @include media($md, max) {
+                padding-bottom: 15rem;
+            }
+        }
+
+        .banner__cta {
+            display: flex;
+            flex-wrap: wrap;
+
+            svg {
+                width: auto;
+                max-height: 1.6rem;
+            }
+
+            @include media($sm, max) {
+                h6 {
+                    font-size: 1rem;
+                }
+            }
         }
     }
 }
