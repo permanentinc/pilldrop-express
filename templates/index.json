@@ -248,6 +248,56 @@
       "settings": {
         "heading": "You may also like…"
       }
+    },
+    "0b55361c-4202-43c8-960b-317dde253a99": {
+      "type": "logo-block",
+      "blocks": {
+        "template--18191156871460__0b55361c-4202-43c8-960b-317dde253a99-16799838823b5eb886-0": {
+          "type": "logo_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/NZ-herald-v2__FocusFillWzU5OCwzOTksIngiLDIwXQ.jpg",
+            "link": ""
+          }
+        },
+        "template--18191156871460__0b55361c-4202-43c8-960b-317dde253a99-16799838823b5eb886-1": {
+          "type": "logo_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/NZ-herald-v2__FocusFillWzU5OCwzOTksIngiLDIwXQ.jpg",
+            "link": ""
+          }
+        },
+        "template--18191156871460__0b55361c-4202-43c8-960b-317dde253a99-16799838823b5eb886-2": {
+          "type": "logo_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/NZ-herald-v2__FocusFillWzU5OCwzOTksIngiLDIwXQ.jpg",
+            "link": ""
+          }
+        },
+        "template--18191156871460__0b55361c-4202-43c8-960b-317dde253a99-16799838823b5eb886-3": {
+          "type": "logo_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/NZ-herald-v2__FocusFillWzU5OCwzOTksIngiLDIwXQ.jpg",
+            "link": ""
+          }
+        },
+        "f9e5622f-6ceb-483e-b888-172390364e56": {
+          "type": "logo_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/NZ-herald-v2__FocusFillWzU5OCwzOTksIngiLDIwXQ.jpg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18191156871460__0b55361c-4202-43c8-960b-317dde253a99-16799838823b5eb886-0",
+        "template--18191156871460__0b55361c-4202-43c8-960b-317dde253a99-16799838823b5eb886-1",
+        "template--18191156871460__0b55361c-4202-43c8-960b-317dde253a99-16799838823b5eb886-2",
+        "template--18191156871460__0b55361c-4202-43c8-960b-317dde253a99-16799838823b5eb886-3",
+        "f9e5622f-6ceb-483e-b888-172390364e56"
+      ],
+      "settings": {
+        "heading": "A seen in…"
+      }
     }
   },
   "order": [
@@ -260,6 +310,7 @@
     "16492312090f4dccd0",
     "1652752504e0ced0e0",
     "0c813dce-aa7e-490a-bd49-e7c998ac8091",
-    "d729f901-4e10-4ce7-819f-da1379f85ce8"
+    "d729f901-4e10-4ce7-819f-da1379f85ce8",
+    "0b55361c-4202-43c8-960b-317dde253a99"
   ]
 }
