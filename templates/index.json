@@ -228,13 +228,22 @@
             "image": "shopify:\/\/shop_images\/a-hand-removes-a-sweater-from-a-clothing-rack.jpg",
             "link": ""
           }
+        },
+        "0eee16c8-9496-41e6-aca3-448b742645a3": {
+          "type": "card_item",
+          "settings": {
+            "heading": "fCard Titlefdsfsdfsd",
+            "image": "shopify:\/\/shop_images\/welcome-to-my-business.jpg",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "template--18191156871460__d729f901-4e10-4ce7-819f-da1379f85ce8-167989788788f484fb-0",
         "template--18191156871460__d729f901-4e10-4ce7-819f-da1379f85ce8-167989788788f484fb-1",
         "template--18191156871460__d729f901-4e10-4ce7-819f-da1379f85ce8-167989788788f484fb-2",
-        "template--18191156871460__d729f901-4e10-4ce7-819f-da1379f85ce8-167989788788f484fb-3"
+        "template--18191156871460__d729f901-4e10-4ce7-819f-da1379f85ce8-167989788788f484fb-3",
+        "0eee16c8-9496-41e6-aca3-448b742645a3"
       ],
       "settings": {
         "heading": "You may also like…"
