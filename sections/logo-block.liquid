@@ -5,14 +5,13 @@
 <div class="logo-block">
   <div class="logo-block__wrap">
     <div class="logo-block__wrap__heading">
-      <h2 class="colour--primary text-center">{{ heading }}</h2>
+      <h2 class="colour--red text-center">{{ section.settings.heading }}</h2>
     </div>
 
     <div class="logo-block__wrap__grid [ js-in-view ]">
       {%- for block in section.blocks -%}
         <div class="logo-block__wrap__grid__item">
           <a href="{{ block.settings.link }}" $Link.TargetAttr target="_blank">
-            <img src="$Image.FocusFill(598,399).URL" alt="$Image.Title" loading="lazy" width="598" height="399">
             <img
               loading="lazy"
               srcset="                {{ block.settings.image | image_url: width: 598, height: 399 }} 600w"

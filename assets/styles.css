@@ -2920,7 +2920,7 @@ Logo block
 ------------------------------------------------------------------*/
 .logo-block {
   margin: 0 auto 0;
-  background: white;
+  background: #f7f7f7;
   position: relative;
   padding: 10rem 0;
   overflow: hidden;
@@ -2949,9 +2949,7 @@ Logo block
         padding: 0 2rem;
         width: 25%;
         transition: all 555ms;
-        will-change: opacity, transform;
-        opacity: 0;
-        transform: matrix(1, 0, 0, 1, 0, 40); }
+        will-change: opacity, transform; }
         .logo-block__wrap__grid__item:nth-child(0) {
           transform: translateY(10px) translateZ(0); }
         .logo-block__wrap__grid__item:nth-child(1) {

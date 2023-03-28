@@ -33,6 +33,7 @@
           height="{{ block.settings.icon.height }}"
         >
         <h2 class="colour--white">{{ block.settings.heading }}</h2>
+        {% if block.settings.button_link %}
         <p>
           <a
             href="{{ block.settings.button_link }}"
@@ -42,6 +43,7 @@
             {{- block.settings.button_label -}}
           </a>
         </p>
+      {% endif %}
       </div>
     </div>
   {%- endfor -%}

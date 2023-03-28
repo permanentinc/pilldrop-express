@@ -4,7 +4,7 @@ Logo block
 
 .logo-block {
   margin: 0 auto 0;
-  background: white;
+  background: #f7f7f7;
   position: relative;
   padding: 10rem 0;
   overflow: hidden;
@@ -41,8 +41,8 @@ Logo block
         width: 25%;
         transition: all 555ms;
         will-change: opacity, transform;
-        opacity: 0;
-        transform: matrix(1, 0, 0, 1, 0, 40);
+        // opacity: 0;
+        // transform: matrix(1, 0, 0, 1, 0, 40);
 
         $steps: 20;
 
