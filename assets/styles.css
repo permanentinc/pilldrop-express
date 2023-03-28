@@ -2916,6 +2916,100 @@ table {
   display: none !important; }
 
 /*------------------------------------------------------------------
+Logo block
+------------------------------------------------------------------*/
+.logo-block {
+  margin: 0 auto 0;
+  background: white;
+  position: relative;
+  padding: 10rem 0;
+  overflow: hidden;
+  z-index: 1; }
+  .logo-block__wrap {
+    margin: 0 auto;
+    max-width: 1024px;
+    padding: 0 2rem;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 3; }
+    .logo-block__wrap__heading {
+      width: 100%; }
+    .logo-block__wrap__grid {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      align-items: center;
+      align-content: center;
+      justify-content: center; }
+      .logo-block__wrap__grid.inView .logo-block__wrap__grid__item {
+        opacity: 1;
+        transform: translateY(0) !important; }
+      .logo-block__wrap__grid__item {
+        padding: 0 2rem;
+        width: 25%;
+        transition: all 555ms;
+        will-change: opacity, transform;
+        opacity: 0;
+        transform: matrix(1, 0, 0, 1, 0, 40); }
+        .logo-block__wrap__grid__item:nth-child(0) {
+          transform: translateY(10px) translateZ(0); }
+        .logo-block__wrap__grid__item:nth-child(1) {
+          transform: translateY(15px) translateZ(0); }
+        .logo-block__wrap__grid__item:nth-child(2) {
+          transform: translateY(20px) translateZ(0); }
+        .logo-block__wrap__grid__item:nth-child(3) {
+          transform: translateY(25px) translateZ(0); }
+        .logo-block__wrap__grid__item:nth-child(4) {
+          transform: translateY(30px) translateZ(0); }
+        .logo-block__wrap__grid__item:nth-child(5) {
+          transform: translateY(35px) translateZ(0); }
+        .logo-block__wrap__grid__item:nth-child(6) {
+          transform: translateY(40px) translateZ(0); }
+        .logo-block__wrap__grid__item:nth-child(7) {
+          transform: translateY(45px) translateZ(0); }
+        .logo-block__wrap__grid__item:nth-child(8) {
+          transform: translateY(50px) translateZ(0); }
+        .logo-block__wrap__grid__item:nth-child(9) {
+          transform: translateY(55px) translateZ(0); }
+        .logo-block__wrap__grid__item:nth-child(10) {
+          transform: translateY(60px) translateZ(0); }
+        .logo-block__wrap__grid__item:nth-child(11) {
+          transform: translateY(65px) translateZ(0); }
+        .logo-block__wrap__grid__item:nth-child(12) {
+          transform: translateY(70px) translateZ(0); }
+        .logo-block__wrap__grid__item:nth-child(13) {
+          transform: translateY(75px) translateZ(0); }
+        .logo-block__wrap__grid__item:nth-child(14) {
+          transform: translateY(80px) translateZ(0); }
+        .logo-block__wrap__grid__item:nth-child(15) {
+          transform: translateY(85px) translateZ(0); }
+        .logo-block__wrap__grid__item:nth-child(16) {
+          transform: translateY(90px) translateZ(0); }
+        .logo-block__wrap__grid__item:nth-child(17) {
+          transform: translateY(95px) translateZ(0); }
+        .logo-block__wrap__grid__item:nth-child(18) {
+          transform: translateY(100px) translateZ(0); }
+        .logo-block__wrap__grid__item:nth-child(19) {
+          transform: translateY(105px) translateZ(0); }
+        @media only screen and (max-width: 967px) {
+          .logo-block__wrap__grid__item {
+            width: 25%; } }
+        @media only screen and (max-width: 767px) {
+          .logo-block__wrap__grid__item {
+            width: 33.333%; } }
+        @media only screen and (max-width: 539px) {
+          .logo-block__wrap__grid__item {
+            width: 50%; } }
+        .logo-block__wrap__grid__item:hover img {
+          filter: grayscale(0); }
+        .logo-block__wrap__grid__item img {
+          width: 100%;
+          height: auto;
+          transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+          filter: grayscale(1); }
+
+/*------------------------------------------------------------------
 Mobile menu
 ------------------------------------------------------------------*/
 .mobileMenu {

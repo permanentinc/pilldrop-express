@@ -1,0 +1,84 @@
+{% comment %}
+  Logo block
+{% endcomment %}
+
+<div class="logo-block">
+  <div class="logo-block__wrap">
+    <div class="logo-block__wrap__heading">
+      <h2 class="colour--primary text-center">{{ heading }}</h2>
+    </div>
+
+    <div class="logo-block__wrap__grid [ js-in-view ]">
+      {%- for block in section.blocks -%}
+        <div class="logo-block__wrap__grid__item">
+          <a href="{{ block.settings.link }}" $Link.TargetAttr target="_blank">
+            <img src="$Image.FocusFill(598,399).URL" alt="$Image.Title" loading="lazy" width="598" height="399">
+            <img
+              loading="lazy"
+              srcset="                {{ block.settings.image | image_url: width: 598, height: 399 }} 600w"
+              sizes="
+                (max-width: 1000px) 600px,
+                1000px
+              "
+              src="{{ block.settings.image | image_url: width: 598, height: 399 }}"
+              alt="{{ block.settings.image.alt | escape }}"
+              width="{{ block.settings.image.width }}"
+              height="{{ block.settings.image.height }}"
+            >
+          </a>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Logo Block",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "A seen in…",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo_item",
+      "name": "Card item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Card Slider",
+      "blocks": [
+        {
+          "type": "logo_item"
+        },
+        {
+          "type": "logo_item"
+        },
+        {
+          "type": "logo_item"
+        },
+        {
+          "type": "logo_item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
