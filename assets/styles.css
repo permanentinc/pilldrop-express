@@ -566,7 +566,7 @@ Background Image
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    padding: 28rem 4rem 28rem;
+    padding: 24rem 4rem 24rem;
     position: relative;
     width: 100%;
     max-width: 1450px;
@@ -628,7 +628,7 @@ Background Image
     bottom: 0;
     left: 0; }
     .banner__image img {
-      height: 120%;
+      height: 100%;
       width: 100%;
       position: absolute;
       left: 0;
@@ -823,7 +823,8 @@ Background Image
       z-index: 3;
       padding: 8rem 4rem 4rem; }
       .card-block__item__content img {
-        max-width: 100%;
+        width: 100%;
+        max-width: 15rem;
         height: auto;
         margin-bottom: 2rem; }
 
@@ -1074,7 +1075,7 @@ Product
 
 .collection-slider {
   position: relative;
-  padding: 10rem 8rem 8rem;
+  padding: 6rem 8rem 4rem;
   background: var(--off-white); }
   .collection-slider a:not([class]) {
     text-decoration: none;
@@ -1092,7 +1093,7 @@ Product
     flex-wrap: wrap;
     justify-content: space-between; }
   .collection-slider__wrap__slider {
-    margin: 6rem auto;
+    margin: 2rem auto 6rem;
     width: 100%;
     max-width: var(--content-width);
     position: relative; }
@@ -1153,7 +1154,9 @@ Product
           top: 50%;
           left: 50%;
           transform: translateX(-50%) translateY(-50%);
-          z-index: 4; }
+          z-index: 4;
+          text-transform: uppercase;
+          font-size: 1.4rem; }
 
 .collection {
   padding: 4rem 2rem;
@@ -1231,7 +1234,7 @@ Product
         position: relative;
         display: block;
         width: 100%;
-        background-color: var(--grey-light); }
+        background-color: white; }
         .collection__grid__item__image:after {
           content: '';
           position: relative;
@@ -1247,15 +1250,16 @@ Product
           bottom: 0;
           left: 0;
           background: rgba(0, 0, 0, 0.025);
+          background: rgba(0, 0, 0, 0.025);
           z-index: 3; }
         .collection__grid__item__image img {
-          width: 100%;
-          height: 100%;
+          width: calc(100% - 4rem);
+          height: calc(100% - 4rem);
           position: absolute;
-          top: 0;
-          left: 0;
-          -o-object-fit: cover;
-             object-fit: cover; }
+          top: 2rem;
+          left: 2rem;
+          -o-object-fit: contain;
+             object-fit: contain; }
         .collection__grid__item__image__sale {
           background: var(--primary);
           color: white;

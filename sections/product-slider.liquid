@@ -33,8 +33,9 @@
               </form>
             </div>
 
-            <a href="{{ product.url }}" class="product-slider__wrap__slider__carousel__item__image">
-              {% if product.media[0] %}
+            <a href="{{ product.url }}" class="product-slider__wrap__slider__carousel__item__image"   {% if product.media[0] -%}{%- else %}style="background-color:#2a2a2a;"{%- endif %}>
+
+              {% if product.media[0] -%}
               <img
                 loading="lazy"
                 srcset="
@@ -52,10 +53,12 @@
                 width="{{ product.media[0].width }}"
                 height="{{ product.media[0].height }}"
               >
-                {% else %}
-                
-                <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0617/3982/7386/products/RX_780b8dd4-821b-426c-9a6b-a4e2b3fc1c18.jpg" />
-              {% endfor %} 
+          {%- else -%}
+           <img
+                loading="lazy"
+                src="{{ 'placeholder.png' | asset_url }}"
+              >
+            {%- endif %}
 
               {% if on_sale -%}
                 <span class="product-slider__wrap__slider__carousel__item__image__sale">SALE</span>

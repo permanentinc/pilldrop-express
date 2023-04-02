@@ -1,6 +1,6 @@
 .collection-slider {
     position: relative;
-    padding: 10rem 8rem 8rem;
+    padding: 6rem 8rem 4rem;
     background: var(--off-white);
     $link: rgba(#ec1d24, 0.99);
 
@@ -27,7 +27,7 @@
         }
 
         &__slider {
-            margin: 6rem auto;
+            margin: 2rem auto 6rem;
             width: 100%;
             max-width: var(--content-width);
             position: relative;
@@ -86,6 +86,8 @@
                     h5 {
                         @include vertical-center;
                         z-index: 4;
+                        text-transform: uppercase;
+                        font-size: 1.4rem;
                     }
 
                     &__details {

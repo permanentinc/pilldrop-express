@@ -125,7 +125,7 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: flex-start;
-        padding: 28rem 4rem 28rem;
+        padding: 24rem 4rem 24rem;
         position: relative;
         width: 100%;
         max-width: 1450px;
@@ -210,7 +210,7 @@
         @include full;
 
         img {
-            height: 120%;
+            height: 100%;
             width: 100%;
             position: absolute;
             left: 0;
