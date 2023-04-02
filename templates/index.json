@@ -5,10 +5,10 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/home_banner.jpg",
         "video_id": "",
-        "heading": "<p>No middleman.<br\/>No price games.<br\/>Huge savings.<\/p>",
+        "heading": "<p>Get your medicines when you need it with PillDrop Express.<\/p>",
         "heading_size": "h1",
         "text": "",
-        "button_label": "SHOP ALL PRODUCTS",
+        "button_label": "browse products",
         "button_link": "shopify:\/\/collections\/all",
         "second_button_label": "",
         "second_button_link": "",
