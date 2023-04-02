@@ -43,157 +43,6 @@
         "button_link": ""
       }
     },
-    "165268048583a69a14": {
-      "type": "scroller",
-      "blocks": {
-        "1652680485ef574f60-0": {
-          "type": "scroller_item",
-          "settings": {
-            "heading": "Every Day Low Prices on Pet Meds",
-            "content": "<p>Save upto 50% on prescription medications.<\/p>",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "1652680485ef574f60-1": {
-          "type": "scroller_item",
-          "settings": {
-            "heading": "NZ wide delivery",
-            "content": "<p>Fast delivery to your door anywhere you are in NZ.<\/p>",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "1652680485ef574f60-2": {
-          "type": "scroller_item",
-          "settings": {
-            "heading": "Free shipping",
-            "content": "<p>Free shipping on all orders above $50.<\/p>",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "1652680485ef574f60-3": {
-          "type": "scroller_item",
-          "settings": {
-            "heading": "Fully Licensed Pharmacy",
-            "content": "<p>We are a fully licensed pharmacy.<\/p>",
-            "button_label": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "1652680485ef574f60-0",
-        "1652680485ef574f60-1",
-        "1652680485ef574f60-2",
-        "1652680485ef574f60-3"
-      ],
-      "settings": {
-        "subheading": "IT'S SIMPLE",
-        "heading": "Why choose PillDrop Pets",
-        "content": "<p>Say goodbye to huge mark-ups and price games to make accessing the right pet medication simpler and much more affordable.<\/p>"
-      }
-    },
-    "143a8151-3eca-477c-906a-f5b42384f3df": {
-      "type": "product-slider",
-      "settings": {
-        "heading": "You may also like…",
-        "collection": "frontpage"
-      }
-    },
-    "16492312090f4dccd0": {
-      "type": "tileSlider",
-      "blocks": {
-        "16492312095b6f3515-0": {
-          "type": "tileSlider_item",
-          "settings": {
-            "content": "<p>Everyday low prices.<\/p>"
-          }
-        },
-        "16492312095b6f3515-1": {
-          "type": "tileSlider_item",
-          "settings": {
-            "content": "<p>Fully licensed pharmacy.<\/p>"
-          }
-        },
-        "16492312095b6f3515-2": {
-          "type": "tileSlider_item",
-          "settings": {
-            "content": "<p>100% satisfaction guarantee.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "16492312095b6f3515-0",
-        "16492312095b6f3515-1",
-        "16492312095b6f3515-2"
-      ],
-      "settings": {
-        "heading": "Our Promise",
-        "button_label": "LEARN MORE",
-        "button_link": "shopify:\/\/pages\/contact"
-      }
-    },
-    "1652752504e0ced0e0": {
-      "type": "background-image",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/paxlovid_banner_newpackagng.jpg",
-        "heading": "Fast & Free Delivery*",
-        "heading_size": "h2",
-        "text": "<p><strong>With PillDrop Pets, you will enjoy FREE delivery* <br\/>on all orders over $50.<\/strong><\/p>",
-        "button_label": "SHOP NOW",
-        "button_link": "shopify:\/\/collections\/all"
-      }
-    },
-    "0c813dce-aa7e-490a-bd49-e7c998ac8091": {
-      "type": "card-block",
-      "blocks": {
-        "template--18191156871460__0c813dce-aa7e-490a-bd49-e7c998ac8091-1678768578d290080e-0": {
-          "type": "card_item",
-          "settings": {
-            "heading": "Stop paying too much for your subscriptions",
-            "button_link": "",
-            "button_label": "SHOP NOW",
-            "icon": "shopify:\/\/shop_images\/logo.svg",
-            "background_image": "shopify:\/\/shop_images\/matthew-brodeur-qcCPIhhdgTw-unsplash.jpg",
-            "overlay": false,
-            "button_colour": "#0a8b61"
-          }
-        },
-        "template--18191156871460__0c813dce-aa7e-490a-bd49-e7c998ac8091-1678768578d290080e-1": {
-          "type": "card_item",
-          "settings": {
-            "heading": "Get huge savings on pet pescriptions",
-            "button_link": "shopify:\/\/pages\/about-us",
-            "button_label": "SHOP PETS",
-            "icon": "shopify:\/\/shop_images\/Artboard_Copy_3_daa30d64-c745-49d7-9adc-99b165e2c484.png",
-            "background_image": "shopify:\/\/shop_images\/john-cameron-ShLDezSsZJk-unsplash.jpg",
-            "overlay": false,
-            "button_colour": "#ec1d24"
-          }
-        },
-        "fd5b1d8d-6fb8-4254-ab56-7c41469a8c9d": {
-          "type": "card_item",
-          "settings": {
-            "heading": "Stop paying too much for your subscriptions",
-            "button_link": "",
-            "button_label": "",
-            "background_image": "shopify:\/\/shop_images\/a-hand-removes-a-sweater-from-a-clothing-rack.jpg",
-            "overlay": false,
-            "button_colour": "#ec1d24"
-          }
-        }
-      },
-      "block_order": [
-        "template--18191156871460__0c813dce-aa7e-490a-bd49-e7c998ac8091-1678768578d290080e-0",
-        "template--18191156871460__0c813dce-aa7e-490a-bd49-e7c998ac8091-1678768578d290080e-1",
-        "fd5b1d8d-6fb8-4254-ab56-7c41469a8c9d"
-      ],
-      "settings": {
-        "heading": ""
-      }
-    },
     "d729f901-4e10-4ce7-819f-da1379f85ce8": {
       "type": "collection-slider",
       "blocks": {
@@ -247,6 +96,106 @@
       ],
       "settings": {
         "heading": "You may also like…"
+      }
+    },
+    "165268048583a69a14": {
+      "type": "scroller",
+      "blocks": {
+        "1652680485ef574f60-0": {
+          "type": "scroller_item",
+          "settings": {
+            "heading": "Every Day Low Prices on Pet Meds",
+            "content": "<p>Save upto 50% on prescription medications.<\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "1652680485ef574f60-1": {
+          "type": "scroller_item",
+          "settings": {
+            "heading": "NZ wide delivery",
+            "content": "<p>Fast delivery to your door anywhere you are in NZ.<\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "1652680485ef574f60-2": {
+          "type": "scroller_item",
+          "settings": {
+            "heading": "Free shipping",
+            "content": "<p>Free shipping on all orders above $50.<\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "1652680485ef574f60-3": {
+          "type": "scroller_item",
+          "settings": {
+            "heading": "Fully Licensed Pharmacy",
+            "content": "<p>We are a fully licensed pharmacy.<\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1652680485ef574f60-0",
+        "1652680485ef574f60-1",
+        "1652680485ef574f60-2",
+        "1652680485ef574f60-3"
+      ],
+      "settings": {
+        "subheading": "IT'S SIMPLE",
+        "heading": "Why choose PillDrop Pets",
+        "content": "<p>Say goodbye to huge mark-ups and price games to make accessing the right pet medication simpler and much more affordable.<\/p>"
+      }
+    },
+    "0c813dce-aa7e-490a-bd49-e7c998ac8091": {
+      "type": "card-block",
+      "blocks": {
+        "template--18191156871460__0c813dce-aa7e-490a-bd49-e7c998ac8091-1678768578d290080e-0": {
+          "type": "card_item",
+          "settings": {
+            "heading": "Stop paying too much for your subscriptions",
+            "button_link": "",
+            "button_label": "SHOP NOW",
+            "icon": "shopify:\/\/shop_images\/logo.svg",
+            "background_image": "shopify:\/\/shop_images\/matthew-brodeur-qcCPIhhdgTw-unsplash.jpg",
+            "overlay": false,
+            "button_colour": "#0a8b61"
+          }
+        },
+        "template--18191156871460__0c813dce-aa7e-490a-bd49-e7c998ac8091-1678768578d290080e-1": {
+          "type": "card_item",
+          "settings": {
+            "heading": "Get huge savings on pet pescriptions",
+            "button_link": "shopify:\/\/pages\/about-us",
+            "button_label": "SHOP PETS",
+            "icon": "shopify:\/\/shop_images\/Artboard_Copy_3_daa30d64-c745-49d7-9adc-99b165e2c484.png",
+            "background_image": "shopify:\/\/shop_images\/john-cameron-ShLDezSsZJk-unsplash.jpg",
+            "overlay": false,
+            "button_colour": "#ec1d24"
+          }
+        },
+        "fd5b1d8d-6fb8-4254-ab56-7c41469a8c9d": {
+          "type": "card_item",
+          "settings": {
+            "heading": "Stop paying too much for your subscriptions",
+            "button_link": "",
+            "button_label": "",
+            "background_image": "shopify:\/\/shop_images\/a-hand-removes-a-sweater-from-a-clothing-rack.jpg",
+            "overlay": false,
+            "button_colour": "#ec1d24"
+          }
+        }
+      },
+      "block_order": [
+        "template--18191156871460__0c813dce-aa7e-490a-bd49-e7c998ac8091-1678768578d290080e-0",
+        "template--18191156871460__0c813dce-aa7e-490a-bd49-e7c998ac8091-1678768578d290080e-1",
+        "fd5b1d8d-6fb8-4254-ab56-7c41469a8c9d"
+      ],
+      "settings": {
+        "heading": ""
       }
     },
     "0b55361c-4202-43c8-960b-317dde253a99": {
@@ -305,12 +254,9 @@
     "1e826c6f-cef7-40e3-a82b-45c6b23f94d4",
     "0bc4ac8f-a994-410c-a54e-ef61a6b8946e",
     "ca8a94d5-5724-4796-bea8-50820354c7a5",
-    "165268048583a69a14",
-    "143a8151-3eca-477c-906a-f5b42384f3df",
-    "16492312090f4dccd0",
-    "1652752504e0ced0e0",
-    "0c813dce-aa7e-490a-bd49-e7c998ac8091",
     "d729f901-4e10-4ce7-819f-da1379f85ce8",
+    "165268048583a69a14",
+    "0c813dce-aa7e-490a-bd49-e7c998ac8091",
     "0b55361c-4202-43c8-960b-317dde253a99"
   ]
 }
