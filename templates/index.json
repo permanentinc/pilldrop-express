@@ -148,7 +148,6 @@
             "heading": "Stop paying too much for your subscriptions",
             "button_link": "",
             "button_label": "SHOP NOW",
-            "icon": "shopify:\/\/shop_images\/logo.svg",
             "background_image": "shopify:\/\/shop_images\/matthew-brodeur-qcCPIhhdgTw-unsplash.jpg",
             "overlay": false,
             "button_colour": "#0a8b61"
@@ -160,7 +159,6 @@
             "heading": "Get huge savings on pet pescriptions",
             "button_link": "shopify:\/\/pages\/about-us",
             "button_label": "SHOP PETS",
-            "icon": "shopify:\/\/shop_images\/Artboard_Copy_3_daa30d64-c745-49d7-9adc-99b165e2c484.png",
             "background_image": "shopify:\/\/shop_images\/john-cameron-ShLDezSsZJk-unsplash.jpg",
             "overlay": false,
             "button_colour": "#ec1d24"
