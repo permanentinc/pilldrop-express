@@ -1849,6 +1849,9 @@ body:not(.template--index) .header {
   body:not(.template--index) .header .header__wrap__logo path:nth-child(11) {
     fill: var(--grey-mid); }
 
+.search-active .header__wrap__search {
+  border: 2px solid white !important; }
+
 .header {
   width: 100%;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
@@ -1860,6 +1863,8 @@ body:not(.template--index) .header {
   .header.sticky {
     background: white;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1); }
+    .header.sticky .header__wrap__search {
+      border: 2px solid var(--primary); }
     .header.sticky .header__wrap__nav__item__link {
       color: var(--text); }
   @media only screen and (min-width: 1100px) {
@@ -2205,10 +2210,11 @@ Search
   cursor: pointer;
   padding: 0.8rem 2.5rem 0.8rem 3rem;
   display: flex;
+  border: 2px solid white;
   flex-wrap: wrap;
-  border: 2px solid var(--primary);
   color: var(--primary) !important;
-  border-radius: 100rem !important; }
+  border-radius: 100rem !important;
+  background: white; }
   @media only screen and (max-width: 1099px) {
     .header__wrap__search {
       right: 6rem; } }

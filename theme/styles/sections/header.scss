@@ -57,6 +57,12 @@ body:not(.template--index) .header {
     }
 }
 
+
+.search-active{
+    .header__wrap__search {
+        border: 2px solid white !important;
+    }
+}
 .header {
     width: 100%;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
@@ -70,6 +76,9 @@ body:not(.template--index) .header {
         background: white;
         box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
 
+        .header__wrap__search {
+            border: 2px solid var(--primary);
+        }
         .header__wrap__nav__item {
             &__link {
                 color: var(--text);
@@ -142,8 +151,6 @@ body:not(.template--index) .header {
                         padding: 0.5rem;
                     }
 
-                   
-
                     p {
                         font-weight: bold;
                         font-size: 1.2rem;
@@ -155,7 +162,7 @@ body:not(.template--index) .header {
                         }
                     }
 
-                    &--active{
+                    &--active {
                         background: white;
                         border-radius: 0.2rem 0.2rem 0 0;
 
@@ -512,10 +519,12 @@ Search
     cursor: pointer;
     padding: 0.8rem 2.5rem 0.8rem 3rem;
     display: flex;
+    border: 2px solid white;
     flex-wrap: wrap;
-    border: 2px solid var(--primary);
+
     color: var(--primary) !important;
     border-radius: 100rem !important;
+    background: white;
 
     @include media(1100px, max) {
         right: 6rem;

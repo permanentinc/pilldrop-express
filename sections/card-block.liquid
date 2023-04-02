@@ -34,16 +34,16 @@
         >
         <h2 class="colour--white">{{ block.settings.heading }}</h2>
         {% if block.settings.button_link %}
-        <p>
-          <a
-            href="{{ block.settings.button_link }}"
-            class="button"
-            style="background-color:{{ block.settings.button_colour }}"
-          >
-            {{- block.settings.button_label -}}
-          </a>
-        </p>
-      {% endif %}
+          <p>
+            <a
+              href="{{ block.settings.button_link }}"
+              class="button"
+              style="background-color:{{ block.settings.button_colour }}"
+            >
+              {{- block.settings.button_label -}}
+            </a>
+          </p>
+        {% endif %}
       </div>
     </div>
   {%- endfor -%}
