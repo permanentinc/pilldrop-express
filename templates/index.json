@@ -89,6 +89,7 @@
         "1652680485ef574f60-0": {
           "type": "scroller_item",
           "settings": {
+            "icon": "shopify:\/\/shop_images\/same_day_delivery.svg",
             "heading": "Same day delivery available",
             "content": "<p>All major cities will have same day express delivery.<\/p>",
             "button_label": "",
@@ -98,6 +99,7 @@
         "1652680485ef574f60-1": {
           "type": "scroller_item",
           "settings": {
+            "icon": "shopify:\/\/shop_images\/express.svg",
             "heading": "Express shipping on all orders",
             "content": "<p>No matter where you are in New Zealand, enjoy same day dispatch with our express shipping.<\/p>",
             "button_label": "",
@@ -107,6 +109,7 @@
         "1652680485ef574f60-2": {
           "type": "scroller_item",
           "settings": {
+            "icon": "shopify:\/\/shop_images\/100_Satisfaction_72f41e76-4b03-42ea-9182-c62e2c30e672.svg",
             "heading": "100% Satisfaction Guarantee",
             "content": "<p>We guarantee that you will be absolutely satisfied with our service.<\/p>",
             "button_label": "",
@@ -116,6 +119,7 @@
         "1652680485ef574f60-3": {
           "type": "scroller_item",
           "settings": {
+            "icon": "shopify:\/\/shop_images\/pharmacy_18246b5c-4749-4ddc-b9f6-c0a45566bf6a.svg",
             "heading": "Fully Licensed Pharmacy",
             "content": "<p>We are a fully licensed pharmacy.<\/p>",
             "button_label": "",
