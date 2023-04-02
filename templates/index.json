@@ -214,14 +214,21 @@
         "template--18191156871460__0b55361c-4202-43c8-960b-317dde253a99-16799838823b5eb886-3": {
           "type": "logo_item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/NZ-herald-v2__FocusFillWzU5OCwzOTksIngiLDIwXQ.jpg",
+            "image": "shopify:\/\/shop_images\/NBR.jpg",
+            "link": ""
+          }
+        },
+        "d8272847-948f-4c25-b626-759e9ce9830f": {
+          "type": "logo_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pulse_it.jpg",
             "link": ""
           }
         },
         "f9e5622f-6ceb-483e-b888-172390364e56": {
           "type": "logo_item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/NZ-herald-v2__FocusFillWzU5OCwzOTksIngiLDIwXQ.jpg",
+            "image": "shopify:\/\/shop_images\/doctor.jpg",
             "link": ""
           }
         }
@@ -231,6 +238,7 @@
         "template--18191156871460__0b55361c-4202-43c8-960b-317dde253a99-16799838823b5eb886-1",
         "template--18191156871460__0b55361c-4202-43c8-960b-317dde253a99-16799838823b5eb886-2",
         "template--18191156871460__0b55361c-4202-43c8-960b-317dde253a99-16799838823b5eb886-3",
+        "d8272847-948f-4c25-b626-759e9ce9830f",
         "f9e5622f-6ceb-483e-b888-172390364e56"
       ],
       "settings": {
