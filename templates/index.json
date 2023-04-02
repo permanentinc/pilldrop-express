@@ -89,8 +89,8 @@
         "1652680485ef574f60-0": {
           "type": "scroller_item",
           "settings": {
-            "heading": "Every Day Low Prices on Pet Meds",
-            "content": "<p>Save upto 50% on prescription medications.<\/p>",
+            "heading": "Same day delivery available",
+            "content": "<p>All major cities will have same day express delivery.<\/p>",
             "button_label": "",
             "button_link": ""
           }
@@ -98,8 +98,8 @@
         "1652680485ef574f60-1": {
           "type": "scroller_item",
           "settings": {
-            "heading": "NZ wide delivery",
-            "content": "<p>Fast delivery to your door anywhere you are in NZ.<\/p>",
+            "heading": "Express shipping on all orders",
+            "content": "<p>No matter where you are in New Zealand, enjoy same day dispatch with our express shipping.<\/p>",
             "button_label": "",
             "button_link": ""
           }
@@ -107,8 +107,8 @@
         "1652680485ef574f60-2": {
           "type": "scroller_item",
           "settings": {
-            "heading": "Free shipping",
-            "content": "<p>Free shipping on all orders above $50.<\/p>",
+            "heading": "100% Satisfaction Guarantee",
+            "content": "<p>We guarantee that you will be absolutely satisfied with our service.<\/p>",
             "button_label": "",
             "button_link": ""
           }
