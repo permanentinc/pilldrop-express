@@ -8,9 +8,9 @@
     "1654671258afe5a2f9": {
       "type": "banner-slim",
       "settings": {
-        "image": "shopify:\/\/shop_images\/cat_banner_lifestyle.png",
+        "image": "shopify:\/\/shop_images\/pilldrop_delovery_desktop__FocusFillWzE5MTksNzk5LCJ5IiwwXQ.jpg",
         "image_position": "left",
-        "subheading": "<p>CONTACT US<\/p>",
+        "subheading": "",
         "colour": "light",
         "subheading_size": "h6",
         "heading": "<p>Get in touch<\/p>",
@@ -18,22 +18,15 @@
         "text": ""
       }
     },
-    "6b616a48-4c22-49fd-a95b-9a0e9ce3b501": {
-      "type": "mailchimp-embed",
-      "settings": {
-        "copy": "<p><em>Reach a PillDrop vet<\/em><\/p><p><strong>Email<\/strong> <a href=\"mailto:vet@pilldrop.co.nz\" target=\"_blank\">vet@pilldrop.co.nz<br\/><br\/><\/a><em><br\/>Get in touch<\/em><\/p><p><strong>Auckland: <\/strong><a href=\"tel:092769090\">09 276 9090<\/a><br\/><strong>Christchurch:<\/strong> <a href=\"tel:036669292\">03 666 9292<\/a><br\/><strong>Toll Free:<\/strong> <a href=\"tel:0800745537\">0800 745 5<br\/><br\/><\/a><em><br\/>Send prescriptions to<\/em><\/p><p><strong>Prescriptions coming from your vet<br\/><\/strong>Email: <a href=\"mailto:vet@pilldrop.co.nz?subject=Pilldrop%20Enquiry\" title=\"mailto:vet@pilldrop.co.nz?subject=Pilldrop%20Enquiry\">vet@pilldrop.co.nz<\/a><br\/>Fax: 09 276 9292<\/p><p>OR<\/p><p><strong>Prescriptions coming from you<\/strong><br\/>PO Box 62283<br\/>Sylvia Park, Auckland 1060<\/p><p><em><br\/>PillDrop Pharmacy<\/em><\/p><p><strong>Auckland<\/strong><br\/>4 Hotunui Drive<br\/>Mt. Wellington, Auckland<br\/><br\/><strong>Christchurch<\/strong><br\/>6\/251 Blenheim Road<br\/>Riccarton, Christchurch<\/p>"
-      }
-    },
     "165467105679d9cbc9": {
       "type": "column",
-      "disabled": true,
       "settings": {
-        "heading_left": "Reach a PillDrop vet",
+        "heading_left": "",
         "heading_left_size": "h3",
-        "text_left": "<p><strong>Email<\/strong> <a href=\"mailto:vet@pilldrop.co.nz\" target=\"_blank\">vet@pilldrop.co.nz<\/a><\/p>",
-        "heading_right": "Get in touch",
+        "text_left": "<h5>Get in touch<\/h5><p><strong>Auckland: <\/strong><a href=\"tel:092769090\">09 276 9090<\/a><br\/><strong>Christchurch:<\/strong> <a href=\"tel:036669292\">03 666 9292<\/a><br\/><strong>Toll Free:<\/strong> <a href=\"tel:0800745537\">0800 745 537<\/a><\/p><p> <\/p><h5>PillDrop Pharmacy<\/h5><p><strong>Auckland<\/strong><br\/>4 Hotunui Drive<br\/>Mt. Wellington, Auckland<br\/><br\/><strong>Christchurch<\/strong><br\/>6\/251 Blenheim Road<br\/>Riccarton, Christchurch<br\/><\/p>",
+        "heading_right": "",
         "heading_right_size": "h3",
-        "text_right": "<p><strong>Auckland: <\/strong><a href=\"tel:092769090\">09 276 9090<\/a><br\/><strong>Christchurch:<\/strong> <a href=\"tel:036669292\">03 666 9292<\/a><br\/><strong>Toll Free:<\/strong> <a href=\"tel:0800745537\">0800 745 537<\/a><\/p>"
+        "text_right": "<h5>Send prescriptions to<\/h5><p>Email: <a href=\"mailto:delivery@pilldrop.co.nz?subject=Pilldrop%20Enquiry\">delivery@pilldrop.co.nz<\/a><br\/>Fax: 09 276 9292<\/p><p> <\/p><h5>Mail prescriptions to<\/h5><p>PO Box 62283<br\/>Sylvia Park,<br\/>Auckland 1060<br\/><\/p>"
       }
     },
     "1654671145eb99ca1b": {
@@ -58,7 +51,6 @@
   "order": [
     "main",
     "1654671258afe5a2f9",
-    "6b616a48-4c22-49fd-a95b-9a0e9ce3b501",
     "165467105679d9cbc9",
     "1654671145eb99ca1b",
     "form"

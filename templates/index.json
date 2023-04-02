@@ -5,10 +5,10 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/home_banner.jpg",
         "video_id": "",
-        "heading": "<p>No middleman.<br\/>No price games.<br\/>Huge savings.<\/p>",
+        "heading": "<p>Get your medicines when you need it with PillDrop Express.<\/p>",
         "heading_size": "h1",
         "text": "",
-        "button_label": "SHOP ALL PRODUCTS",
+        "button_label": "browse products",
         "button_link": "shopify:\/\/collections\/all",
         "second_button_label": "",
         "second_button_link": "",
@@ -148,7 +148,6 @@
             "heading": "Stop paying too much for your subscriptions",
             "button_link": "",
             "button_label": "SHOP NOW",
-            "icon": "shopify:\/\/shop_images\/logo.svg",
             "background_image": "shopify:\/\/shop_images\/matthew-brodeur-qcCPIhhdgTw-unsplash.jpg",
             "overlay": false,
             "button_colour": "#0a8b61"
@@ -160,7 +159,6 @@
             "heading": "Get huge savings on pet pescriptions",
             "button_link": "shopify:\/\/pages\/about-us",
             "button_label": "SHOP PETS",
-            "icon": "shopify:\/\/shop_images\/Artboard_Copy_3_daa30d64-c745-49d7-9adc-99b165e2c484.png",
             "background_image": "shopify:\/\/shop_images\/john-cameron-ShLDezSsZJk-unsplash.jpg",
             "overlay": false,
             "button_colour": "#ec1d24"
@@ -193,7 +191,7 @@
         "template--18191156871460__0b55361c-4202-43c8-960b-317dde253a99-16799838823b5eb886-0": {
           "type": "logo_item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/NZ-herald-v2__FocusFillWzU5OCwzOTksIngiLDIwXQ.jpg",
+            "image": "shopify:\/\/shop_images\/stuff.jpg",
             "link": ""
           }
         },
@@ -207,21 +205,28 @@
         "template--18191156871460__0b55361c-4202-43c8-960b-317dde253a99-16799838823b5eb886-2": {
           "type": "logo_item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/NZ-herald-v2__FocusFillWzU5OCwzOTksIngiLDIwXQ.jpg",
+            "image": "shopify:\/\/shop_images\/scoop.jpg",
             "link": ""
           }
         },
         "template--18191156871460__0b55361c-4202-43c8-960b-317dde253a99-16799838823b5eb886-3": {
           "type": "logo_item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/NZ-herald-v2__FocusFillWzU5OCwzOTksIngiLDIwXQ.jpg",
+            "image": "shopify:\/\/shop_images\/NBR.jpg",
+            "link": ""
+          }
+        },
+        "d8272847-948f-4c25-b626-759e9ce9830f": {
+          "type": "logo_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pulse_it.jpg",
             "link": ""
           }
         },
         "f9e5622f-6ceb-483e-b888-172390364e56": {
           "type": "logo_item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/NZ-herald-v2__FocusFillWzU5OCwzOTksIngiLDIwXQ.jpg",
+            "image": "shopify:\/\/shop_images\/doctor.jpg",
             "link": ""
           }
         }
@@ -231,6 +236,7 @@
         "template--18191156871460__0b55361c-4202-43c8-960b-317dde253a99-16799838823b5eb886-1",
         "template--18191156871460__0b55361c-4202-43c8-960b-317dde253a99-16799838823b5eb886-2",
         "template--18191156871460__0b55361c-4202-43c8-960b-317dde253a99-16799838823b5eb886-3",
+        "d8272847-948f-4c25-b626-759e9ce9830f",
         "f9e5622f-6ceb-483e-b888-172390364e56"
       ],
       "settings": {
