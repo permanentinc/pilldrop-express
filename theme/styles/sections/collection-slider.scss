@@ -1,7 +1,7 @@
 .collection-slider {
     position: relative;
     padding: 10rem 8rem 8rem;
-
+    background: var(--off-white);
     $link: rgba(#ec1d24, 0.99);
 
     a:not([class]) {
@@ -83,10 +83,9 @@
                         }
                     }
 
-                    h5{
+                    h5 {
                         @include vertical-center;
-                        z-index:4;
-
+                        z-index: 4;
                     }
 
                     &__details {
