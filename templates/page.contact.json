@@ -8,8 +8,9 @@
     "1654671258afe5a2f9": {
       "type": "banner-slim",
       "settings": {
+        "image": "shopify:\/\/shop_images\/home_banner.jpg",
         "image_position": "left",
-        "subheading": "<p>CONTACT US<\/p>",
+        "subheading": "",
         "colour": "light",
         "subheading_size": "h6",
         "heading": "<p>Get in touch<\/p>",
