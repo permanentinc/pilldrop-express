@@ -9,7 +9,7 @@
       "type": "banner-slim",
       "settings": {
         "image": "shopify:\/\/shop_images\/contact_banner.jpg",
-        "image_position": "left",
+        "image_position": "right",
         "subheading": "",
         "colour": "light",
         "subheading_size": "h6",
