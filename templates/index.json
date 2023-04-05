@@ -5,7 +5,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/Express_home_banner.jpg",
         "video_id": "",
-        "heading": "<p>Get your medicines when you need it with PillDrop Express.<\/p>",
+        "heading": "<p>Get your medicines <br\/>when you need it with PillDrop Express.<\/p>",
         "heading_size": "h1",
         "text": "",
         "button_label": "browse products",
