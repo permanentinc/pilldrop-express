@@ -8,7 +8,6 @@
     "16510315198c1783c4": {
       "type": "banner-slim",
       "settings": {
-        "image": "shopify:\/\/shop_images\/pilldrop_pet_prescriptions_aboutus.jpg",
         "image_position": "left",
         "subheading": "<p><strong>OUR STORY<\/strong><\/p>",
         "colour": "light",
@@ -21,10 +20,9 @@
     "16570076576ba4e626": {
       "type": "image-with-text",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Drlouise_pilldrop.jpg",
         "heading": "Introducing our veterinarian: Dr Louise Harvey",
         "heading_size": "h2",
-        "text": "<p>PillDrop Pets is proud to welcome experienced veterinarian, Louise Harvey, to the team. <br\/>Louise is excited to join PillDrop Pets and is the perfect fit. She believes every owner should have access to affordable, consistent, and excellent care to support their pets to live longer, happier, and healthier lives. <\/p>",
+        "text": "<h2>Our Story<\/h2><p>Kia ora!<\/p><p>Our vision is for healthy, thriving communities and for everyone to have access to a complete pharmacy experience that puts you and your family’s health first. It’s a privilege to see you get well and help you live the life you love and deserve.<\/p><p>Our background and hearts are in community health. Jack has over twelve years’ experience as a community pharmacist and loves helping people of all ages and walks of life stay happy and healthy. Many of his patients that he first met twelve years ago, he still sees and helps today.<\/p>",
         "button_label": "Read more",
         "button_link": "shopify:\/\/pages\/introducing-our-veterinarian-louise-harvey",
         "layout": "right"
@@ -63,7 +61,6 @@
     "1654072422ee4ffbdd": {
       "type": "background-image",
       "settings": {
-        "image": "shopify:\/\/shop_images\/banner_slim.jpg",
         "heading": "Fast & Free delivery*",
         "heading_size": "h2",
         "text": "<p><strong>With PillDrop Pets, you will enjoy FREE delivery*<br\/>on all orders over $50.<\/strong><\/p>",
