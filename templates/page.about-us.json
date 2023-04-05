@@ -20,9 +20,10 @@
     "16570076576ba4e626": {
       "type": "image-with-text",
       "settings": {
-        "heading": "Introducing our veterinarian: Dr Louise Harvey",
+        "image": "shopify:\/\/shop_images\/suzanne_pilldropexpress.jpg",
+        "heading": "Our Story",
         "heading_size": "h2",
-        "text": "<h2>Our Story<\/h2><p>Kia ora!<\/p><p>Our vision is for healthy, thriving communities and for everyone to have access to a complete pharmacy experience that puts you and your family’s health first. It’s a privilege to see you get well and help you live the life you love and deserve.<\/p><p>Our background and hearts are in community health. Jack has over twelve years’ experience as a community pharmacist and loves helping people of all ages and walks of life stay happy and healthy. Many of his patients that he first met twelve years ago, he still sees and helps today.<\/p>",
+        "text": "<h2><\/h2><p>Kia ora!<\/p><p>Our vision is for healthy, thriving communities and for everyone to have access to a complete pharmacy experience that puts you and your family’s health first. It’s a privilege to see you get well and help you live the life you love and deserve.<\/p><p>Our background and hearts are in community health. Jack has over twelve years’ experience as a community pharmacist and loves helping people of all ages and walks of life stay happy and healthy. Many of his patients that he first met twelve years ago, he still sees and helps today.<\/p>",
         "button_label": "Read more",
         "button_link": "shopify:\/\/pages\/introducing-our-veterinarian-louise-harvey",
         "layout": "right"
