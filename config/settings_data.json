@@ -6,7 +6,7 @@
     "checkout_heading_font": "Helvetica Neue",
     "checkout_body_font": "Helvetica Neue",
     "checkout_accent_color": "#ec1d24",
-    "checkout_button_color": "#00ab80",
+    "checkout_button_color": "#ec1d24",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
