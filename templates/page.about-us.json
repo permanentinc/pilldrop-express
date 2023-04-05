@@ -10,7 +10,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/aboutus_banner.jpg",
         "image_position": "left",
-        "subheading": "<p><strong>OUR STORY<\/strong><\/p>",
+        "subheading": "",
         "colour": "light",
         "subheading_size": "h6",
         "heading": "<p>About us<\/p>",
