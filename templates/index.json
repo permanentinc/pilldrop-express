@@ -161,7 +161,7 @@
             "button_link": "https:\/\/pilldroppets.co.nz\/",
             "button_label": "Shop pets",
             "icon": "shopify:\/\/shop_images\/pets_logo.svg",
-            "background_image": "shopify:\/\/shop_images\/Pets.jpg",
+            "background_image": "shopify:\/\/shop_images\/Pets_image.jpg",
             "overlay": true,
             "button_colour": "#ec1d24"
           }
