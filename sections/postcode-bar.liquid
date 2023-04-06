@@ -20,7 +20,7 @@
           class="postcode-bar__wrap__form__form__input [ js-postcode-bar-query ]"
           type="text"
           name="q"
-          placeholder="Search products"
+          placeholder="Type in your postcode..."
         >
         <div class="postcode-bar__wrap__form__form__icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -28,49 +28,6 @@
           </svg>
         </div>
       </form>
-
-      {% comment %}
-        postcode-bar__wrap__form__searchPane
-      {% endcomment %}
-
-      <section class="postcode-bar__wrap__form__searchPane">
-        <div class="postcode-bar__wrap__form__searchPane__wrapper">
-          <p class="postcode-bar__wrap__form__searchPane__wrapper__title">
-            <span>RESULTS</span>
-          </p>
-
-          <div class="postcode-bar__wrap__form__searchPane__wrapper__items [ js-postcode-bar-items ]">
-            <div class="postcode-bar__wrap__form__searchPane__wrapper__item postcode-bar__wrap__form__searchPane__wrapper__item--placeholder">
-              <div class="postcode-bar__wrap__form__searchPane__wrapper__item__image"><span></span></div>
-              <div class="postcode-bar__wrap__form__searchPane__wrapper__item__details">
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-              </div>
-            </div>
-
-            <div class="postcode-bar__wrap__form__searchPane__wrapper__item postcode-bar__wrap__form__searchPane__wrapper__item--placeholder">
-              <div class="postcode-bar__wrap__form__searchPane__wrapper__item__image"><span></span></div>
-              <div class="postcode-bar__wrap__form__searchPane__wrapper__item__details">
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-              </div>
-            </div>
-
-            <div class="postcode-bar__wrap__form__searchPane__wrapper__item postcode-bar__wrap__form__searchPane__wrapper__item--placeholder">
-              <div class="postcode-bar__wrap__form__searchPane__wrapper__item__image"><span></span></div>
-              <div class="postcode-bar__wrap__form__searchPane__wrapper__item__details">
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-              </div>
-            </div>
-          </div>
-
-          <a href="{{ routes.search_url }}" class="button [ js-full-postcode-bar ]"> Show all results </a>
-        </div>
-      </section>
     </div>
   </div>
 </div>
@@ -96,9 +53,64 @@
 
 <script>
   window.postcodes = [
-    0600, 0602, 0604, 0610, 0612, 0614, 0616, 0618, 0620, 0622, 0624, 0626, 0627, 0629, 0630, 0632, 0772, 0781, 0782,
-    0792, 0793, 0794, 0814, 0816, 1010, 1011, 1021, 1022, 1023, 1024, 1025, 1026, 1040, 1041, 1042, 1050, 1051, 1052,
-    1060, 1061, 1062, 1071, 1072, 2010, 2012, 2013, 2014, 2016, 2019, 2022, 2023, 2024, 2025, 2102, 2103, 2104, 2105,
-    2571, 2576,
+    '0600',
+    '0602',
+    '0604',
+    '0610',
+    '0612',
+    '0614',
+    '0616',
+    '0618',
+    '0620',
+    '0622',
+    '0624',
+    '0626',
+    '0627',
+    '0629',
+    '0630',
+    '0632',
+    '0772',
+    '0781',
+    '0782',
+    '0792',
+    '0793',
+    '0794',
+    '0814',
+    '0816',
+    '1010',
+    '1011',
+    '1021',
+    '1022',
+    '1023',
+    '1024',
+    '1025',
+    '1026',
+    '1040',
+    '1041',
+    '1042',
+    '1050',
+    '1051',
+    '1052',
+    '1060',
+    '1061',
+    '1062',
+    '1071',
+    '1072',
+    '2010',
+    '2012',
+    '2013',
+    '2014',
+    '2016',
+    '2019',
+    '2022',
+    '2023',
+    '2024',
+    '2025',
+    '2102',
+    '2103',
+    '2104',
+    '2105',
+    '2571',
+    '2576',
   ];
 </script>

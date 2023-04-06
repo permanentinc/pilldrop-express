@@ -7,6 +7,7 @@ import './../styles/style.scss';
 console.log('Shopify Skeleton 1.2 💀');
 
 import './predictive-search';
+import './postcode-search';
 import Shop from './shop';
 import $ from 'jquery';
 import slick from 'slick-carousel';
