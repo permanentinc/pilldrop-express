@@ -3,8 +3,10 @@
     "banner": {
       "type": "banner-slim",
       "settings": {
-        "image": "shopify:\/\/shop_images\/banner_slim.jpg",
+        "image": "shopify:\/\/shop_images\/allergy.jpg",
+        "image_position": "left",
         "subheading": "",
+        "colour": "light",
         "subheading_size": "h4",
         "heading": "<p><strong>Shop products<\/strong><\/p>",
         "heading_size": "h1",
