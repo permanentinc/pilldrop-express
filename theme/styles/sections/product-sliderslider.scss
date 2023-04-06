@@ -3,7 +3,7 @@
     padding: 10rem 8rem 8rem;
 
     @include media($md, max) {
-        padding: 10rem 2rem 8rem;
+        padding: 6rem 2rem 8rem;
     }
 
     &__wrap {
@@ -40,6 +40,11 @@
             width: 100%;
             position: relative;
 
+            @include media($md, max) {
+                margin: 2rem auto;
+                padding: 0;
+            }
+
             * {
                 user-select: none;
             }
@@ -58,6 +63,10 @@
                     top: 40%;
                     cursor: pointer;
                     z-index: 99999;
+
+                    @include media($md, max) {
+                        top: 100%;
+                    }
                 }
             }
 
@@ -106,6 +115,10 @@
                         overflow: hidden;
                         border-radius: 0.3rem;
                         box-shadow: 0px 0px 1.4px rgba(0, 0, 0, 0.035), 0px 0px 11px rgba(0, 0, 0, 0.07);
+
+                        @include media($md, max) {
+                            @include aspect(1, 1);
+                        }
 
                         &--overlay {
                             &:before {

@@ -40,8 +40,8 @@
                   width="{{ block.settings.image.width }}"
                   height="{{ block.settings.image.height }}"
                 >
-                <h5 class="colour--white">
-                  {{ block.settings.heading }} 
+                <h5 class="colour--white text-center">
+                  {{ block.settings.heading }}
                 </h5>
               </div>
             {% endif %}
@@ -58,7 +58,7 @@
 <script>
   tns({
     container: '#scroller--{{ section.id }}',
-    items: 1,
+    items: 1.5,
     mouseDrag: true,
     nav: false,
     controls: true,
@@ -82,6 +82,15 @@
   .collection-slider--{{ section.id }} .tns-controls button:last-of-type {
     background-image: url({{ 'next-green-mid.svg' | asset_url }});
     right: -4rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .collection-slider--{{ section.id }} .tns-controls button:first-of-type {
+      left: 6rem;
+    }
+    .collection-slider--{{ section.id }} .tns-controls button:last-of-type {
+      right: 6rem;
+    }
   }
 </style>
 

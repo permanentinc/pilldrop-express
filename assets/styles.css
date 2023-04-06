@@ -665,6 +665,10 @@ Background Image
         .banner__image img {
           -o-object-position: 30% 100%;
              object-position: 30% 100%; } }
+      @media only screen and (max-width: 639px) {
+        .banner__image img {
+          -o-object-position: 50% 100%;
+             object-position: 50% 100%; } }
 
 @media only screen and (max-width: 767px) {
   .page--index .banner .banner__text {
@@ -1106,6 +1110,10 @@ Product
   position: relative;
   padding: 6rem 8rem 4rem;
   background: var(--off-white); }
+  @media only screen and (max-width: 767px) {
+    .collection-slider {
+      padding-left: 2rem;
+      padding-right: 2rem; } }
   .collection-slider a:not([class]) {
     text-decoration: none;
     box-shadow: inset 0 -1px 0 rgba(236, 29, 36, 0.99);
@@ -1141,6 +1149,11 @@ Product
       top: 50%;
       cursor: pointer;
       z-index: 44; }
+      @media only screen and (max-width: 767px) {
+        .collection-slider__wrap__slider .tns-controls button {
+          top: 100%;
+          width: 6rem;
+          height: 6rem; } }
     .collection-slider__wrap__slider__carousel {
       width: 100%; }
       .collection-slider__wrap__slider__carousel__item {
@@ -3459,6 +3472,7 @@ Newsletter popup
       .postcode-bar__wrap__form__form {
         margin: 0; }
         .postcode-bar__wrap__form__form__input {
+          font-family: 'Montserrat', sans-serif;
           font-weight: bold;
           border: 2px solid white;
           background: transparent;
@@ -3674,7 +3688,7 @@ Newsletter popup
   padding: 10rem 8rem 8rem; }
   @media only screen and (max-width: 767px) {
     .product-slider {
-      padding: 10rem 2rem 8rem; } }
+      padding: 6rem 2rem 8rem; } }
   .product-slider__wrap__heading {
     width: 100%;
     max-width: var(--inner-content-width);
@@ -3697,6 +3711,10 @@ Newsletter popup
     padding: 0 3rem;
     width: 100%;
     position: relative; }
+    @media only screen and (max-width: 767px) {
+      .product-slider__wrap__slider {
+        margin: 2rem auto;
+        padding: 0; } }
     .product-slider__wrap__slider * {
       -webkit-user-select: none;
          -moz-user-select: none;
@@ -3714,6 +3732,9 @@ Newsletter popup
         top: 40%;
         cursor: pointer;
         z-index: 99999; }
+        @media only screen and (max-width: 767px) {
+          .product-slider__wrap__slider .tns-controls button {
+            top: 100%; } }
     .product-slider__wrap__slider__carousel {
       width: 100%; }
       .product-slider__wrap__slider__carousel__item {
@@ -3754,6 +3775,14 @@ Newsletter popup
             position: relative;
             display: block;
             padding-bottom: 150%; }
+          @media only screen and (max-width: 767px) {
+            .product-slider__wrap__slider__carousel__item__image {
+              position: relative; }
+              .product-slider__wrap__slider__carousel__item__image:after {
+                content: '';
+                position: relative;
+                display: block;
+                padding-bottom: 100%; } }
           .product-slider__wrap__slider__carousel__item__image--overlay:before {
             position: absolute;
             display: block;

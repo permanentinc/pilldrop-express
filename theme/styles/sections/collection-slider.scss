@@ -4,6 +4,11 @@
     background: var(--off-white);
     $link: rgba(#ec1d24, 0.99);
 
+    @include media($md, max) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
     a:not([class]) {
         text-decoration: none;
         box-shadow: inset 0 -1px 0 $link;
@@ -48,6 +53,12 @@
                     top: 50%;
                     cursor: pointer;
                     z-index: 44;
+
+                    @include media($md, max) {
+                        top: 100%;
+                        width: 6rem;
+                        height: 6rem;
+                    }
                 }
             }
 

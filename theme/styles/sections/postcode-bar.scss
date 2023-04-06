@@ -44,6 +44,7 @@
                 margin: 0;
 
                 &__input {
+                    font-family: 'Montserrat', sans-serif;
                     font-weight: bold;
                     border: 2px solid white;
                     background: transparent;
@@ -52,6 +53,7 @@
                     font-size: 1.6rem;
                     padding: 2rem 3rem;
                     margin: 0;
+                    
 
                     @include placeholder {
                         color: white;

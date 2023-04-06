@@ -224,6 +224,11 @@
             @include media($xmd, max) {
                 object-position: 30% 100%;
             }
+
+
+            @include media($sm, max) {
+                object-position: 50% 100%;
+            }
         }
     }
 }
