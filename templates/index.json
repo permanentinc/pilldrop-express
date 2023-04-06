@@ -172,6 +172,7 @@
             "heading": "Prescriptions sorted and delivered",
             "button_link": "https:\/\/pilldrop.co.nz\/",
             "button_label": "Learn more",
+            "icon": "shopify:\/\/shop_images\/pilldrop_logo_1c273a66-4e31-41d6-8537-8d12d4eff860.svg",
             "background_image": "shopify:\/\/shop_images\/Pharmacy.jpg",
             "overlay": false,
             "button_colour": "#ec1d24"
