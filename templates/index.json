@@ -35,7 +35,7 @@
           "type": "card_item",
           "settings": {
             "heading": "Nasal products",
-            "image": "shopify:\/\/shop_images\/john-cameron-ShLDezSsZJk-unsplash.jpg",
+            "image": "shopify:\/\/shop_images\/nasal.jpg",
             "link": ""
           }
         },
@@ -43,7 +43,7 @@
           "type": "card_item",
           "settings": {
             "heading": "Pain relief",
-            "image": "shopify:\/\/shop_images\/matthew-brodeur-qcCPIhhdgTw-unsplash.jpg",
+            "image": "shopify:\/\/shop_images\/pain.jpg",
             "link": "shopify:\/\/products\/audiclean-ear-cleansing-spray-60ml"
           }
         },
@@ -51,7 +51,7 @@
           "type": "card_item",
           "settings": {
             "heading": "Allergy medication",
-            "image": "shopify:\/\/shop_images\/paxlovid_banner_newpackagng.jpg",
+            "image": "shopify:\/\/shop_images\/allergy.jpg",
             "link": ""
           }
         },
@@ -59,7 +59,7 @@
           "type": "card_item",
           "settings": {
             "heading": "Mother and baby",
-            "image": "shopify:\/\/shop_images\/a-hand-removes-a-sweater-from-a-clothing-rack.jpg",
+            "image": "shopify:\/\/shop_images\/mother_and_baby.jpg",
             "link": ""
           }
         },
@@ -67,7 +67,7 @@
           "type": "card_item",
           "settings": {
             "heading": "Cough and cold",
-            "image": "shopify:\/\/shop_images\/welcome-to-my-business.jpg",
+            "image": "shopify:\/\/shop_images\/flu.jpg",
             "link": ""
           }
         }
