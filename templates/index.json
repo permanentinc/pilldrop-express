@@ -15,8 +15,8 @@
         "layout": "right"
       }
     },
-    "1e826c6f-cef7-40e3-a82b-45c6b23f94d4": {
-      "type": "search-bar",
+    "60f6a06d-c1da-462a-8292-2af800da714a": {
+      "type": "postcode-bar",
       "settings": {
         "heading": "Get it today, browse our range"
       }
@@ -246,7 +246,7 @@
   },
   "order": [
     "16490384482dbd99cf",
-    "1e826c6f-cef7-40e3-a82b-45c6b23f94d4",
+    "60f6a06d-c1da-462a-8292-2af800da714a",
     "0bc4ac8f-a994-410c-a54e-ef61a6b8946e",
     "d729f901-4e10-4ce7-819f-da1379f85ce8",
     "165268048583a69a14",
