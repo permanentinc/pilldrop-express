@@ -146,8 +146,8 @@
           "type": "card_item",
           "settings": {
             "heading": "Stop paying too much for your prescriptions",
-            "button_link": "",
-            "button_label": "SHOP NOW",
+            "button_link": "https:\/\/www.thecannabisdispensary.nz\/",
+            "button_label": "LEARN MORE",
             "background_image": "shopify:\/\/shop_images\/nzcd.jpg",
             "overlay": false,
             "button_colour": "#0a8b61"
@@ -168,8 +168,8 @@
           "type": "card_item",
           "settings": {
             "heading": "Prescriptions sorted and delivered",
-            "button_link": "",
-            "button_label": "",
+            "button_link": "https:\/\/pilldrop.co.nz\/",
+            "button_label": "Learn more",
             "background_image": "shopify:\/\/shop_images\/Pharmacy.jpg",
             "overlay": false,
             "button_colour": "#ec1d24"
