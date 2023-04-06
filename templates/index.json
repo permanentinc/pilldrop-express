@@ -159,7 +159,8 @@
           "settings": {
             "heading": "Get huge savings on pet prescriptions",
             "button_link": "shopify:\/\/pages\/about-us",
-            "button_label": "SHOP PETS",
+            "button_label": "Shop pets",
+            "icon": "shopify:\/\/shop_images\/pets_logo.svg",
             "background_image": "shopify:\/\/shop_images\/Pets.jpg",
             "overlay": true,
             "button_colour": "#ec1d24"
