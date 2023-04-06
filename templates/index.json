@@ -148,7 +148,7 @@
             "heading": "Stop paying too much for your subscriptions",
             "button_link": "",
             "button_label": "SHOP NOW",
-            "background_image": "shopify:\/\/shop_images\/matthew-brodeur-qcCPIhhdgTw-unsplash.jpg",
+            "background_image": "shopify:\/\/shop_images\/nzcd.jpg",
             "overlay": false,
             "button_colour": "#0a8b61"
           }
@@ -159,8 +159,8 @@
             "heading": "Get huge savings on pet pescriptions",
             "button_link": "shopify:\/\/pages\/about-us",
             "button_label": "SHOP PETS",
-            "background_image": "shopify:\/\/shop_images\/john-cameron-ShLDezSsZJk-unsplash.jpg",
-            "overlay": false,
+            "background_image": "shopify:\/\/shop_images\/Pets.jpg",
+            "overlay": true,
             "button_colour": "#ec1d24"
           }
         },
@@ -170,7 +170,7 @@
             "heading": "Stop paying too much for your subscriptions",
             "button_link": "",
             "button_label": "",
-            "background_image": "shopify:\/\/shop_images\/a-hand-removes-a-sweater-from-a-clothing-rack.jpg",
+            "background_image": "shopify:\/\/shop_images\/Pharmacy.jpg",
             "overlay": false,
             "button_colour": "#ec1d24"
           }
