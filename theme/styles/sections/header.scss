@@ -2,7 +2,7 @@
 Header
 ------------------------------------------------------------------*/
 .template--index {
-    @include media(1100px) {
+    @include media(1110px) {
         .header:not(.sticky) {
             background: transparent;
 
@@ -34,13 +34,13 @@ body:not(.template--index) .header {
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
 
     .header__wrap__nav__item__link {
-        @include media(1100px) {
+        @include media(1110px) {
             color: var(--text) !important;
         }
     }
 
     &.sticky .header__wrap__nav__item__link {
-        @include media(1100px, max) {
+        @include media(1110px, max) {
             color: var(--text);
         }
     }
@@ -57,8 +57,7 @@ body:not(.template--index) .header {
     }
 }
 
-
-.search-active{
+.search-active {
     .header__wrap__search {
         border: 2px solid white !important;
     }
@@ -86,7 +85,7 @@ body:not(.template--index) .header {
         }
     }
 
-    @include media(1100px) {
+    @include media(1110px) {
         background: transparent;
         box-shadow: none;
     }
@@ -101,7 +100,7 @@ body:not(.template--index) .header {
         &__logo {
             @include svg(308, 81);
             width: 22rem;
-            margin: 1rem 1rem 2rem 2rem;
+            margin: 2rem 1rem 1rem 2rem;
             z-index: 3;
         }
 
@@ -123,6 +122,13 @@ body:not(.template--index) .header {
                 justify-content: flex-end;
             }
 
+            @include media(1240px, max) {
+                .header__wrap__menu__item{
+                    display: none;
+                }
+            }
+
+
             &__sites {
                 margin-left: 1rem;
                 margin-right: auto;
@@ -130,12 +136,12 @@ body:not(.template--index) .header {
                 flex-wrap: wrap;
                 align-items: flex-end;
 
-                @include media(1100px, max) {
+                @include media(1110px, max) {
                     background-color: var(--primary);
                     box-shadow: none;
                 }
 
-                @include media($xs, max) {
+                @include media(820px, max) {
                     display: none;
                 }
 
@@ -157,7 +163,7 @@ body:not(.template--index) .header {
                         margin: 0;
                         color: white;
 
-                        @include media($xs, max) {
+                        @include media($xmd, max) {
                             font-size: 1rem;
                         }
                     }
@@ -182,9 +188,11 @@ body:not(.template--index) .header {
                 margin-right: 0;
                 margin-left: auto;
 
-                @include media(1100px, max) {
+                @include media(1110px, max) {
                     display: none;
                 }
+
+
 
                 &__item {
                     font-weight: 500;
@@ -194,7 +202,7 @@ body:not(.template--index) .header {
                     display: inline-block;
                     font-size: 1.4rem;
 
-                    @include media(1100px) {
+                    @include media(1110px) {
                         color: white;
                     }
 
@@ -273,7 +281,7 @@ body:not(.template--index) .header {
                 align-items: center;
                 align-content: center;
 
-                @include media(1100px) {
+                @include media(1110px) {
                     width: auto;
                 }
 
@@ -283,7 +291,7 @@ body:not(.template--index) .header {
                     color: white;
                     margin: 0 0 0 1rem;
 
-                    @include media(1100px) {
+                    @include media(1110px) {
                         display: block;
                         padding-right: 2rem;
                         line-height: 4rem;
@@ -295,7 +303,7 @@ body:not(.template--index) .header {
                         fill: white;
                     }
 
-                    @include media(1100px, max) {
+                    @include media(1110px, max) {
                         @include vertical-center;
                     }
                 }
@@ -308,7 +316,7 @@ body:not(.template--index) .header {
                 padding: 0 1rem;
                 line-height: 3.8rem;
 
-                @include media(1100px) {
+                @include media(1110px) {
                     display: none;
                 }
             }
@@ -331,11 +339,11 @@ body:not(.template--index) .header {
             justify-content: center;
             padding-right: 11rem;
 
-            @include media(1100px) {
+            @include media(1110px) {
                 display: flex;
             }
 
-            @include media(1100px) {
+            @include media(1110px) {
                 margin-left: 0;
             }
 
@@ -351,7 +359,7 @@ body:not(.template--index) .header {
 
                 &__link {
                     position: relative;
-                    font-weight: 500;
+                    font-weight: 700;
                     padding: 2rem 1.5rem;
                     color: var(--grey-dark);
                     display: block;
@@ -414,7 +422,7 @@ body:not(.template--index) .header {
             bottom: 3rem;
             display: none;
 
-            @include media(1100px) {
+            @include media(1110px) {
                 display: flex;
                 align-items: center;
             }
@@ -460,7 +468,7 @@ body:not(.template--index) .header {
             cursor: pointer;
             overflow: hidden;
 
-            @include media(1100px) {
+            @include media(1110px) {
                 display: none;
             }
 
@@ -519,14 +527,13 @@ Search
     cursor: pointer;
     padding: 0.8rem 2.5rem 0.8rem 3rem;
     display: flex;
-    border: 2px solid white;
+    border: 2px solid var(--primary);
     flex-wrap: wrap;
 
     color: var(--primary) !important;
     border-radius: 100rem !important;
-    background: white;
 
-    @include media(1100px, max) {
+    @include media(1110px, max) {
         right: 6rem;
     }
 

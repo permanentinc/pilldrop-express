@@ -2,6 +2,10 @@
     position: relative;
     padding: 10rem 8rem 8rem;
 
+    @include media($md, max) {
+        padding: 10rem 2rem 8rem;
+    }
+
     &__wrap {
         &__heading {
             width: 100%;
@@ -32,6 +36,7 @@
 
         &__slider {
             margin: 6rem auto;
+            padding: 0 3rem;
             width: 100%;
             position: relative;
 
@@ -87,11 +92,9 @@
                                 cursor: pointer;
                                 transition: all $fast;
 
-                                &:hover{
+                                &:hover {
                                     transform: scale(1.05);
-                                    
                                 }
-                                
                             }
                         }
                     }

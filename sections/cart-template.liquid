@@ -121,12 +121,12 @@
       <p>
         <i>Shipping & taxes calculated at checkout</i>
       </p>
-      <p >
+      {% comment %} <p>
         <input style="float:none; vertical-align: middle;" type="checkbox" id="agree" />
         <label style="display:inline; float:none; font-weight:600;" for="agree">
           I agree with the <a href="/policies/terms-of-service" target="_blank" style="color:var(--primary)">terms and conditions</a> and understand I may order this product online today,<br> but it will not be processed until PillDrop Pets receives an official copy of the prescription.
         </label>
-      </p>
+      </p> {% endcomment %}
       <p>
         
         <a href="{{ routes.root_url }}checkout" class="button button--yellow [ js-click-through ]">
@@ -135,7 +135,7 @@
       </p>
 
       <p>
-        <b>I already have the prescription. How do I get it to PillDrop Pets?<br></b>
+        <b>I already have the prescription. How do I get it to PillDrop Express?<br></b>
         Please post the original prescription to us: PO Box 62283, Sylvia Park, Auckland, 1060
         <br>
 

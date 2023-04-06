@@ -4,7 +4,11 @@
     margin: -1rem auto 0;
     position: relative;
     overflow: hidden;
- 
+
+    @include media(1110px, max) {
+        margin-top: 8rem;
+    }
+
     &--off-white {
         background: var(--off-white);
 
@@ -216,6 +220,10 @@
             left: 0;
             object-fit: cover;
             object-position: 80%;
+
+            @include media($xmd, max) {
+                object-position: 30% 100%;
+            }
         }
     }
 }
