@@ -124,6 +124,23 @@ Product
                 padding-left: 0;
             }
 
+            &__availability {
+                line-height: 1.4;
+
+                p {
+                    font-size: 1.2rem;
+                }
+
+                .js-availability {
+                    position: relative;
+                    display: inline-block;
+                    border: 1px solid var(--grey-light);
+                    border-radius: 0.2rem;
+                    padding: 0 1rem;
+                    cursor: pointer;
+                }
+            }
+
             &__description {
                 line-height: 1.4;
 

@@ -3929,6 +3929,17 @@ Product
           margin: 0 auto;
           padding-right: 0;
           padding-left: 0; } }
+      .product__wrap__details__availability {
+        line-height: 1.4; }
+        .product__wrap__details__availability p {
+          font-size: 1.2rem; }
+        .product__wrap__details__availability .js-availability {
+          position: relative;
+          display: inline-block;
+          border: 1px solid var(--grey-light);
+          border-radius: 0.2rem;
+          padding: 0 1rem;
+          cursor: pointer; }
       .product__wrap__details__description {
         line-height: 1.4; }
         .product__wrap__details__description h3 {
