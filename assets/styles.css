@@ -192,6 +192,12 @@ strong {
 .small {
   font-size: 80%; }
 
+.spaced {
+  margin-top: -1.5rem;
+  line-height: 1.7;
+  text-align: left;
+  opacity: 0.6; }
+
 .text-right {
   text-align: right; }
 
@@ -5211,23 +5217,18 @@ Side Cart
 body .swal2-modal {
   border: 1px solid #ebebeb;
   padding: 4rem; }
+  body .swal2-modal h6 {
+    text-align: left;
+    font-size: 1.6rem; }
   @media only screen and (max-width: 767px) {
     body .swal2-modal {
       padding: 2rem; } }
   body .swal2-modal .swal2-title {
     position: relative;
-    padding-bottom: 2rem; }
-    body .swal2-modal .swal2-title:after {
-      position: absolute;
-      display: block;
-      content: '';
-      border: 0;
-      border-bottom: 1px solid #ebebeb;
-      margin: 1rem auto;
-      left: 0;
-      bottom: -1rem;
-      right: 0;
-      width: calc(10rem); }
+    padding-bottom: 0rem;
+    text-align: left !important;
+    font-size: 2.2rem;
+    color: var(--primary); }
 
 .swal2-popup.swal2-toast {
   box-sizing: border-box;

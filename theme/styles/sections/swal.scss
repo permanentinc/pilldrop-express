@@ -3,24 +3,23 @@ body {
     border: 1px solid $grey-light;
     padding: 4rem;
 
+    h6 {
+      text-align: left;
+      font-size: 1.6rem;
+    }
+
     @include media($md, max) {
       padding: 2rem;
     }
 
     .swal2-title {
       position: relative;
-      padding-bottom: 2rem;
+      padding-bottom: 0rem;
+      text-align: left !important;
+      font-size: 2.2rem;
+      color: var(--primary);
 
-      &:after {
-        @include pseudo;
-        border: 0;
-        border-bottom: 1px solid $grey-light;
-        margin: 1rem auto;
-        left: 0;
-        bottom: -1rem;
-        right: 0;
-        width: calc(10rem);
-      }
+     
     }
   }
 }

@@ -131,7 +131,7 @@ $(() => {
                     }
                 });
 
-                let html = `<p style="text-align:left;"> Delivering to <span class="[ js-availability ]">${matched_city}${user_entered_postcode}</span><br><br>It should arrive:<br>`;
+                let html = `<p style="text-align:left;" class=""> Delivering to <span class="[ js-availability ]">${matched_city}${user_entered_postcode}</span><br><br></p><p class="small spaced">It should arrive:<br>`;
 
                 if (afternoon_home.find((location) => location.postcode === user_entered_postcode)) {
                     options_available++;
@@ -163,8 +163,8 @@ $(() => {
                     allowEscapeKey: true,
                     allowOutsideClick: true,
                     confirmButtonText: 'Browse Products',
-                    title: (options_available === 0) ? 'Standard Shipping' : 'Congratulations! ',
-                    html: html,
+                    title: (options_available === 0) ? 'Unfortunately, we don\'t currently offer same day delivery to your address.' : 'You are eligible for same day delivery on your order! ',
+                    html: `${(options_available === 0) ? `<h6>However, you are in zone for Express shipping.</h6>` : `<h6>Order before 2pm to receive your products today.</h6>`}${html}`,
                     preConfirm: () => {
                         window.location = window.location.origin + `/collections/all`;
                     }
