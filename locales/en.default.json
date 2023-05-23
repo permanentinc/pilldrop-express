@@ -1,2 +1,9 @@
 {
+  "shopify": {
+    "checkout": {
+      "shipping": {
+        "local_delivery": "Express Delivery"
+      }
+    }
+  }
 }
