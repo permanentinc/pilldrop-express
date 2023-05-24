@@ -8,7 +8,6 @@
     "16510315198c1783c4": {
       "type": "banner-slim",
       "settings": {
-        "image": "shopify:\/\/shop_images\/pilldrop_pet_prescriptions_contact.jpg",
         "image_position": "left",
         "subheading": "",
         "colour": "light",
@@ -25,13 +24,10 @@
         "subheading": "IT'S SIMPLE",
         "heading": "Getting started.",
         "heading_size": "h1",
-        "image1": "shopify:\/\/shop_images\/Artboard_Copy_6.png",
         "heading1": "Get prescription",
         "text1": "<p>Your pet medications will be delivered straight to your door anywhere you are in New Zealand.<\/p>",
-        "image2": "shopify:\/\/shop_images\/Artboard_e714124e-35da-4abc-b224-b844f91964f6.png",
         "heading2": "Get prescription",
         "text2": "<p>Your pet medications will be delivered straight to your door anywhere you are in New Zealand.<\/p>",
-        "image3": "shopify:\/\/shop_images\/Artboard_Copy_7.png",
         "heading3": "Get prescription",
         "text3": "<p>Your pet medications will be delivered straight to your door anywhere you are in New Zealand.<\/p>"
       }
@@ -42,120 +38,71 @@
         "165406382718befed6-0": {
           "type": "accordion_item",
           "settings": {
-            "heading": "Is it cheaper to get my pet’s medicines through PillDrop Pets rather than going through my vets?",
-            "content": "<p>Yes, with no middlemen, no price games and buying medications in bulk, we can pass the savings to you.<br\/>Generally, you will be looking at paying 20% cheaper than getting it at the vets.<\/p>"
+            "heading": "How can I place an order on PillDrop Express?",
+            "content": "<p>Placing an order is simple! Just browse through our products, select the items you need, and add them to your cart. Proceed to the checkout process, provide the required information, and complete the payment. Your order will be processed promptly.<\/p>"
           }
         },
         "165406382718befed6-1": {
           "type": "accordion_item",
           "settings": {
-            "heading": "Do you stock the same medicines as my vet?",
-            "content": "<p>Yes, we offer the same prescription medicines and vet-only nutraceuticals as your vet, but at a lower price.<\/p>"
+            "heading": "Do you deliver prescription medicines?",
+            "content": "<p>Certainly! Please visit pilldrop.co.nz for all your prescription medication needs.<\/p>"
           }
         },
         "165406382718befed6-2": {
           "type": "accordion_item",
           "settings": {
-            "heading": "There’s a medication I need that’s not on your website.",
-            "content": "<p>As one of New Zealand’s largest dispensaries, we stock most pet medicines. However, if you can’t see it on our website, please give us a call on: <a href=\"tel:0800 745 537\" title=\"tel:0800 745 537\">0800 745 537<\/a><\/p>"
+            "heading": "What are the shipping options available?",
+            "content": "<p>We offer fast nationwide shipping for all orders. Express same day delivery service is available in certain postcodes. Shipping options and delivery times vary depending on your location and the shipping method chosen during checkout.<\/p>"
           }
         },
         "1b8677f3-5ccf-4936-abc5-d360bae18be7": {
           "type": "accordion_item",
           "settings": {
-            "heading": "When can I expect to receive my pet’s medication?",
-            "content": "<p><strong>For prescription items:<\/strong><br\/>Once we have received your pet’s prescription, we will sent it out within one business day and you should expect to recieve it in 1-2 business days. For rural addresses, please allow 3 business days for delivery.<\/p><p><br\/><strong>For non-prescription items:<\/strong><br\/>For vet-only, non-prescription items, such as vitamins, we will process within 24 hours from receiving<br\/>the order, or the following business day (please see our delivery schedule below).<\/p>"
+            "heading": "Can I track the status of my order?",
+            "content": "<p>Yes, you can! Once your order is shipped, we will provide you with a tracking number. You can use this tracking number to monitor the progress of your shipment through our website or the shipping partner's tracking system.<\/p>"
           }
         },
         "016bac0d-e2d2-488e-9c74-9553718c730f": {
           "type": "accordion_item",
           "settings": {
-            "heading": "What is your delivery schedule?",
-            "content": "<p>We deliver during business hours, Monday to Friday.<\/p>"
+            "heading": "What is your return or refund policy?",
+            "content": "<p>We have a customer-friendly return policy. If you receive a damaged or defective product, please contact our customer support within 48 hours of delivery, and we will arrange for a return or refund. Please refer to our Returns and Refunds page on our website for detailed instructions.<\/p>"
           }
         },
         "375cfe66-5b7d-454b-8271-5aee2b4d1f09": {
           "type": "accordion_item",
           "settings": {
-            "heading": "How much is your shipping fee?",
-            "content": "<p>We offer free shipping* for all orders over $50. <\/p><p><br\/><strong>For orders less than $50:<\/strong><br\/>Urban deliveries: $7.50<br\/><strong>Rural: <\/strong>$12.50<br\/><br\/>For urgent delivery, please call us on <a href=\"tel:0800745537\" title=\"tel:0800745537\">0800745537<\/a><\/p>"
+            "heading": "Can I get assistance or advice on product selection?",
+            "content": "<p>Absolutely! Our knowledgeable pharmacy team is available to assist you. You can reach out to us via phone or email. We can provide guidance and help you choose the right products based on your specific needs.<\/p>"
           }
         },
         "8eecd9e9-b5c0-45a6-9d83-869ac4f295f0": {
           "type": "accordion_item",
           "settings": {
-            "heading": "How do I order “RX” medication?",
-            "content": "<p>For any prescription medication, we require a valid prescription from your vet before we can send it to you.<br\/>For safety reasons and to meet our legal obligations, we can’t ship the medication until we receive the prescription.<\/p><p><br\/><strong>Here are the six easy steps to follow:<\/strong><br\/>1) Find and select the medication you need.<br\/>2) Add to cart.<br\/>3) Go to checkout.<br\/>4) Pay for the medication<br\/>5) Submit your prescription by either:<br\/><\/p><p><strong>Posting the original to:<\/strong> PO Box 62283, Sylvia Park, Auckland, 1060<\/p><p><br\/><strong>Asking your vet to send it to us directly: <\/strong>email: <a href=\"mailto:delivery@pilldrop.co.nz\" title=\"mailto:delivery@pilldrop.co.nz\">delivery@pilldrop.co.nz<\/a> or via fax: 09 276 9292<\/p>"
+            "heading": "Are there any limitations on the quantity of products I can order?",
+            "content": "<p>While there are no specific limitations on the quantity of products you can order, certain regulations or restrictions may apply to specific medications or healthcare products. If you have any concerns about ordering larger quantities, please reach out to our team for clarification.<\/p>"
           }
         },
         "68401fca-621f-4250-b467-1af85fcf12cb": {
           "type": "accordion_item",
           "settings": {
-            "heading": "I already have the prescription. How do I get it to PillDrop Pets?",
-            "content": "<p>Please post the original prescription to us: PO Box 62283, Sylvia Park, Auckland, 1060<br\/><\/p><p>Or you can ask your vet to email the prescription to us directly: email: <a href=\"mailto:delivery@pilldrop.co.nz\" title=\"mailto:delivery@pilldrop.co.nz\">delivery@pilldrop.co.nz<\/a> or via fax: 09 276 9292<\/p>"
+            "heading": "Can I cancel or modify my order after it has been placed?",
+            "content": "<p>We strive to process and ship orders as quickly as possible. If you need to cancel or modify your order, please contact us immediately. We will do our best to accommodate your request if the order has not yet been shipped.<\/p>"
           }
         },
         "640ee2b0-a08a-4c6f-b05b-9a76a823e486": {
           "type": "accordion_item",
           "settings": {
-            "heading": "Can I fax or email my pet’s prescription?",
-            "content": "<p>Faxed or scanned copies are only accepted if sent directly from the vet’s office. If you would like to send us you prescription directly, you can mail in the original prescription to <br\/>PO Box 62283Sylvia Park, Auckland 1060<\/p>"
+            "heading": "Do I need a prescription to purchase pharmacy-onlymedicines?",
+            "content": "<p>No, you do not need a prescription to purchase pharmacy-only medicines. These products are carefully selected and approved for sale without a prescription, making them easily accessible for your convenience.<\/p>"
           }
         },
         "25ace2b0-becd-474b-acc5-cf4b5da29415": {
           "type": "accordion_item",
           "settings": {
-            "heading": "How do I get repeats?",
-            "content": "<p>If you have a PillDrop Account, log into your account, go to My Medicines, click the name of your pet<br\/>and choose the medication you need repeats for.<br\/>Or you can request your repeats to be sent to you by emailing us: <a href=\"mailto:delivery@pilldrop.co.nz\" title=\"mailto:delivery@pilldrop.co.nz\">delivery@pilldrop.co.nz<\/a> or calling us:<br\/><a href=\"tel:0800 745 537\" title=\"tel:0800 745 537\">0800 745 537<\/a><\/p>"
-          }
-        },
-        "53fe48d6-d1e2-45f4-a0ba-71eb105e1e20": {
-          "type": "accordion_item",
-          "settings": {
-            "heading": "Can you supply part packs? I don’t need hundreds of tablets.",
-            "content": "<p>Yes, of course. We don’t want to sell you quantities that you don’t need. We always look for ways on how we can help you save!<\/p>"
-          }
-        },
-        "558a6d14-8559-4c66-bc68-e84fcd88b0a8": {
-          "type": "accordion_item",
-          "settings": {
-            "heading": "Do my pets get a colourful PillDrop dispenser and PillSachets?",
-            "content": "<p>Although that would be cute, we’re sorry to say no. Animal medication comes in so many different sizes and forms – creams, pills, drops etc. – so it’s not practical to pack them into PillSachets. They will instead come in the usual form – bottles, tubes, injectables, etc.<\/p>"
-          }
-        },
-        "f50cd388-7db9-432c-8489-e5278ea4d203": {
-          "type": "accordion_item",
-          "settings": {
-            "heading": "What are PillSachets anyway?",
-            "content": "<p>It’s for humans! Check it out here: <a href=\"https:\/\/pilldrop.co.nz\" target=\"_blank\" title=\"https:\/\/pilldrop.co.nz\">https:\/\/pilldrop.co.nz<\/a><\/p>"
-          }
-        },
-        "291f9bfb-a826-44d0-b0dc-af5d1f2a5c4f": {
-          "type": "accordion_item",
-          "settings": {
-            "heading": "Can I call PillDrop Pets if I have any concerns?",
-            "content": "<p>Yes, call our team on <a href=\"tel:0800-745-537\" title=\"tel:0800-745-537\">0800-745-537<\/a> if you require assistance. Alternatively, send our vet an email on<br\/><a href=\"mailto:vet@pilldroppets.co.nz\" title=\"mailto:vet@pilldrop.co.nz\">vet@pilldrop.co.nz<\/a><\/p>"
-          }
-        },
-        "8deeecd9-2072-493b-b9d2-e1a094043acb": {
-          "type": "accordion_item",
-          "settings": {
-            "heading": "Do you accept returns or exchanges on prescription items?",
-            "content": "<p>For medication orders, once this has been confirmed and you have paid for the charges and delivery<br\/>fees (if any) we will not be able to offer returns or refund any of the medicines selected to be dispensed unless they are faulty, damaged or not the items you ordered.<br\/>If goods (prescription or non-prescription) delivered to you are faulty, damaged or not the items you<br\/>ordered then you must contact us as soon as possible and return the goods to PillDropPets Pharmacy at your cost within 21 days. If it turns out the goods are faulty, damaged or incorrect we will replace and redeliver the goods at no charge to you.<br\/>If you are entitled to a refund the refund will be made based on the method of payment you used. If you paid by credit card then the refunded amount will be credited back to the same credit card. If you paid by bank transfer then the refunded amount will be deposited back to the same bank account.<\/p>"
-          }
-        },
-        "d2ad0b63-d807-4306-bb33-97a981fb5176": {
-          "type": "accordion_item",
-          "settings": {
-            "heading": "What payment method do you accept?",
-            "content": "<p>We accept credit card and bank transfer payment methods.<\/p>"
-          }
-        },
-        "ec4170e4-b0db-4f48-bc51-fa1eb25d3c87": {
-          "type": "accordion_item",
-          "settings": {
-            "heading": "Do you ship overseas?",
-            "content": "<p>No. We only ship within New Zealand. All transactions are priced in NZD ( New Zealand Dollars) <\/p>"
+            "heading": "Do you offer international shipping?",
+            "content": "<p>We do not provide international shipping services at this time.<\/p><p>If you have any further questions or concerns, please feel free to reach out to our team. We are here to assist you and provide the best possible shopping experience at PillDrop Express.<\/p>"
           }
         }
       },
@@ -169,14 +116,7 @@
         "8eecd9e9-b5c0-45a6-9d83-869ac4f295f0",
         "68401fca-621f-4250-b467-1af85fcf12cb",
         "640ee2b0-a08a-4c6f-b05b-9a76a823e486",
-        "25ace2b0-becd-474b-acc5-cf4b5da29415",
-        "53fe48d6-d1e2-45f4-a0ba-71eb105e1e20",
-        "558a6d14-8559-4c66-bc68-e84fcd88b0a8",
-        "f50cd388-7db9-432c-8489-e5278ea4d203",
-        "291f9bfb-a826-44d0-b0dc-af5d1f2a5c4f",
-        "8deeecd9-2072-493b-b9d2-e1a094043acb",
-        "d2ad0b63-d807-4306-bb33-97a981fb5176",
-        "ec4170e4-b0db-4f48-bc51-fa1eb25d3c87"
+        "25ace2b0-becd-474b-acc5-cf4b5da29415"
       ],
       "settings": {
         "heading": ""
