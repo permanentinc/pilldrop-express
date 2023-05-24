@@ -8,6 +8,7 @@
     "16510315198c1783c4": {
       "type": "banner-slim",
       "settings": {
+        "image": "shopify:\/\/shop_images\/pilldrop_express.jpg",
         "image_position": "left",
         "subheading": "",
         "colour": "light",
