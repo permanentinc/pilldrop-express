@@ -61,6 +61,21 @@ Footer
                 }
             }
 
+            &__fern {
+                padding: 0 0.5rem;
+
+                @include media(1060px, max) {
+                    width: 100%;
+                    padding-top: 1rem;
+                }
+
+                @include media($xs, max) {
+                    order: 125;
+                    margin-bottom: 1rem;
+                }
+            }
+
+            
             &--details {
                 width: calc(30rem);
 

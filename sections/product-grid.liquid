@@ -56,14 +56,14 @@
     
     <h6 class="collection__filters__title">Condition</h6>
 
-    <p class="collection__filters__item">
+    {% comment %} <p class="collection__filters__item">
       <input type="checkbox" class="[ js-filter-tags ]" value="Nasal Sprays" id="Nasal Sprays">
       <label for="Nasal Sprays">Nasal Sprays</label>
-    </p>
-    <p class="collection__filters__item">
+    </p> {% endcomment %}
+    {% comment %} <p class="collection__filters__item">
       <input type="checkbox" class="[ js-filter-tags ]" value="Pharmacist Only Medicines" id="Pharmacist Only Medicines">
       <label for="Pharmacist Only Medicines">Pharmacist Only Medicines</label>
-    </p>
+    </p> {% endcomment %}
     <p class="collection__filters__item">
       <input type="checkbox" class="[ js-filter-tags ]" value="Pain Relief" id="Pain Relief">
       <label for="Pain Relief">Pain Relief</label>
@@ -108,10 +108,10 @@
       <input type="checkbox" class="[ js-filter-tags ]" value="Ear Care" id="Ear Care">
       <label for="Ear Care">Ear Care</label>
     </p>
-    <p class="collection__filters__item">
+    {% comment %} <p class="collection__filters__item">
       <input type="checkbox" class="[ js-filter-tags ]" value="Accessories" id="Accessories">
       <label for="Accessories">Accessories</label>
-    </p>
+    </p> {% endcomment %}
 
 
 
@@ -154,7 +154,7 @@
       {%- assign on_sale = true -%}
       {% endif %}
 
-      <div class="collection__grid__item" data-tags="{% for tag in product.tags %}{{ tag }},{% endfor %}" data-collections="{% for collection in product.collections %}{{ collection.title }},{% endfor %}" data-brand="{{ product.vendor }}">
+      <div class="collection__grid__item" data-tags="{% for tag in product.tags %}{{ tag }},{% endfor %}" data-collections="{% for collection in product.collections %}{{ collection.title }},{% endfor %}" data-brand="{{ product.vendor }}" data-types="{{ product.type }}">
         {% if product.media[0] %}
         <a  href="{{ product.url }}" class="collection__grid__item__image">
           

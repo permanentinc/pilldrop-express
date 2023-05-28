@@ -157,30 +157,30 @@ $(() => {
 
     const filterProducts = () => {
         $body.addClass('busy');
-        let brands = [];
-        $('.js-filter-brands:checked').each((i, el) => brands.push($(el).attr('id')));
+        // let brands = [];
+        // $('.js-filter-brands:checked').each((i, el) => brands.push($(el).attr('id')));
         let tags = [];
         $('.js-filter-tags:checked').each((i, el) => tags.push($(el).attr('id')));
 
-        let collection = [];
+        // let collection = [];
 
-        $('.js-filter-collections.active').each((i, el) => collection.push($(el).attr('data-id')));
+        // $('.js-filter-collections.active').each((i, el) => collection.push($(el).attr('data-id')));
 
 
         $('.collection__grid__item').each((i, el) => {
             let $this = $(el);
             let item_brands = $this.attr('data-brand').split(',');
-            let item_tags = $this.attr('data-collections').split(',');
+            let item_tags = $this.attr('data-tags').split(',');
             $this.show();
-            if (brands.length > 0 && !item_brands.some(brand => brands.includes(brand))) {
-                $this.hide();
-            }
+            // if (brands.length > 0 && !item_brands.some(brand => brands.includes(brand))) {
+            //     $this.hide();
+            // }
             if (tags.length > 0 && !item_tags.some(tag => tags.includes(tag))) {
                 $this.hide();
             }
-            if (collection.length > 0 && !item_tags.some(tag => collection.includes(tag))) {
-                $this.hide();
-            }
+            // if (collection.length > 0 && !item_tags.some(tag => collection.includes(tag))) {
+                // $this.hide();
+            // }
         });
 
 
