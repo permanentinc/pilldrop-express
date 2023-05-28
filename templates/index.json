@@ -18,7 +18,8 @@
     "60f6a06d-c1da-462a-8292-2af800da714a": {
       "type": "postcode-bar",
       "settings": {
-        "heading": "Need it today?"
+        "heading": "Need it today?",
+        "subcopy": "Enter postcode here for same day delivery"
       }
     },
     "0bc4ac8f-a994-410c-a54e-ef61a6b8946e": {
@@ -36,7 +37,7 @@
           "settings": {
             "heading": "Nasal products",
             "image": "shopify:\/\/shop_images\/nasal.jpg",
-            "link": ""
+            "link": "https:\/\/pillexpress.co.nz\/collections\/all?filter=nasal-sprays"
           }
         },
         "template--18191156871460__d729f901-4e10-4ce7-819f-da1379f85ce8-167989788788f484fb-1": {
