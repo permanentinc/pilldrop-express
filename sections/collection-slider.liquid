@@ -8,7 +8,7 @@
       <h2 class="colour--green-dark" data-splitting>{{ section.settings.heading }}</h2>
       <p>
         <b
-          ><a href="/collections/shop" class="arrow-link"
+          ><a href="/collections/all" class="arrow-link"
             >VIEW ALL PRODUCTS
             <img src="{{ 'mini-arrow-right.svg' | asset_url }}" width="14" height="22" loading="lazy"></a
         ></b>
@@ -20,7 +20,7 @@
         {%- for block in section.blocks -%}
           <div class="collection-slider__wrap__slider__carousel__item">
             {% if block.settings.image %}
-              <div
+              <a
                 href="{{ block.settings.link }}"
                 class="collection-slider__wrap__slider__carousel__item__image collection-slider__wrap__slider__carousel__item__image--overlay"
               >
@@ -43,7 +43,7 @@
                 <h5 class="colour--white text-center">
                   {{ block.settings.heading }}
                 </h5>
-              </div>
+              </a>
             {% endif %}
           </div>
         {%- endfor -%}
