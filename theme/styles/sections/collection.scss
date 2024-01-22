@@ -1,3 +1,78 @@
+#searchresults {
+    padding: 4rem 2rem;
+    max-width: var(--content-width);
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    position: relative;
+
+    @include media($md, max) {
+        padding: 4rem 0rem;
+    }
+
+    ol {
+        display: flex;
+        margin: 0 auto;
+        position: relative;
+        flex-wrap: wrap;
+        width: 100%;
+
+        li {
+            width: calc(20% - 4rem);
+            margin: 2rem;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+
+            @include media($xmd, max) {
+                width: calc(33.333% - 4rem);
+            }
+
+            @include media($md, max) {
+                width: calc(50% - 2rem);
+                margin: 1rem;
+            }
+
+            h3 {
+                order: 2;
+            }
+
+            span {
+                order: 3;
+            }
+
+            .result-image {
+                order: 1;
+                @include aspect(280, 280);
+                display: block;
+                width: 100%;
+                background-color: white;
+                overflow: hidden;
+                border-radius: 0.3rem;
+                box-shadow:
+                    0 0 1.4px #00000009,
+                    0 0 11px #00000012;
+
+                &:before {
+                    @include pseudo;
+                    @include full;
+                    background: rgba(black, 0.025);
+                    z-index: 3;
+                }
+
+                img {
+                    width: calc(100% - 4rem);
+                    height: calc(100% - 4rem);
+                    position: absolute;
+                    top: 2rem;
+                    left: 2rem;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+
 .collection {
     padding: 4rem 2rem;
     max-width: var(--content-width);
